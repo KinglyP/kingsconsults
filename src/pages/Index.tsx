@@ -60,12 +60,18 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="text-2xl font-bold text-slate-800">King's Consults</div>
+            <div className="flex items-center">
+              <img 
+                src="/lovable-uploads/1cc2bfe3-2ea0-4eae-95b5-73369bfdfbcb.png" 
+                alt="JKings Consults Logo" 
+                className="h-12 w-auto"
+              />
+            </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-slate-600 hover:text-slate-800 transition-colors">About</a>
-              <a href="#services" className="text-slate-600 hover:text-slate-800 transition-colors">Services</a>
-              <a href="#clients" className="text-slate-600 hover:text-slate-800 transition-colors">Clients</a>
-              <a href="#contact" className="text-slate-600 hover:text-slate-800 transition-colors">Contact</a>
+              <a href="#about" className="text-slate-600 hover:text-red-800 transition-colors">About</a>
+              <a href="#services" className="text-slate-600 hover:text-red-800 transition-colors">Services</a>
+              <a href="#clients" className="text-slate-600 hover:text-red-800 transition-colors">Clients</a>
+              <a href="#contact" className="text-slate-600 hover:text-red-800 transition-colors">Contact</a>
             </div>
           </div>
         </div>
@@ -78,28 +84,28 @@ const Index = () => {
             <div>
               <h1 className="text-5xl lg:text-6xl font-bold text-slate-800 leading-tight mb-6">
                 Purpose-Driven Consulting for{' '}
-                <span className="text-amber-600">Visionary Entrepreneurs</span>
+                <span className="text-yellow-600">Visionary Entrepreneurs</span>
               </h1>
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
                 Empowering entrepreneurs and professionals to build values-driven, sustainable brands with clarity and strategy.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
+                <Button size="lg" className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 text-lg">
                   Book a Session
                 </Button>
-                <Button variant="outline" size="lg" className="border-amber-600 text-amber-600 hover:bg-amber-50 px-8 py-4 text-lg">
+                <Button variant="outline" size="lg" className="border-red-800 text-red-800 hover:bg-red-50 px-8 py-4 text-lg">
                   Let's Work Together
                 </Button>
               </div>
             </div>
             <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center">
+              <div className="w-full h-96 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-2xl flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-32 h-32 bg-white rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-4xl">👑</span>
                   </div>
                   <p className="text-slate-600">CEO Professional Photo</p>
-                  <p className="text-sm text-slate-500 mt-2">King's Consults Logo</p>
+                  <p className="text-sm text-slate-500 mt-2">Upload photo here</p>
                 </div>
               </div>
             </div>
@@ -118,25 +124,25 @@ const Index = () => {
                   Favour Nicholas is a business strategist and mentor with 5+ years of experience launching, scaling, and leading businesses in Nigeria and Atlanta, USA. She has served as Chief Operating Officer and guided entrepreneurs through business development and operations.
                 </p>
                 <p>
-                  Her journey began with launching a business with ₦65,000 and scaling it to half a million in six months—empowering others along the way. That success story sparked the birth of King's Consults: a mission to mentor, equip, and elevate purpose-driven leaders.
+                  Her journey began with launching a business with ₦65,000 and scaling it to half a million in six months—empowering others along the way. That success story sparked the birth of JKings Consults: a mission to mentor, equip, and elevate purpose-driven leaders.
                 </p>
               </div>
             </div>
             <Card className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-amber-600">Education & Certifications</CardTitle>
+                <CardTitle className="text-red-800">Education & Certifications</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
                   <span>Bachelor's in Public Health</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
                   <span>Diploma in Operations Management</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
                   <span>Certified Scrum Master</span>
                 </div>
               </CardContent>
@@ -145,11 +151,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About King's Consults */}
+      {/* About JKings Consults */}
       <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-6">About King's Consults</h2>
+            <h2 className="text-4xl font-bold text-slate-800 mb-6">About JKings Consults</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Launched in 2024, serving entrepreneurs, professionals, and businesses with purpose-driven consulting.
             </p>
@@ -158,7 +164,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <Card className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-amber-600 flex items-center space-x-2">
+                <CardTitle className="text-red-800 flex items-center space-x-2">
                   <Briefcase className="w-6 h-6" />
                   <span>What We Offer</span>
                 </CardTitle>
@@ -167,7 +173,7 @@ const Index = () => {
                 <div className="grid gap-3">
                   {services.map((service, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
+                      <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
                       <span>{service}</span>
                     </div>
                   ))}
@@ -177,7 +183,7 @@ const Index = () => {
 
             <Card className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-amber-600">What Makes Us Different</CardTitle>
+                <CardTitle className="text-red-800">What Makes Us Different</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-slate-600">
@@ -187,7 +193,7 @@ const Index = () => {
                   <h4 className="font-semibold text-slate-800 mb-2">Core Values:</h4>
                   <div className="flex flex-wrap gap-2">
                     {coreValues.map((value, index) => (
-                      <Badge key={index} variant="secondary" className="bg-amber-100 text-amber-800">
+                      <Badge key={index} variant="secondary" className="bg-yellow-100 text-red-800">
                         {value}
                       </Badge>
                     ))}
@@ -222,13 +228,13 @@ const Index = () => {
           {/* Recognition & Milestones */}
           <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle className="text-amber-600 text-2xl">Recognition & Milestones</CardTitle>
+              <CardTitle className="text-red-800 text-2xl">Recognition & Milestones</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid gap-4">
                 {achievements.map((achievement, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-amber-600 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-600 rounded-full"></div>
                     <span className="text-slate-700">{achievement}</span>
                   </div>
                 ))}
@@ -239,20 +245,20 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800">
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-red-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Let's build something that reflects your purpose.
           </h2>
-          <p className="text-xl text-slate-300 mb-8">
+          <p className="text-xl text-red-100 mb-8">
             Ready to grow your brand with clarity and strategy?
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
+            <Button size="lg" className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 text-lg">
               Book a Session
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-slate-800 px-8 py-4 text-lg">
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-red-900 px-8 py-4 text-lg">
               Get in Touch
             </Button>
           </div>
@@ -290,7 +296,7 @@ const Index = () => {
                   rows={4}
                   required
                 />
-                <Button type="submit" className="w-full bg-amber-600 hover:bg-amber-700">
+                <Button type="submit" className="w-full bg-yellow-600 hover:bg-yellow-700">
                   Send Message
                 </Button>
               </form>
@@ -299,15 +305,15 @@ const Index = () => {
 
           {/* Contact Links */}
           <div className="mt-12 flex justify-center space-x-8">
-            <a href="mailto:contact@kingsconsults.com" className="flex items-center space-x-2 text-slate-300 hover:text-white transition-colors">
+            <a href="mailto:contact@jkingsconsults.com" className="flex items-center space-x-2 text-red-100 hover:text-white transition-colors">
               <Mail className="w-5 h-5" />
               <span>Email</span>
             </a>
-            <a href="#" className="flex items-center space-x-2 text-slate-300 hover:text-white transition-colors">
+            <a href="#" className="flex items-center space-x-2 text-red-100 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
               <span>Instagram</span>
             </a>
-            <a href="#" className="flex items-center space-x-2 text-slate-300 hover:text-white transition-colors">
+            <a href="#" className="flex items-center space-x-2 text-red-100 hover:text-white transition-colors">
               <span>📱</span>
               <span>WhatsApp</span>
             </a>
@@ -316,10 +322,10 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-8 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-red-950 text-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-slate-400">
-            © 2024 King's Consults. Empowering purpose-driven entrepreneurs.
+          <p className="text-red-200">
+            © 2024 JKings Consults. Empowering purpose-driven entrepreneurs.
           </p>
         </div>
       </footer>
