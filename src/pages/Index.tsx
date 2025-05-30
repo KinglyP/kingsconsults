@@ -64,7 +64,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/1cc2bfe3-2ea0-4eae-95b5-73369bfdfbcb.png" 
                 alt="JKings Consults Logo" 
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
             </div>
             <div className="hidden md:flex space-x-8">
