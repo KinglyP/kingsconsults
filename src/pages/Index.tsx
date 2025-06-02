@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -167,7 +168,7 @@ const Index = () => {
             <div className="animate-fade-in relative" style={{ animationDelay: '0.2s' }}>
               <div className="relative overflow-hidden rounded-2xl shadow-xl">
                 <img 
-                  src="/lovable-uploads/1cc2bfe3-2ea0-4eae-95b5-73369bfdfbcb.png" 
+                  src="/lovable-uploads/a9446baf-23ed-4fb0-8052-0703bffd7093.png" 
                   alt="Favour Nicholas - CEO of JKings Consults" 
                   className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
                 />
