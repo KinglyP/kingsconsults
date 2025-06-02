@@ -61,9 +61,9 @@ const Index = () => {
           <div className="flex justify-between items-center py-3">
             <div className="flex items-center">
               <img 
-                src="/lovable-uploads/1cc2bfe3-2ea0-4eae-95b5-73369bfdfbcb.png" 
+                src="/lovable-uploads/cb6a2ab8-2783-4538-b6e8-9363c3597977.png" 
                 alt="JKings Consults Logo" 
-                className="h-12 w-auto transition-transform duration-300 hover:scale-105"
+                className="h-10 w-auto transition-transform duration-300 hover:scale-105"
               />
             </div>
             <div className="hidden md:flex space-x-8">
@@ -98,59 +98,46 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Modern Hero Section */}
-      <section className="pt-20 min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 animate-fade-in">
-              <div className="inline-flex items-center px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium mb-6">
-                <span className="w-2 h-2 bg-yellow-600 rounded-full mr-2"></span>
-                Purpose-Driven Consulting
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                Empowering{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-yellow-500">
-                  Visionary
-                </span>{' '}
-                Entrepreneurs
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
-                Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button size="lg" className="bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-700 hover:to-yellow-600 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
-                  Book a Session
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
-                <Button variant="outline" size="lg" className="border-red-800 text-red-800 hover:bg-red-50 px-8 py-4 text-lg transition-all duration-300 hover:shadow-md">
-                  Let's Work Together
-                </Button>
-              </div>
-              <div className="flex items-center space-x-6 text-sm text-gray-500">
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
-                  <div className="w-8 h-8 bg-gray-200 rounded-full -ml-2"></div>
-                  <div className="w-8 h-8 bg-gray-200 rounded-full -ml-2"></div>
-                  <span className="ml-2">50+ Entrepreneurs Mentored</span>
+      {/* Hero Section with Image */}
+      <section className="pt-16 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Hero Image Container */}
+          <div className="relative h-[60vh] min-h-[400px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl mb-16">
+            <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20 z-10"></div>
+            <div className="absolute inset-0 flex items-center justify-center z-20">
+              <div className="text-center text-white max-w-4xl px-6">
+                <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
+                  <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span>
+                  Purpose-Driven Consulting
+                </div>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                  Empowering{' '}
+                  <span className="text-yellow-400">
+                    Visionary
+                  </span>{' '}
+                  Entrepreneurs
+                </h1>
+                <p className="text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto">
+                  Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button size="lg" className="bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-700 hover:to-yellow-600 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    Book a Session
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg transition-all duration-300 hover:shadow-md">
+                    Let's Work Together
+                  </Button>
                 </div>
               </div>
             </div>
-            <div className="order-1 lg:order-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-red-400/20 rounded-3xl blur-3xl"></div>
-                <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
-                  <div className="aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                    <div className="text-center z-10">
-                      <div className="w-20 h-20 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
-                        <span className="text-3xl">👑</span>
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-700 mb-2">Favour Nicholas</h3>
-                      <p className="text-gray-500 text-sm">CEO & Founder</p>
-                      <p className="text-xs text-gray-400 mt-4">Professional photo space</p>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent"></div>
-                  </div>
+            {/* Placeholder for hero image */}
+            <div className="absolute inset-0 flex items-center justify-center text-gray-400 z-5">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-white/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-3xl">📸</span>
                 </div>
+                <p className="text-sm">Hero Image Space</p>
               </div>
             </div>
           </div>
