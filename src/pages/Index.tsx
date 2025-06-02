@@ -1,11 +1,10 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Instagram, Briefcase } from "lucide-react";
+import { Mail, Instagram, Briefcase, ArrowRight } from "lucide-react";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -55,57 +54,102 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-slate-200">
+    <div className="min-h-screen bg-white">
+      {/* Lightweight Header */}
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-3">
             <div className="flex items-center">
               <img 
                 src="/lovable-uploads/1cc2bfe3-2ea0-4eae-95b5-73369bfdfbcb.png" 
                 alt="JKings Consults Logo" 
-                className="h-30 w-auto"
+                className="h-12 w-auto transition-transform duration-300 hover:scale-105"
               />
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-slate-600 hover:text-red-800 transition-colors">About</a>
-              <a href="#services" className="text-slate-600 hover:text-red-800 transition-colors">Services</a>
-              <a href="#clients" className="text-slate-600 hover:text-red-800 transition-colors">Clients</a>
-              <a href="#contact" className="text-slate-600 hover:text-red-800 transition-colors">Contact</a>
+              <a href="#about" className="text-gray-600 hover:text-red-800 transition-all duration-300 font-medium relative group">
+                About
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-800 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#services" className="text-gray-600 hover:text-red-800 transition-all duration-300 font-medium relative group">
+                Services
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-800 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#clients" className="text-gray-600 hover:text-red-800 transition-all duration-300 font-medium relative group">
+                Clients
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-800 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#contact" className="text-gray-600 hover:text-red-800 transition-all duration-300 font-medium relative group">
+                Contact
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-800 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            </div>
+            <div className="md:hidden">
+              <Button variant="ghost" size="sm">
+                <span className="sr-only">Menu</span>
+                <div className="w-6 h-6 flex flex-col justify-center space-y-1">
+                  <div className="w-full h-0.5 bg-gray-600"></div>
+                  <div className="w-full h-0.5 bg-gray-600"></div>
+                  <div className="w-full h-0.5 bg-gray-600"></div>
+                </div>
+              </Button>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-slate-800 leading-tight mb-6">
-                Purpose-Driven Consulting for{' '}
-                <span className="text-yellow-600">Visionary Entrepreneurs</span>
+      {/* Modern Hero Section */}
+      <section className="pt-20 min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1 animate-fade-in">
+              <div className="inline-flex items-center px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium mb-6">
+                <span className="w-2 h-2 bg-yellow-600 rounded-full mr-2"></span>
+                Purpose-Driven Consulting
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                Empowering{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-yellow-500">
+                  Visionary
+                </span>{' '}
+                Entrepreneurs
               </h1>
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-                Empowering entrepreneurs and professionals to build values-driven, sustainable brands with clarity and strategy.
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
+                Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 text-lg">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button size="lg" className="bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-700 hover:to-yellow-600 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
                   Book a Session
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
-                <Button variant="outline" size="lg" className="border-red-800 text-red-800 hover:bg-red-50 px-8 py-4 text-lg">
+                <Button variant="outline" size="lg" className="border-red-800 text-red-800 hover:bg-red-50 px-8 py-4 text-lg transition-all duration-300 hover:shadow-md">
                   Let's Work Together
                 </Button>
               </div>
+              <div className="flex items-center space-x-6 text-sm text-gray-500">
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
+                  <div className="w-8 h-8 bg-gray-200 rounded-full -ml-2"></div>
+                  <div className="w-8 h-8 bg-gray-200 rounded-full -ml-2"></div>
+                  <span className="ml-2">50+ Entrepreneurs Mentored</span>
+                </div>
+              </div>
             </div>
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-white rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-4xl">👑</span>
+            <div className="order-1 lg:order-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-red-400/20 rounded-3xl blur-3xl"></div>
+                <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
+                  <div className="aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                    <div className="text-center z-10">
+                      <div className="w-20 h-20 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                        <span className="text-3xl">👑</span>
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-700 mb-2">Favour Nicholas</h3>
+                      <p className="text-gray-500 text-sm">CEO & Founder</p>
+                      <p className="text-xs text-gray-400 mt-4">Professional photo space</p>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent"></div>
                   </div>
-                  <p className="text-slate-600">CEO Professional Photo</p>
-                  <p className="text-sm text-slate-500 mt-2">Upload photo here</p>
                 </div>
               </div>
             </div>
@@ -114,12 +158,15 @@ const Index = () => {
       </section>
 
       {/* About the CEO Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <h2 className="text-4xl font-bold text-slate-800 mb-6">About the CEO – Favour Nicholas</h2>
-              <div className="prose prose-lg text-slate-600 space-y-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="animate-fade-in">
+              <div className="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium mb-6">
+                Leadership Excellence
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">About the CEO – Favour Nicholas</h2>
+              <div className="prose prose-lg text-gray-600 space-y-6">
                 <p>
                   Favour Nicholas is a business strategist and mentor with 5+ years of experience launching, scaling, and leading businesses in Nigeria and Atlanta, USA. She has served as Chief Operating Officer and guided entrepreneurs through business development and operations.
                 </p>
@@ -128,22 +175,27 @@ const Index = () => {
                 </p>
               </div>
             </div>
-            <Card className="shadow-lg">
+            <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <CardHeader>
-                <CardTitle className="text-red-800">Education & Certifications</CardTitle>
+                <CardTitle className="text-red-800 flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                    <span className="text-red-800 text-sm">🎓</span>
+                  </div>
+                  <span>Education & Certifications</span>
+                </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
-                  <span>Bachelor's in Public Health</span>
+              <CardContent className="space-y-4">
+                <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-700">Bachelor's in Public Health</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
-                  <span>Diploma in Operations Management</span>
+                <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-700">Diploma in Operations Management</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
-                  <span>Certified Scrum Master</span>
+                <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-700">Certified Scrum Master</span>
                 </div>
               </CardContent>
             </Card>
@@ -152,16 +204,16 @@ const Index = () => {
       </section>
 
       {/* About JKings Consults */}
-      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-6">About JKings Consults</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">About JKings Consults</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Launched in 2024, serving entrepreneurs, professionals, and businesses with purpose-driven consulting.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className="grid md:grid-cols-2 gap-16 mb-16">
             <Card className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-red-800 flex items-center space-x-2">
@@ -186,11 +238,11 @@ const Index = () => {
                 <CardTitle className="text-red-800">What Makes Us Different</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-slate-600">
+                <p className="text-gray-600">
                   We are rooted in purpose, committed to impact, and driven by values. Our faith foundation inspires our approach to business with integrity, innovation, and empowerment at the core.
                 </p>
                 <div>
-                  <h4 className="font-semibold text-slate-800 mb-2">Core Values:</h4>
+                  <h4 className="font-semibold text-gray-800 mb-2">Core Values:</h4>
                   <div className="flex flex-wrap gap-2">
                     {coreValues.map((value, index) => (
                       <Badge key={index} variant="secondary" className="bg-yellow-100 text-red-800">
@@ -206,10 +258,10 @@ const Index = () => {
       </section>
 
       {/* Clients & Portfolio */}
-      <section id="clients" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="clients" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-6">Clients & Portfolio</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">Clients & Portfolio</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -219,7 +271,7 @@ const Index = () => {
                   <CardTitle className="text-lg">{client.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-600 text-sm">{client.service}</p>
+                  <p className="text-gray-600 text-sm">{client.service}</p>
                 </CardContent>
               </Card>
             ))}
@@ -235,7 +287,7 @@ const Index = () => {
                 {achievements.map((achievement, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-yellow-600 rounded-full"></div>
-                    <span className="text-slate-700">{achievement}</span>
+                    <span className="text-gray-700">{achievement}</span>
                   </div>
                 ))}
               </div>
@@ -245,7 +297,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-red-900">
+      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-red-900 to-red-800">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Let's build something that reflects your purpose.
