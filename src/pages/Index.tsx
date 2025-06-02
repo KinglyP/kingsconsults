@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -64,7 +63,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/cb6a2ab8-2783-4538-b6e8-9363c3597977.png" 
                 alt="JKings Consults Logo" 
-                className="h-12 w-auto transition-transform duration-300 hover:scale-105"
+                className="h-16 w-auto transition-transform duration-300 hover:scale-105"
               />
             </div>
             <div className="hidden md:flex space-x-8">
@@ -153,7 +152,7 @@ const Index = () => {
               <div className="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium mb-6">
                 Leadership Excellence
               </div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">About the CEO – Favour Nicholas</h2>
+              <h2 className="text-4xl font-bold text-red-800 mb-6">About the CEO – Favour Nicholas</h2>
               <div className="prose prose-lg text-gray-600 space-y-6">
                 <p>
                   Favour Nicholas is a business strategist and mentor with 5+ years of experience launching, scaling, and leading businesses in Nigeria and Atlanta, USA. She has served as Chief Operating Officer and guided entrepreneurs through business development and operations.
@@ -163,30 +162,44 @@ const Index = () => {
                 </p>
               </div>
             </div>
-            <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <CardHeader>
-                <CardTitle className="text-red-800 flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
-                    <span className="text-red-800 text-sm">🎓</span>
+            
+            {/* CEO Image */}
+            <div className="animate-fade-in relative" style={{ animationDelay: '0.2s' }}>
+              <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                <img 
+                  src="/lovable-uploads/1cc2bfe3-2ea0-4eae-95b5-73369bfdfbcb.png" 
+                  alt="Favour Nicholas - CEO of JKings Consults" 
+                  className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
+              
+              {/* Education & Certifications Card */}
+              <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-8">
+                <CardHeader>
+                  <CardTitle className="text-red-800 flex items-center space-x-2">
+                    <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                      <span className="text-red-800 text-sm">🎓</span>
+                    </div>
+                    <span>Education & Certifications</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Bachelor's in Public Health</span>
                   </div>
-                  <span>Education & Certifications</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                  <span className="text-gray-700">Bachelor's in Public Health</span>
-                </div>
-                <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                  <span className="text-gray-700">Diploma in Operations Management</span>
-                </div>
-                <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                  <span className="text-gray-700">Certified Scrum Master</span>
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Diploma in Operations Management</span>
+                  </div>
+                  <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Certified Scrum Master</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -364,7 +377,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-red-950 text-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-red-200">
+          <p className="text-gray-600">
             © 2024 JKings Consults. Empowering purpose-driven entrepreneurs.
           </p>
         </div>
