@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -63,7 +64,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/cb6a2ab8-2783-4538-b6e8-9363c3597977.png" 
                 alt="JKings Consults Logo" 
-                className="h-10 w-auto transition-transform duration-300 hover:scale-105"
+                className="h-12 w-auto transition-transform duration-300 hover:scale-105"
               />
             </div>
             <div className="hidden md:flex space-x-8">
