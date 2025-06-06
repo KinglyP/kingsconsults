@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -82,7 +81,7 @@ const Index = () => {
       {/* Lightweight Header */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-3">
+          <div className="flex justify-between items-center py-2">
             <div className="flex items-center">
               <img 
                 src="/lovable-uploads/cb6a2ab8-2783-4538-b6e8-9363c3597977.png" 
@@ -123,7 +122,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section with Image */}
-      <section className="pt-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="pt-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Image Container */}
           <div className="relative h-[60vh] min-h-[400px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl mb-16">
@@ -323,105 +322,117 @@ const Index = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#901219] to-[#901219]/90">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Let's build something that reflects your purpose.
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Ready to grow your brand with clarity and strategy?
-          </p>
+        <div className="max-w-4xl mx-auto">
+          {/* Modern Contact Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
+              Ready for Brand Clarity?
+            </h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+              Let's schedule a 1-on-1 session to get your brand moving in the right direction.
+            </p>
+          </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-[#F8A615] hover:bg-[#F8A615]/90 text-white px-8 py-4 text-lg">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Button size="lg" className="bg-[#F8A615] hover:bg-[#F8A615]/90 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
               Book a Session
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#901219] px-8 py-4 text-lg">
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#901219] px-8 py-4 text-lg transition-all duration-300 hover:shadow-md">
               Get in Touch
             </Button>
           </div>
 
-          {/* Contact Form */}
-          <Card className="shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-2xl">Book a Clarity Session</CardTitle>
-              <CardDescription>
-                Let's discuss how we can help you achieve your business goals.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              {showConfirmation ? (
-                <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-green-600 text-2xl">✓</span>
+          {/* Modern Contact Form */}
+          <div className="max-w-2xl mx-auto">
+            <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm">
+              <CardHeader className="text-center pb-8">
+                <CardTitle className="text-3xl font-bold text-[#901219] mb-2">Book a Clarity Session</CardTitle>
+                <CardDescription className="text-gray-600 text-lg">
+                  Let's discuss how we can help you achieve your business goals.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="px-8 pb-8">
+                {showConfirmation ? (
+                  <div className="text-center py-12">
+                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <span className="text-green-600 text-3xl">✓</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4">Thank You!</h3>
+                    <p className="text-gray-600 text-lg leading-relaxed max-w-md mx-auto mb-8">
+                      Thank you for reaching out! We've received your details and will get in touch with you shortly.
+                    </p>
+                    <Button 
+                      onClick={() => setShowConfirmation(false)} 
+                      className="bg-[#F8A615] hover:bg-[#F8A615]/90 px-6 py-3"
+                    >
+                      Submit Another Request
+                    </Button>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">Thank You!</h3>
-                  <p className="text-gray-600">
-                    Thank you for reaching out! We've received your details and will get in touch with you shortly.
-                  </p>
-                  <Button 
-                    onClick={() => setShowConfirmation(false)} 
-                    className="mt-4 bg-[#F8A615] hover:bg-[#F8A615]/90"
-                  >
-                    Submit Another Request
-                  </Button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <Input
-                    placeholder="Your Name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                  <Input
-                    type="email"
-                    placeholder="Your Email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                  <Input
-                    type="tel"
-                    placeholder="Your Phone Number"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                  />
-                  <Textarea
-                    placeholder="Tell us about your project or how we can help..."
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    required
-                  />
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </Button>
-                </form>
-              )}
-            </CardContent>
-          </Card>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <Input
+                        placeholder="Your Name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="h-12 text-base"
+                      />
+                      <Input
+                        type="email"
+                        placeholder="Your Email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="h-12 text-base"
+                      />
+                    </div>
+                    <Input
+                      type="tel"
+                      placeholder="Your Phone Number"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="h-12 text-base"
+                    />
+                    <Textarea
+                      placeholder="Tell us about your project or how we can help..."
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={5}
+                      required
+                      className="text-base resize-none"
+                    />
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90 h-14 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                    </Button>
+                  </form>
+                )}
+              </CardContent>
+            </Card>
+          </div>
 
           {/* Contact Links */}
-          <div className="mt-12 flex justify-center space-x-8">
-            <a href="mailto:contact@kingsconsults.com" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors">
-              <Mail className="w-5 h-5" />
+          <div className="mt-16 flex justify-center space-x-8">
+            <a href="mailto:contact@kingsconsults.com" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
+              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
               <span>Email</span>
             </a>
-            <a href="#" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors">
-              <Instagram className="w-5 h-5" />
+            <a href="#" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
+              <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
               <span>Instagram</span>
             </a>
-            <a href="#" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors">
-              <span>📱</span>
+            <a href="#" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
+              <span className="text-lg group-hover:scale-110 transition-transform duration-300">📱</span>
               <span>WhatsApp</span>
             </a>
           </div>
@@ -431,7 +442,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-[#901219]/95 text-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-300">
+          <p className="text-gray-600">
             © 2024 Kings Consults. Empowering purpose-driven entrepreneurs.
           </p>
         </div>
