@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -17,8 +16,16 @@ const Index = () => {
     preferredDate: '',
     preferredTime: ''
   });
+  const [contactFormData, setContactFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isContactSubmitting, setIsContactSubmitting] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [showContactConfirmation, setShowContactConfirmation] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -47,9 +54,43 @@ const Index = () => {
     }
   };
 
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsContactSubmitting(true);
+    
+    try {
+      const response = await fetch('https://formspree.io/f/mrbkeeeq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(contactFormData)
+      });
+      
+      if (response.ok) {
+        setShowContactConfirmation(true);
+        setContactFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        alert("There was an error submitting the form. Please try again.");
+      }
+    } catch (error) {
+      console.error('Contact form submission error:', error);
+      alert("There was an error submitting the form. Please try again.");
+    } finally {
+      setIsContactSubmitting(false);
+    }
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setContactFormData({
+      ...contactFormData,
       [e.target.name]: e.target.value
     });
   };
@@ -110,7 +151,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/9c613978-8093-4547-86bb-5bf5e848f137.png" 
                 alt="Kings Consults Logo" 
-                className="h-22 w-auto transition-transform duration-300 hover:scale-105"
+                className="h-16 w-auto transition-transform duration-300 hover:scale-105"
               />
             </div>
             <div className="hidden md:flex space-x-8">
@@ -146,11 +187,19 @@ const Index = () => {
       </nav>
 
       {/* Hero Section with Image */}
-      <section className="pt-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="pt-14 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Image Container */}
           <div className="relative h-[60vh] min-h-[400px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl mb-16">
             <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20 z-10"></div>
+            
+            {/* Professional Image */}
+            <img 
+              src="/lovable-uploads/97e0d125-2c26-44f8-b200-bbce09b5ba23.png" 
+              alt="Professional consulting team collaboration" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            
             <div className="absolute inset-0 flex items-center justify-center z-20">
               <div className="text-center text-white max-w-4xl px-6">
                 <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
@@ -272,15 +321,6 @@ const Index = () => {
                     Let's Work Together
                   </Button>
                 </div>
-              </div>
-            </div>
-            {/* Placeholder for hero image */}
-            <div className="absolute inset-0 flex items-center justify-center text-gray-400 z-5">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-white/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-3xl">📸</span>
-                </div>
-                <p className="text-sm">Hero Image Space</p>
               </div>
             </div>
           </div>
@@ -472,137 +512,85 @@ const Index = () => {
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#901219] to-[#901219]/90">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left side - Professional Image */}
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <img 
-                  src="/lovable-uploads/97e0d125-2c26-44f8-b200-bbce09b5ba23.png" 
-                  alt="Professional consulting team collaboration" 
-                  className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
-            </div>
-
-            {/* Right side - Contact Content */}
+            
+            {/* Left side - Contact Form */}
             <div className="text-white">
               <div className="mb-12">
                 <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                  Ready for Brand Clarity?
+                  Get in Touch
                 </h2>
                 <p className="text-xl text-white/90 leading-relaxed">
-                  Let's schedule a 1-on-1 session to get your brand moving in the right direction.
+                  Have questions about our services? We'd love to hear from you.
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button size="lg" className="bg-[#F8A615] hover:bg-[#F8A615]/90 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
-                      Book a Session
-                      <Calendar className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold text-[#901219] mb-2">Book a Clarity Session</DialogTitle>
-                    </DialogHeader>
-                    
-                    {showConfirmation ? (
-                      <div className="text-center py-8">
-                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-green-600 text-2xl">✓</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-gray-800 mb-3">Thank You!</h3>
-                        <p className="text-gray-600 leading-relaxed max-w-md mx-auto mb-6">
-                          Your session request has been received. A team member from Kings Consults will contact you shortly to confirm and complete the booking.
-                        </p>
-                        <Button 
-                          onClick={() => setShowConfirmation(false)} 
-                          className="bg-[#F8A615] hover:bg-[#F8A615]/90 px-6 py-2"
-                        >
-                          Book Another Session
-                        </Button>
-                      </div>
-                    ) : (
-                      <form onSubmit={handleSubmit} className="space-y-4">
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <Input
-                            placeholder="Full Name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                            className="h-11"
-                          />
-                          <Input
-                            type="email"
-                            placeholder="Email Address"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                            className="h-11"
-                          />
-                        </div>
-                        <Input
-                          type="tel"
-                          placeholder="Phone Number"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          required
-                          className="h-11"
-                        />
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <Input
-                            type="date"
-                            placeholder="Preferred Date"
-                            name="preferredDate"
-                            value={formData.preferredDate}
-                            onChange={handleChange}
-                            required
-                            className="h-11"
-                          />
-                          <Input
-                            type="time"
-                            placeholder="Preferred Time"
-                            name="preferredTime"
-                            value={formData.preferredTime}
-                            onChange={handleChange}
-                            required
-                            className="h-11"
-                          />
-                        </div>
-                        <Textarea
-                          placeholder="Tell us about your business goals or challenges..."
-                          name="message"
-                          value={formData.message}
-                          onChange={handleChange}
-                          rows={4}
-                          className="resize-none"
-                        />
-                        <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
-                          <strong>Note:</strong> This is a paid consultation. Our team will contact you to confirm the session and complete the booking process.
-                        </p>
-                        <Button 
-                          type="submit" 
-                          className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                          disabled={isSubmitting}
-                        >
-                          {isSubmitting ? 'Sending Request...' : 'Request Session'}
-                        </Button>
-                      </form>
-                    )}
-                  </DialogContent>
-                </Dialog>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#901219] px-8 py-4 text-lg transition-all duration-300 hover:shadow-md">
-                  Get in Touch
-                </Button>
-              </div>
+              {showContactConfirmation ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-green-600 text-2xl">✓</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">Thank You!</h3>
+                  <p className="text-white/90 leading-relaxed max-w-md mx-auto mb-6">
+                    Thank you for reaching out! We'll be in touch with you shortly.
+                  </p>
+                  <Button 
+                    onClick={() => setShowContactConfirmation(false)} 
+                    className="bg-[#F8A615] hover:bg-[#F8A615]/90 px-6 py-2"
+                  >
+                    Send Another Message
+                  </Button>
+                </div>
+              ) : (
+                <form onSubmit={handleContactSubmit} className="space-y-4">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <Input
+                      placeholder="Full Name"
+                      name="name"
+                      value={contactFormData.name}
+                      onChange={handleContactChange}
+                      required
+                      className="h-11 bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                    />
+                    <Input
+                      type="email"
+                      placeholder="Email Address"
+                      name="email"
+                      value={contactFormData.email}
+                      onChange={handleContactChange}
+                      required
+                      className="h-11 bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                    />
+                  </div>
+                  <Input
+                    type="tel"
+                    placeholder="Phone Number"
+                    name="phone"
+                    value={contactFormData.phone}
+                    onChange={handleContactChange}
+                    required
+                    className="h-11 bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                  />
+                  <Textarea
+                    placeholder="Your message..."
+                    name="message"
+                    value={contactFormData.message}
+                    onChange={handleContactChange}
+                    rows={4}
+                    className="resize-none bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                    required
+                  />
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    disabled={isContactSubmitting}
+                  >
+                    {isContactSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                </form>
+              )}
 
               {/* Contact Links */}
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-6 mt-8">
                 <a href="mailto:contact@kingsconsults.com" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
                   <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                   <span>Email</span>
@@ -632,6 +620,18 @@ const Index = () => {
                   <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                   <span>Phone Call</span>
                 </a>
+              </div>
+            </div>
+
+            {/* Right side - Professional Image */}
+            <div className="relative order-first lg:order-last">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <img 
+                  src="/lovable-uploads/a9446baf-23ed-4fb0-8052-0703bffd7093.png" 
+                  alt="Favour Nicholas - CEO of Kings Consults" 
+                  className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
             </div>
           </div>
