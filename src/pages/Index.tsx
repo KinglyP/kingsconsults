@@ -335,10 +335,10 @@ const Index = () => {
               <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6">
                 Leadership Excellence
               </div>
-              <h2 className="text-4xl font-bold text-white mb-6">About the CEO – Favour Nicholas</h2>
+              <h2 className="text-4xl font-bold text-white mb-6">About the CEO</h2>
               <div className="prose prose-lg text-white/90 space-y-6">
                 <p>
-                  Favour Nicholas is a business strategist and mentor with 5+ years of experience launching, scaling, and leading businesses in Nigeria and Atlanta, USA. She has served as Chief Operating Officer and guided entrepreneurs through business development and operations.
+                  <strong>Favour Nicholas</strong> is a business strategist and mentor with 5+ years of experience launching, scaling, and leading businesses in Nigeria and Atlanta, USA. She has served as Chief Operating Officer and guided entrepreneurs through business development and operations.
                 </p>
                 <p>
                   Her journey began with launching a business with ₦65,000 and scaling it to half a million in six months—empowering others along the way. That success story sparked the birth of Kings Consults: a mission to mentor, equip, and elevate purpose-driven leaders.
