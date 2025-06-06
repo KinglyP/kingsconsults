@@ -11,14 +11,37 @@ const Index = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert("Thank you for your message! I'll get back to you soon.");
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('https://formspree.io/f/mrbkeeeq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        setShowConfirmation(true);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        alert("There was an error submitting the form. Please try again.");
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert("There was an error submitting the form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -63,26 +86,26 @@ const Index = () => {
             <div className="flex items-center">
               <img 
                 src="/lovable-uploads/cb6a2ab8-2783-4538-b6e8-9363c3597977.png" 
-                alt="JKings Consults Logo" 
-                className="h-16 w-auto transition-transform duration-300 hover:scale-105"
+                alt="Kings Consults Logo" 
+                className="h-22 w-auto transition-transform duration-300 hover:scale-105"
               />
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-gray-600 hover:text-red-800 transition-all duration-300 font-medium relative group">
+              <a href="#about" className="text-gray-600 hover:text-[#901219] transition-all duration-300 font-medium relative group">
                 About
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-800 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#901219] transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#services" className="text-gray-600 hover:text-red-800 transition-all duration-300 font-medium relative group">
+              <a href="#services" className="text-gray-600 hover:text-[#901219] transition-all duration-300 font-medium relative group">
                 Services
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-800 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#901219] transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#clients" className="text-gray-600 hover:text-red-800 transition-all duration-300 font-medium relative group">
+              <a href="#clients" className="text-gray-600 hover:text-[#901219] transition-all duration-300 font-medium relative group">
                 Clients
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-800 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#901219] transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#contact" className="text-gray-600 hover:text-red-800 transition-all duration-300 font-medium relative group">
+              <a href="#contact" className="text-gray-600 hover:text-[#901219] transition-all duration-300 font-medium relative group">
                 Contact
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-800 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#901219] transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
             <div className="md:hidden">
@@ -108,12 +131,12 @@ const Index = () => {
             <div className="absolute inset-0 flex items-center justify-center z-20">
               <div className="text-center text-white max-w-4xl px-6">
                 <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-[#F8A615] rounded-full mr-2"></span>
                   Purpose-Driven Consulting
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                   Empowering{' '}
-                  <span className="text-yellow-400">
+                  <span className="text-[#F8A615]">
                     Visionary
                   </span>{' '}
                   Entrepreneurs
@@ -122,7 +145,7 @@ const Index = () => {
                   Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-700 hover:to-yellow-600 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  <Button size="lg" className="bg-gradient-to-r from-[#F8A615] to-[#F8A615]/90 hover:from-[#F8A615]/90 hover:to-[#F8A615]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
                     Book a Session
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
@@ -146,20 +169,20 @@ const Index = () => {
       </section>
 
       {/* About the CEO Section */}
-      <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#901219]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="animate-fade-in">
-              <div className="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6">
                 Leadership Excellence
               </div>
-              <h2 className="text-4xl font-bold text-red-800 mb-6">About the CEO – Favour Nicholas</h2>
-              <div className="prose prose-lg text-gray-600 space-y-6">
+              <h2 className="text-4xl font-bold text-white mb-6">About the CEO – Favour Nicholas</h2>
+              <div className="prose prose-lg text-white/90 space-y-6">
                 <p>
                   Favour Nicholas is a business strategist and mentor with 5+ years of experience launching, scaling, and leading businesses in Nigeria and Atlanta, USA. She has served as Chief Operating Officer and guided entrepreneurs through business development and operations.
                 </p>
                 <p>
-                  Her journey began with launching a business with ₦65,000 and scaling it to half a million in six months—empowering others along the way. That success story sparked the birth of JKings Consults: a mission to mentor, equip, and elevate purpose-driven leaders.
+                  Her journey began with launching a business with ₦65,000 and scaling it to half a million in six months—empowering others along the way. That success story sparked the birth of Kings Consults: a mission to mentor, equip, and elevate purpose-driven leaders.
                 </p>
               </div>
             </div>
@@ -169,7 +192,7 @@ const Index = () => {
               <div className="relative overflow-hidden rounded-2xl shadow-xl">
                 <img 
                   src="/lovable-uploads/a9446baf-23ed-4fb0-8052-0703bffd7093.png" 
-                  alt="Favour Nicholas - CEO of JKings Consults" 
+                  alt="Favour Nicholas - CEO of Kings Consults" 
                   className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -178,24 +201,24 @@ const Index = () => {
               {/* Education & Certifications Card */}
               <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-8">
                 <CardHeader>
-                  <CardTitle className="text-red-800 flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
-                      <span className="text-red-800 text-sm">🎓</span>
+                  <CardTitle className="text-[#901219] flex items-center space-x-2">
+                    <div className="w-8 h-8 bg-[#F8A615]/20 rounded-lg flex items-center justify-center">
+                      <span className="text-[#901219] text-sm">🎓</span>
                     </div>
                     <span>Education & Certifications</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#F8A615] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">Bachelor's in Public Health</span>
                   </div>
                   <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#F8A615] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">Diploma in Operations Management</span>
                   </div>
                   <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#F8A615] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">Certified Scrum Master</span>
                   </div>
                 </CardContent>
@@ -205,20 +228,20 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About JKings Consults */}
+      {/* About Kings Consults */}
       <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">About JKings Consults</h2>
+            <h2 className="text-4xl font-bold text-[#901219] mb-6">About Kings Consults</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Launched in 2024, serving entrepreneurs, professionals, and businesses with purpose-driven consulting.
+              Kings Consults is a strategy-first consulting brand helping purpose-driven entrepreneurs build structure, clarity, and confidence in their business. We guide founders through brand discovery, strategic positioning, and alignment so they can grow with intention and impact.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 mb-16">
             <Card className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-red-800 flex items-center space-x-2">
+                <CardTitle className="text-[#901219] flex items-center space-x-2">
                   <Briefcase className="w-6 h-6" />
                   <span>What We Offer</span>
                 </CardTitle>
@@ -227,7 +250,7 @@ const Index = () => {
                 <div className="grid gap-3">
                   {services.map((service, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#F8A615] rounded-full"></div>
                       <span>{service}</span>
                     </div>
                   ))}
@@ -237,7 +260,7 @@ const Index = () => {
 
             <Card className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-red-800">What Makes Us Different</CardTitle>
+                <CardTitle className="text-[#901219]">What Makes Us Different</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-600">
@@ -247,7 +270,7 @@ const Index = () => {
                   <h4 className="font-semibold text-gray-800 mb-2">Core Values:</h4>
                   <div className="flex flex-wrap gap-2">
                     {coreValues.map((value, index) => (
-                      <Badge key={index} variant="secondary" className="bg-yellow-100 text-red-800">
+                      <Badge key={index} variant="secondary" className="bg-[#F8A615]/20 text-[#901219]">
                         {value}
                       </Badge>
                     ))}
@@ -282,13 +305,13 @@ const Index = () => {
           {/* Recognition & Milestones */}
           <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle className="text-red-800 text-2xl">Recognition & Milestones</CardTitle>
+              <CardTitle className="text-[#901219] text-2xl">Recognition & Milestones</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid gap-4">
                 {achievements.map((achievement, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-yellow-600 rounded-full"></div>
+                    <div className="w-3 h-3 bg-[#F8A615] rounded-full"></div>
                     <span className="text-gray-700">{achievement}</span>
                   </div>
                 ))}
@@ -299,20 +322,20 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-red-900 to-red-800">
+      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#901219] to-[#901219]/90">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Let's build something that reflects your purpose.
           </h2>
-          <p className="text-xl text-red-100 mb-8">
+          <p className="text-xl text-white/90 mb-8">
             Ready to grow your brand with clarity and strategy?
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4 text-lg">
+            <Button size="lg" className="bg-[#F8A615] hover:bg-[#F8A615]/90 text-white px-8 py-4 text-lg">
               Book a Session
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-red-900 px-8 py-4 text-lg">
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#901219] px-8 py-4 text-lg">
               Get in Touch
             </Button>
           </div>
@@ -320,54 +343,84 @@ const Index = () => {
           {/* Contact Form */}
           <Card className="shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl">Send a Message</CardTitle>
+              <CardTitle className="text-2xl">Book a Clarity Session</CardTitle>
               <CardDescription>
                 Let's discuss how we can help you achieve your business goals.
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <Input
-                  placeholder="Your Name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-                <Input
-                  type="email"
-                  placeholder="Your Email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-                <Textarea
-                  placeholder="Tell us about your project or how we can help..."
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  required
-                />
-                <Button type="submit" className="w-full bg-yellow-600 hover:bg-yellow-700">
-                  Send Message
-                </Button>
-              </form>
+              {showConfirmation ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-green-600 text-2xl">✓</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">Thank You!</h3>
+                  <p className="text-gray-600">
+                    Thank you for reaching out! We've received your details and will get in touch with you shortly.
+                  </p>
+                  <Button 
+                    onClick={() => setShowConfirmation(false)} 
+                    className="mt-4 bg-[#F8A615] hover:bg-[#F8A615]/90"
+                  >
+                    Submit Another Request
+                  </Button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <Input
+                    placeholder="Your Name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                  <Input
+                    type="email"
+                    placeholder="Your Email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                  <Input
+                    type="tel"
+                    placeholder="Your Phone Number"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                  <Textarea
+                    placeholder="Tell us about your project or how we can help..."
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    required
+                  />
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                </form>
+              )}
             </CardContent>
           </Card>
 
           {/* Contact Links */}
           <div className="mt-12 flex justify-center space-x-8">
-            <a href="mailto:contact@jkingsconsults.com" className="flex items-center space-x-2 text-red-100 hover:text-white transition-colors">
+            <a href="mailto:contact@kingsconsults.com" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors">
               <Mail className="w-5 h-5" />
               <span>Email</span>
             </a>
-            <a href="#" className="flex items-center space-x-2 text-red-100 hover:text-white transition-colors">
+            <a href="#" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
               <span>Instagram</span>
             </a>
-            <a href="#" className="flex items-center space-x-2 text-red-100 hover:text-white transition-colors">
+            <a href="#" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors">
               <span>📱</span>
               <span>WhatsApp</span>
             </a>
@@ -376,10 +429,10 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-red-950 text-white py-8 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-[#901219]/95 text-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-600">
-            © 2024 JKings Consults. Empowering purpose-driven entrepreneurs.
+          <p className="text-gray-300">
+            © 2024 Kings Consults. Empowering purpose-driven entrepreneurs.
           </p>
         </div>
       </footer>
