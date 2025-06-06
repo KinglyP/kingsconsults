@@ -4,14 +4,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Instagram, Briefcase, ArrowRight } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Mail, Instagram, Briefcase, ArrowRight, Calendar, Phone } from "lucide-react";
 
 const Index = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    preferredDate: '',
+    preferredTime: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -31,7 +34,7 @@ const Index = () => {
       
       if (response.ok) {
         setShowConfirmation(true);
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '', preferredDate: '', preferredTime: '' });
       } else {
         alert("There was an error submitting the form. Please try again.");
       }
@@ -64,10 +67,30 @@ const Index = () => {
   ];
 
   const clients = [
-    { name: "Simbi's Secret", service: "Business Startup Consulting" },
-    { name: "Zenny's Cookware", service: "Consulting & Growth Strategy" },
-    { name: "Bills Grub", service: "Business Strategy" },
-    { name: "Shores Global", service: "Consulting" }
+    { 
+      name: "Simbi's Secret", 
+      service: "Business Startup Consulting",
+      testimonial: "Kings Consults transformed our business vision into reality. Their strategic guidance was invaluable.",
+      services: "Business Startup Consulting, Brand Strategy Development, Operations Setup"
+    },
+    { 
+      name: "Zenny's Cookware", 
+      service: "Consulting & Growth Strategy",
+      testimonial: "The growth strategy they developed helped us scale beyond our expectations.",
+      services: "Growth Strategy Planning, Market Analysis, Operational Optimization"
+    },
+    { 
+      name: "Bills Grub", 
+      service: "Business Strategy",
+      testimonial: "Professional, insightful, and results-driven. Highly recommend their services.",
+      services: "Business Strategy Development, Process Improvement, Team Training"
+    },
+    { 
+      name: "Shores Global", 
+      service: "Consulting",
+      testimonial: "Their expertise in operations management streamlined our entire business process.",
+      services: "Operations Consulting, Strategic Planning, Leadership Development"
+    }
   ];
 
   const achievements = [
@@ -77,7 +100,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-inter">
       {/* Lightweight Header */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -144,10 +167,106 @@ const Index = () => {
                   Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="bg-gradient-to-r from-[#F8A615] to-[#F8A615]/90 hover:from-[#F8A615]/90 hover:to-[#F8A615]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
-                    Book a Session
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button size="lg" className="bg-gradient-to-r from-[#F8A615] to-[#F8A615]/90 hover:from-[#F8A615]/90 hover:to-[#F8A615]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+                        Book a Session
+                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                      <DialogHeader>
+                        <DialogTitle className="text-2xl font-bold text-[#901219] mb-2">Book a Clarity Session</DialogTitle>
+                      </DialogHeader>
+                      
+                      {showConfirmation ? (
+                        <div className="text-center py-8">
+                          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span className="text-green-600 text-2xl">✓</span>
+                          </div>
+                          <h3 className="text-xl font-bold text-gray-800 mb-3">Thank You!</h3>
+                          <p className="text-gray-600 leading-relaxed max-w-md mx-auto mb-6">
+                            Your session request has been received. A team member from Kings Consults will contact you shortly to confirm and complete the booking.
+                          </p>
+                          <Button 
+                            onClick={() => setShowConfirmation(false)} 
+                            className="bg-[#F8A615] hover:bg-[#F8A615]/90 px-6 py-2"
+                          >
+                            Book Another Session
+                          </Button>
+                        </div>
+                      ) : (
+                        <form onSubmit={handleSubmit} className="space-y-4">
+                          <div className="grid md:grid-cols-2 gap-4">
+                            <Input
+                              placeholder="Full Name"
+                              name="name"
+                              value={formData.name}
+                              onChange={handleChange}
+                              required
+                              className="h-11"
+                            />
+                            <Input
+                              type="email"
+                              placeholder="Email Address"
+                              name="email"
+                              value={formData.email}
+                              onChange={handleChange}
+                              required
+                              className="h-11"
+                            />
+                          </div>
+                          <Input
+                            type="tel"
+                            placeholder="Phone Number"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            required
+                            className="h-11"
+                          />
+                          <div className="grid md:grid-cols-2 gap-4">
+                            <Input
+                              type="date"
+                              placeholder="Preferred Date"
+                              name="preferredDate"
+                              value={formData.preferredDate}
+                              onChange={handleChange}
+                              required
+                              className="h-11"
+                            />
+                            <Input
+                              type="time"
+                              placeholder="Preferred Time"
+                              name="preferredTime"
+                              value={formData.preferredTime}
+                              onChange={handleChange}
+                              required
+                              className="h-11"
+                            />
+                          </div>
+                          <Textarea
+                            placeholder="Tell us about your business goals or challenges..."
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            rows={4}
+                            className="resize-none"
+                          />
+                          <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
+                            <strong>Note:</strong> This is a paid consultation. Our team will contact you to confirm the session and complete the booking process.
+                          </p>
+                          <Button 
+                            type="submit" 
+                            className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                            disabled={isSubmitting}
+                          >
+                            {isSubmitting ? 'Sending Request...' : 'Request Session'}
+                          </Button>
+                        </form>
+                      )}
+                    </DialogContent>
+                  </Dialog>
                   <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg transition-all duration-300 hover:shadow-md">
                     Let's Work Together
                   </Button>
@@ -290,14 +409,42 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {clients.map((client, index) => (
-              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-lg">{client.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 text-sm">{client.service}</p>
-                </CardContent>
-              </Card>
+              <Dialog key={index}>
+                <DialogTrigger asChild>
+                  <Card className="shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105">
+                    <CardHeader>
+                      <CardTitle className="text-lg">{client.name}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 text-sm">{client.service}</p>
+                      <p className="text-[#F8A615] text-xs mt-2 font-medium">Click to view case study</p>
+                    </CardContent>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl text-[#901219] mb-4">{client.name}</DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-6">
+                    {/* Placeholder for client logo */}
+                    <div className="h-20 bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                      <span className="text-gray-500 text-sm">Client Logo Placeholder</span>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-800 mb-2">Client Testimonial</h4>
+                      <blockquote className="text-gray-600 italic border-l-4 border-[#F8A615] pl-4">
+                        "{client.testimonial}"
+                      </blockquote>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-800 mb-2">Services Provided</h4>
+                      <p className="text-gray-600">{client.services}</p>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             ))}
           </div>
 
@@ -322,119 +469,155 @@ const Index = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#901219] to-[#901219]/90">
-        <div className="max-w-4xl mx-auto">
-          {/* Modern Contact Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
-              Ready for Brand Clarity?
-            </h2>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-              Let's schedule a 1-on-1 session to get your brand moving in the right direction.
-            </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg" className="bg-[#F8A615] hover:bg-[#F8A615]/90 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
-              Book a Session
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#901219] px-8 py-4 text-lg transition-all duration-300 hover:shadow-md">
-              Get in Touch
-            </Button>
-          </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left side - Professional Image */}
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <img 
+                  src="/lovable-uploads/97e0d125-2c26-44f8-b200-bbce09b5ba23.png" 
+                  alt="Professional consulting team collaboration" 
+                  className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
+            </div>
 
-          {/* Modern Contact Form */}
-          <div className="max-w-2xl mx-auto">
-            <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm">
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-3xl font-bold text-[#901219] mb-2">Book a Clarity Session</CardTitle>
-                <CardDescription className="text-gray-600 text-lg">
-                  Let's discuss how we can help you achieve your business goals.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="px-8 pb-8">
-                {showConfirmation ? (
-                  <div className="text-center py-12">
-                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <span className="text-green-600 text-3xl">✓</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4">Thank You!</h3>
-                    <p className="text-gray-600 text-lg leading-relaxed max-w-md mx-auto mb-8">
-                      Thank you for reaching out! We've received your details and will get in touch with you shortly.
-                    </p>
-                    <Button 
-                      onClick={() => setShowConfirmation(false)} 
-                      className="bg-[#F8A615] hover:bg-[#F8A615]/90 px-6 py-3"
-                    >
-                      Submit Another Request
+            {/* Right side - Contact Content */}
+            <div className="text-white">
+              <div className="mb-12">
+                <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                  Ready for Brand Clarity?
+                </h2>
+                <p className="text-xl text-white/90 leading-relaxed">
+                  Let's schedule a 1-on-1 session to get your brand moving in the right direction.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button size="lg" className="bg-[#F8A615] hover:bg-[#F8A615]/90 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+                      Book a Session
+                      <Calendar className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                     </Button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <Input
-                        placeholder="Your Name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="h-12 text-base"
-                      />
-                      <Input
-                        type="email"
-                        placeholder="Your Email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="h-12 text-base"
-                      />
-                    </div>
-                    <Input
-                      type="tel"
-                      placeholder="Your Phone Number"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="h-12 text-base"
-                    />
-                    <Textarea
-                      placeholder="Tell us about your project or how we can help..."
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={5}
-                      required
-                      className="text-base resize-none"
-                    />
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90 h-14 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
-                    </Button>
-                  </form>
-                )}
-              </CardContent>
-            </Card>
-          </div>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                    {/* Same dialog content as above */}
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-bold text-[#901219] mb-2">Book a Clarity Session</DialogTitle>
+                    </DialogHeader>
+                    
+                    {showConfirmation ? (
+                      <div className="text-center py-8">
+                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <span className="text-green-600 text-2xl">✓</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-800 mb-3">Thank You!</h3>
+                        <p className="text-gray-600 leading-relaxed max-w-md mx-auto mb-6">
+                          Your session request has been received. A team member from Kings Consults will contact you shortly to confirm and complete the booking.
+                        </p>
+                        <Button 
+                          onClick={() => setShowConfirmation(false)} 
+                          className="bg-[#F8A615] hover:bg-[#F8A615]/90 px-6 py-2"
+                        >
+                          Book Another Session
+                        </Button>
+                      </div>
+                    ) : (
+                      // ... keep existing code (form content same as above)
+                      <form onSubmit={handleSubmit} className="space-y-4">
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <Input
+                            placeholder="Full Name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            className="h-11"
+                          />
+                          <Input
+                            type="email"
+                            placeholder="Email Address"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            className="h-11"
+                          />
+                        </div>
+                        <Input
+                          type="tel"
+                          placeholder="Phone Number"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          required
+                          className="h-11"
+                        />
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <Input
+                            type="date"
+                            placeholder="Preferred Date"
+                            name="preferredDate"
+                            value={formData.preferredDate}
+                            onChange={handleChange}
+                            required
+                            className="h-11"
+                          />
+                          <Input
+                            type="time"
+                            placeholder="Preferred Time"
+                            name="preferredTime"
+                            value={formData.preferredTime}
+                            onChange={handleChange}
+                            required
+                            className="h-11"
+                          />
+                        </div>
+                        <Textarea
+                          placeholder="Tell us about your business goals or challenges..."
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          rows={4}
+                          className="resize-none"
+                        />
+                        <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
+                          <strong>Note:</strong> This is a paid consultation. Our team will contact you to confirm the session and complete the booking process.
+                        </p>
+                        <Button 
+                          type="submit" 
+                          className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                          disabled={isSubmitting}
+                        >
+                          {isSubmitting ? 'Sending Request...' : 'Request Session'}
+                        </Button>
+                      </form>
+                    )}
+                  </DialogContent>
+                </Dialog>
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-[#901219] px-8 py-4 text-lg transition-all duration-300 hover:shadow-md">
+                  Get in Touch
+                </Button>
+              </div>
 
-          {/* Contact Links */}
-          <div className="mt-16 flex justify-center space-x-8">
-            <a href="mailto:contact@kingsconsults.com" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
-              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-              <span>Email</span>
-            </a>
-            <a href="#" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
-              <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-              <span>Instagram</span>
-            </a>
-            <a href="#" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
-              <span className="text-lg group-hover:scale-110 transition-transform duration-300">📱</span>
-              <span>WhatsApp</span>
-            </a>
+              {/* Contact Links */}
+              <div className="flex flex-wrap gap-6">
+                <a href="mailto:contact@kingsconsults.com" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
+                  <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                  <span>Email</span>
+                </a>
+                <a href="#" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
+                  <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                  <span>Instagram</span>
+                </a>
+                <a href="#" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
+                  <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -442,7 +625,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-[#901219]/95 text-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-600">
+          <p className="text-gray-300">
             © 2024 Kings Consults. Empowering purpose-driven entrepreneurs.
           </p>
         </div>
