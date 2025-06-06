@@ -152,7 +152,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/9c613978-8093-4547-86bb-5bf5e848f137.png" 
                 alt="Kings Consults Logo" 
-                className="h-12 w-auto transition-transform duration-300 hover:scale-105"
+                className="h-10 w-auto transition-transform duration-300 hover:scale-105"
               />
             </div>
             <div className="hidden md:flex space-x-8">
