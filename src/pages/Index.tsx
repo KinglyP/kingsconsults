@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -101,13 +102,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white font-inter">
-      {/* Lightweight Header */}
+      {/* Compact Header */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-2">
+          <div className="flex justify-between items-center py-1">
             <div className="flex items-center">
               <img 
-                src="/lovable-uploads/cb6a2ab8-2783-4538-b6e8-9363c3597977.png" 
+                src="/lovable-uploads/9c613978-8093-4547-86bb-5bf5e848f137.png" 
                 alt="Kings Consults Logo" 
                 className="h-22 w-auto transition-transform duration-300 hover:scale-105"
               />
@@ -145,7 +146,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section with Image */}
-      <section className="pt-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="pt-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Image Container */}
           <div className="relative h-[60vh] min-h-[400px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl mb-16">
@@ -503,7 +504,6 @@ const Index = () => {
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-                    {/* Same dialog content as above */}
                     <DialogHeader>
                       <DialogTitle className="text-2xl font-bold text-[#901219] mb-2">Book a Clarity Session</DialogTitle>
                     </DialogHeader>
@@ -525,7 +525,6 @@ const Index = () => {
                         </Button>
                       </div>
                     ) : (
-                      // ... keep existing code (form content same as above)
                       <form onSubmit={handleSubmit} className="space-y-4">
                         <div className="grid md:grid-cols-2 gap-4">
                           <Input
@@ -608,13 +607,30 @@ const Index = () => {
                   <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                   <span>Email</span>
                 </a>
-                <a href="#" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
+                <a 
+                  href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+                >
                   <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                   <span>Instagram</span>
                 </a>
-                <a href="#" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
+                <a 
+                  href="https://wa.me/2348113829471" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+                >
                   <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                   <span>WhatsApp</span>
+                </a>
+                <a 
+                  href="tel:+2348113829471" 
+                  className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+                >
+                  <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                  <span>Phone Call</span>
                 </a>
               </div>
             </div>
