@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -151,25 +152,25 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/9c613978-8093-4547-86bb-5bf5e848f137.png" 
                 alt="Kings Consults Logo" 
-                className="h-16 w-auto transition-transform duration-300 hover:scale-105"
+                className="h-12 w-auto transition-transform duration-300 hover:scale-105"
               />
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-gray-600 hover:text-[#901219] transition-all duration-300 font-medium relative group">
+              <a href="#about" className="text-gray-600 hover:text-[#701015] transition-all duration-300 font-medium relative group">
                 About
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#901219] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#701015] transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#services" className="text-gray-600 hover:text-[#901219] transition-all duration-300 font-medium relative group">
+              <a href="#services" className="text-gray-600 hover:text-[#701015] transition-all duration-300 font-medium relative group">
                 Services
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#901219] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#701015] transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#clients" className="text-gray-600 hover:text-[#901219] transition-all duration-300 font-medium relative group">
+              <a href="#clients" className="text-gray-600 hover:text-[#701015] transition-all duration-300 font-medium relative group">
                 Clients
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#901219] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#701015] transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#contact" className="text-gray-600 hover:text-[#901219] transition-all duration-300 font-medium relative group">
+              <a href="#contact" className="text-gray-600 hover:text-[#701015] transition-all duration-300 font-medium relative group">
                 Contact
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#901219] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#701015] transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
             <div className="md:hidden">
@@ -190,14 +191,14 @@ const Index = () => {
       <section className="pt-14 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Image Container */}
-          <div className="relative h-[60vh] min-h-[400px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl mb-16">
-            <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20 z-10"></div>
+          <div className="relative h-[60vh] min-h-[400px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl mb-8">
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40 z-10"></div>
             
             {/* Professional Image */}
             <img 
               src="/lovable-uploads/97e0d125-2c26-44f8-b200-bbce09b5ba23.png" 
               alt="Professional consulting team collaboration" 
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover opacity-70"
             />
             
             <div className="absolute inset-0 flex items-center justify-center z-20">
@@ -216,119 +217,118 @@ const Index = () => {
                 <p className="text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto">
                   Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button size="lg" className="bg-gradient-to-r from-[#F8A615] to-[#F8A615]/90 hover:from-[#F8A615]/90 hover:to-[#F8A615]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
-                        Book a Session
-                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-                      <DialogHeader>
-                        <DialogTitle className="text-2xl font-bold text-[#901219] mb-2">Book a Clarity Session</DialogTitle>
-                      </DialogHeader>
-                      
-                      {showConfirmation ? (
-                        <div className="text-center py-8">
-                          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span className="text-green-600 text-2xl">✓</span>
-                          </div>
-                          <h3 className="text-xl font-bold text-gray-800 mb-3">Thank You!</h3>
-                          <p className="text-gray-600 leading-relaxed max-w-md mx-auto mb-6">
-                            Your session request has been received. A team member from Kings Consults will contact you shortly to confirm and complete the booking.
-                          </p>
-                          <Button 
-                            onClick={() => setShowConfirmation(false)} 
-                            className="bg-[#F8A615] hover:bg-[#F8A615]/90 px-6 py-2"
-                          >
-                            Book Another Session
-                          </Button>
-                        </div>
-                      ) : (
-                        <form onSubmit={handleSubmit} className="space-y-4">
-                          <div className="grid md:grid-cols-2 gap-4">
-                            <Input
-                              placeholder="Full Name"
-                              name="name"
-                              value={formData.name}
-                              onChange={handleChange}
-                              required
-                              className="h-11"
-                            />
-                            <Input
-                              type="email"
-                              placeholder="Email Address"
-                              name="email"
-                              value={formData.email}
-                              onChange={handleChange}
-                              required
-                              className="h-11"
-                            />
-                          </div>
-                          <Input
-                            type="tel"
-                            placeholder="Phone Number"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                            required
-                            className="h-11"
-                          />
-                          <div className="grid md:grid-cols-2 gap-4">
-                            <Input
-                              type="date"
-                              placeholder="Preferred Date"
-                              name="preferredDate"
-                              value={formData.preferredDate}
-                              onChange={handleChange}
-                              required
-                              className="h-11"
-                            />
-                            <Input
-                              type="time"
-                              placeholder="Preferred Time"
-                              name="preferredTime"
-                              value={formData.preferredTime}
-                              onChange={handleChange}
-                              required
-                              className="h-11"
-                            />
-                          </div>
-                          <Textarea
-                            placeholder="Tell us about your business goals or challenges..."
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            rows={4}
-                            className="resize-none"
-                          />
-                          <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
-                            <strong>Note:</strong> This is a paid consultation. Our team will contact you to confirm the session and complete the booking process.
-                          </p>
-                          <Button 
-                            type="submit" 
-                            className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                            disabled={isSubmitting}
-                          >
-                            {isSubmitting ? 'Sending Request...' : 'Request Session'}
-                          </Button>
-                        </form>
-                      )}
-                    </DialogContent>
-                  </Dialog>
-                  <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg transition-all duration-300 hover:shadow-md">
-                    Let's Work Together
-                  </Button>
-                </div>
               </div>
             </div>
+          </div>
+          
+          {/* Book Session Button - Positioned below hero image */}
+          <div className="flex justify-center pb-16">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button size="lg" className="bg-gradient-to-r from-[#F8A615] to-[#F8A615]/90 hover:from-[#F8A615]/90 hover:to-[#F8A615]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+                  Book a Session
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold text-[#701015] mb-2">Book a Clarity Session</DialogTitle>
+                </DialogHeader>
+                
+                {showConfirmation ? (
+                  <div className="text-center py-8">
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-green-600 text-2xl">✓</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3">Thank You!</h3>
+                    <p className="text-gray-600 leading-relaxed max-w-md mx-auto mb-6">
+                      Your session request has been received. A team member from Kings Consults will contact you shortly to confirm and complete the booking.
+                    </p>
+                    <Button 
+                      onClick={() => setShowConfirmation(false)} 
+                      className="bg-[#F8A615] hover:bg-[#F8A615]/90 px-6 py-2"
+                    >
+                      Book Another Session
+                    </Button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <Input
+                        placeholder="Full Name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="h-11 bg-white border-gray-300"
+                      />
+                      <Input
+                        type="email"
+                        placeholder="Email Address"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="h-11 bg-white border-gray-300"
+                      />
+                    </div>
+                    <Input
+                      type="tel"
+                      placeholder="Phone Number"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="h-11 bg-white border-gray-300"
+                    />
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <Input
+                        type="date"
+                        placeholder="Preferred Date"
+                        name="preferredDate"
+                        value={formData.preferredDate}
+                        onChange={handleChange}
+                        required
+                        className="h-11 bg-white border-gray-300"
+                      />
+                      <Input
+                        type="time"
+                        placeholder="Preferred Time"
+                        name="preferredTime"
+                        value={formData.preferredTime}
+                        onChange={handleChange}
+                        required
+                        className="h-11 bg-white border-gray-300"
+                      />
+                    </div>
+                    <Textarea
+                      placeholder="Tell us about your business goals or challenges..."
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={4}
+                      className="resize-none bg-white border-gray-300"
+                    />
+                    <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
+                      <strong>Note:</strong> This is a paid consultation. Our team will contact you to confirm the session and complete the booking process.
+                    </p>
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? 'Sending Request...' : 'Request Session'}
+                    </Button>
+                  </form>
+                )}
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>
 
       {/* About the CEO Section */}
-      <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#901219]">
+      <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#701015]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="animate-fade-in">
@@ -360,9 +360,9 @@ const Index = () => {
               {/* Education & Certifications Card */}
               <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-8">
                 <CardHeader>
-                  <CardTitle className="text-[#901219] flex items-center space-x-2">
+                  <CardTitle className="text-[#701015] flex items-center space-x-2">
                     <div className="w-8 h-8 bg-[#F8A615]/20 rounded-lg flex items-center justify-center">
-                      <span className="text-[#901219] text-sm">🎓</span>
+                      <span className="text-[#701015] text-sm">🎓</span>
                     </div>
                     <span>Education & Certifications</span>
                   </CardTitle>
@@ -391,7 +391,7 @@ const Index = () => {
       <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#901219] mb-6">About Kings Consults</h2>
+            <h2 className="text-4xl font-bold text-[#701015] mb-6">About Kings Consults</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Kings Consults is a strategy-first consulting brand helping purpose-driven entrepreneurs build structure, clarity, and confidence in their business. We guide founders through brand discovery, strategic positioning, and alignment so they can grow with intention and impact.
             </p>
@@ -400,7 +400,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-16 mb-16">
             <Card className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-[#901219] flex items-center space-x-2">
+                <CardTitle className="text-[#701015] flex items-center space-x-2">
                   <Briefcase className="w-6 h-6" />
                   <span>What We Offer</span>
                 </CardTitle>
@@ -419,7 +419,7 @@ const Index = () => {
 
             <Card className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-[#901219]">What Makes Us Different</CardTitle>
+                <CardTitle className="text-[#701015]">What Makes Us Different</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-600">
@@ -429,7 +429,7 @@ const Index = () => {
                   <h4 className="font-semibold text-gray-800 mb-2">Core Values:</h4>
                   <div className="flex flex-wrap gap-2">
                     {coreValues.map((value, index) => (
-                      <Badge key={index} variant="secondary" className="bg-[#F8A615]/20 text-[#901219]">
+                      <Badge key={index} variant="secondary" className="bg-[#F8A615]/20 text-[#701015]">
                         {value}
                       </Badge>
                     ))}
@@ -464,7 +464,7 @@ const Index = () => {
                 </DialogTrigger>
                 <DialogContent className="max-w-2xl">
                   <DialogHeader>
-                    <DialogTitle className="text-2xl text-[#901219] mb-4">{client.name}</DialogTitle>
+                    <DialogTitle className="text-2xl text-[#701015] mb-4">{client.name}</DialogTitle>
                   </DialogHeader>
                   <div className="space-y-6">
                     {/* Placeholder for client logo */}
@@ -492,7 +492,7 @@ const Index = () => {
           {/* Recognition & Milestones */}
           <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle className="text-[#901219] text-2xl">Recognition & Milestones</CardTitle>
+              <CardTitle className="text-[#701015] text-2xl">Recognition & Milestones</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid gap-4">
@@ -509,13 +509,13 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#901219] to-[#901219]/90">
+      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#701015] to-[#701015]/90">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-1 gap-16 items-center">
             
-            {/* Left side - Contact Form */}
+            {/* Contact Form */}
             <div className="text-white">
-              <div className="mb-12">
+              <div className="mb-12 text-center">
                 <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                   Get in Touch
                 </h2>
@@ -541,105 +541,95 @@ const Index = () => {
                   </Button>
                 </div>
               ) : (
-                <form onSubmit={handleContactSubmit} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
+                <div className="max-w-2xl mx-auto">
+                  <form onSubmit={handleContactSubmit} className="space-y-4">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <Input
+                        placeholder="Full Name"
+                        name="name"
+                        value={contactFormData.name}
+                        onChange={handleContactChange}
+                        required
+                        className="h-11 bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
+                      />
+                      <Input
+                        type="email"
+                        placeholder="Email Address"
+                        name="email"
+                        value={contactFormData.email}
+                        onChange={handleContactChange}
+                        required
+                        className="h-11 bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
+                      />
+                    </div>
                     <Input
-                      placeholder="Full Name"
-                      name="name"
-                      value={contactFormData.name}
+                      type="tel"
+                      placeholder="Phone Number"
+                      name="phone"
+                      value={contactFormData.phone}
                       onChange={handleContactChange}
                       required
-                      className="h-11 bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                      className="h-11 bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
                     />
-                    <Input
-                      type="email"
-                      placeholder="Email Address"
-                      name="email"
-                      value={contactFormData.email}
+                    <Textarea
+                      placeholder="Your message..."
+                      name="message"
+                      value={contactFormData.message}
                       onChange={handleContactChange}
+                      rows={4}
+                      className="resize-none bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
                       required
-                      className="h-11 bg-white/10 border-white/20 text-white placeholder:text-white/60"
                     />
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      disabled={isContactSubmitting}
+                    >
+                      {isContactSubmitting ? 'Sending...' : 'Send Message'}
+                    </Button>
+                  </form>
+
+                  {/* Contact Links */}
+                  <div className="flex flex-wrap justify-center gap-6 mt-8">
+                    <a href="mailto:contact@kingsconsults.com" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
+                      <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                      <span>Email</span>
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+                    >
+                      <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                      <span>Instagram</span>
+                    </a>
+                    <a 
+                      href="https://wa.me/2348113829471" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+                    >
+                      <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                      <span>WhatsApp</span>
+                    </a>
+                    <a 
+                      href="tel:+2348113829471" 
+                      className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+                    >
+                      <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                      <span>Phone Call</span>
+                    </a>
                   </div>
-                  <Input
-                    type="tel"
-                    placeholder="Phone Number"
-                    name="phone"
-                    value={contactFormData.phone}
-                    onChange={handleContactChange}
-                    required
-                    className="h-11 bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                  />
-                  <Textarea
-                    placeholder="Your message..."
-                    name="message"
-                    value={contactFormData.message}
-                    onChange={handleContactChange}
-                    rows={4}
-                    className="resize-none bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                    required
-                  />
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                    disabled={isContactSubmitting}
-                  >
-                    {isContactSubmitting ? 'Sending...' : 'Send Message'}
-                  </Button>
-                </form>
+                </div>
               )}
-
-              {/* Contact Links */}
-              <div className="flex flex-wrap gap-6 mt-8">
-                <a href="mailto:contact@kingsconsults.com" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
-                  <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                  <span>Email</span>
-                </a>
-                <a 
-                  href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
-                >
-                  <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                  <span>Instagram</span>
-                </a>
-                <a 
-                  href="https://wa.me/2348113829471" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
-                >
-                  <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                  <span>WhatsApp</span>
-                </a>
-                <a 
-                  href="tel:+2348113829471" 
-                  className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
-                >
-                  <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                  <span>Phone Call</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Right side - Professional Image */}
-            <div className="relative order-first lg:order-last">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <img 
-                  src="/lovable-uploads/a9446baf-23ed-4fb0-8052-0703bffd7093.png" 
-                  alt="Favour Nicholas - CEO of Kings Consults" 
-                  className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#901219]/95 text-white py-8 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-[#701015]/95 text-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-300">
             © 2024 Kings Consults. Empowering purpose-driven entrepreneurs.
