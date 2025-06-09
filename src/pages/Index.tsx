@@ -6,7 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Mail, Instagram, Briefcase, ArrowRight, Phone, Menu } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Mail, Instagram, Briefcase, ArrowRight, Phone, Menu, ChevronDown } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
 const Index = () => {
@@ -30,6 +31,12 @@ const Index = () => {
   const [showContactConfirmation, setShowContactConfirmation] = useState(false);
   const [nameSuggestions, setNameSuggestions] = useState<string[]>([]);
   const [emailSuggestions, setEmailSuggestions] = useState<string[]>([]);
+  const [openSections, setOpenSections] = useState({
+    about: false,
+    services: false,
+    contact: false,
+    connect: false
+  });
 
   // Common name suggestions
   const commonNames = [
@@ -166,6 +173,13 @@ const Index = () => {
     if (field === 'email') setEmailSuggestions([]);
   };
 
+  const toggleSection = (section: keyof typeof openSections) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
   const services = [
     "Business Startup Consulting",
     "Strategy & Growth Planning", 
@@ -214,15 +228,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white font-inter">
-      {/* Enhanced Header with Mobile Menu */}
+      {/* Enhanced Header with Reduced Size */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
+          <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <img 
                 src="/lovable-uploads/9c613978-8093-4547-86bb-5bf5e848f137.png" 
                 alt="Kings Consults Logo" 
-                className="h-10 w-auto transition-transform duration-300 hover:scale-105"
+                className="h-8 w-auto transition-transform duration-300 hover:scale-105"
               />
             </div>
             <div className="hidden md:flex space-x-8">
@@ -247,122 +261,154 @@ const Index = () => {
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="sm" className="p-2">
-                    <Menu className="w-6 h-6 text-gray-600" />
+                    <Menu className="w-5 h-5 text-gray-600" />
                     <span className="sr-only">Menu</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-full sm:max-w-md">
+                <SheetContent side="right" className="w-full sm:max-w-md bg-[#701015]">
                   <SheetHeader className="text-left pb-6">
-                    <SheetTitle className="text-[#701015] text-xl font-bold">Kings Consults</SheetTitle>
-                    <SheetDescription className="text-gray-600">
+                    <SheetTitle className="text-white text-xl font-bold">Kings Consults</SheetTitle>
+                    <SheetDescription className="text-gray-300">
                       Empowering purpose-driven entrepreneurs
                     </SheetDescription>
                   </SheetHeader>
                   
-                  <div className="space-y-8">
+                  <div className="space-y-4">
                     {/* About Section */}
-                    <div>
-                      <h3 className="text-lg font-semibold text-[#701015] mb-3">About Kings Consulting</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        Kings Consulting is a business consulting agency that partners with entrepreneurs, startups, and organizations to bring clarity to their ideas, build strategic business structures, and execute winning plans. Whether you're refining a concept, launching a new venture, or scaling operations, we help you position your business for real results.
-                      </p>
-                    </div>
+                    <Collapsible 
+                      open={openSections.about} 
+                      onOpenChange={() => toggleSection('about')}
+                    >
+                      <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                        <span className="text-white font-medium">About Kings Consulting</span>
+                        <ChevronDown className={`w-4 h-4 text-white transition-transform duration-200 ${openSections.about ? 'rotate-180' : ''}`} />
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="mt-2 p-3 bg-white/5 rounded-lg">
+                        <p className="text-gray-300 text-sm leading-relaxed">
+                          Kings Consulting is a business consulting agency that partners with entrepreneurs, startups, and organizations to bring clarity to their ideas, build strategic business structures, and execute winning plans. Whether you're refining a concept, launching a new venture, or scaling operations, we help you position your business for real results.
+                        </p>
+                      </CollapsibleContent>
+                    </Collapsible>
 
                     {/* Services Section */}
-                    <div>
-                      <h3 className="text-lg font-semibold text-[#701015] mb-3">Our Services</h3>
-                      <ul className="space-y-2 text-sm text-gray-600">
-                        <li className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Business & Idea Consultation</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Business Structuring & Strategic Planning</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Brand & Market Positioning</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Execution Strategy & Roadmapping</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Acting COO Services</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Operations & Team Structuring</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Brand Identity Advisory</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
-                          <span>Go-to-Market Support</span>
-                        </li>
-                      </ul>
-                    </div>
+                    <Collapsible 
+                      open={openSections.services} 
+                      onOpenChange={() => toggleSection('services')}
+                    >
+                      <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                        <span className="text-white font-medium">Our Services</span>
+                        <ChevronDown className={`w-4 h-4 text-white transition-transform duration-200 ${openSections.services ? 'rotate-180' : ''}`} />
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="mt-2 p-3 bg-white/5 rounded-lg">
+                        <ul className="space-y-2 text-sm text-gray-300">
+                          <li className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <span>Business & Idea Consultation</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <span>Business Structuring & Strategic Planning</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <span>Brand & Market Positioning</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <span>Execution Strategy & Roadmapping</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <span>Acting COO Services</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <span>Operations & Team Structuring</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <span>Brand Identity Advisory</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <span>Go-to-Market Support</span>
+                          </li>
+                        </ul>
+                      </CollapsibleContent>
+                    </Collapsible>
 
                     {/* Contact Section */}
-                    <div>
-                      <h3 className="text-lg font-semibold text-[#701015] mb-3">Contact Us</h3>
-                      <div className="space-y-3">
-                        <a 
-                          href="tel:+2348113829471" 
-                          className="flex items-center space-x-3 text-gray-600 hover:text-[#701015] transition-colors"
-                        >
-                          <div className="w-8 h-8 bg-[#F8A615]/10 rounded-lg flex items-center justify-center">
-                            <Phone className="w-4 h-4 text-[#701015]" />
-                          </div>
-                          <span className="text-sm">+234 811 382 9471</span>
-                        </a>
-                        <a 
-                          href="mailto:info.kingsconsults@gmail.com" 
-                          className="flex items-center space-x-3 text-gray-600 hover:text-[#701015] transition-colors"
-                        >
-                          <div className="w-8 h-8 bg-[#F8A615]/10 rounded-lg flex items-center justify-center">
-                            <Mail className="w-4 h-4 text-[#701015]" />
-                          </div>
-                          <span className="text-sm">info.kingsconsults@gmail.com</span>
-                        </a>
-                      </div>
-                    </div>
+                    <Collapsible 
+                      open={openSections.contact} 
+                      onOpenChange={() => toggleSection('contact')}
+                    >
+                      <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                        <span className="text-white font-medium">Contact Us</span>
+                        <ChevronDown className={`w-4 h-4 text-white transition-transform duration-200 ${openSections.contact ? 'rotate-180' : ''}`} />
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="mt-2 p-3 bg-white/5 rounded-lg">
+                        <div className="space-y-3">
+                          <a 
+                            href="tel:+2348113829471" 
+                            className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors"
+                          >
+                            <div className="w-8 h-8 bg-[#D4951C]/20 rounded-lg flex items-center justify-center">
+                              <Phone className="w-4 h-4 text-white" />
+                            </div>
+                            <span className="text-sm">+234 811 382 9471</span>
+                          </a>
+                          <a 
+                            href="mailto:info.kingsconsults@gmail.com" 
+                            className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors"
+                          >
+                            <div className="w-8 h-8 bg-[#D4951C]/20 rounded-lg flex items-center justify-center">
+                              <Mail className="w-4 h-4 text-white" />
+                            </div>
+                            <span className="text-sm">info.kingsconsults@gmail.com</span>
+                          </a>
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
 
                     {/* Connect Section */}
-                    <div>
-                      <h3 className="text-lg font-semibold text-[#701015] mb-3">Connect With Us</h3>
-                      <div className="grid grid-cols-2 gap-3">
-                        <a 
-                          href="https://wa.me/2348113829471" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="flex items-center justify-center space-x-2 p-3 bg-green-50 text-green-700 rounded-lg hover:bg-green-100 transition-colors text-sm"
-                        >
-                          <Phone className="w-4 h-4" />
-                          <span>WhatsApp</span>
-                        </a>
-                        <a 
-                          href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="flex items-center justify-center space-x-2 p-3 bg-pink-50 text-pink-700 rounded-lg hover:bg-pink-100 transition-colors text-sm"
-                        >
-                          <Instagram className="w-4 h-4" />
-                          <span>Instagram</span>
-                        </a>
-                        <a 
-                          href="mailto:info.kingsconsults@gmail.com" 
-                          className="flex items-center justify-center space-x-2 p-3 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-sm col-span-2"
-                        >
-                          <Mail className="w-4 h-4" />
-                          <span>Email Us</span>
-                        </a>
-                      </div>
-                    </div>
+                    <Collapsible 
+                      open={openSections.connect} 
+                      onOpenChange={() => toggleSection('connect')}
+                    >
+                      <CollapsibleTrigger className="flex items-center justify-between w-full p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+                        <span className="text-white font-medium">Connect With Us</span>
+                        <ChevronDown className={`w-4 h-4 text-white transition-transform duration-200 ${openSections.connect ? 'rotate-180' : ''}`} />
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="mt-2 p-3 bg-white/5 rounded-lg">
+                        <div className="grid grid-cols-2 gap-3">
+                          <a 
+                            href="https://wa.me/2348113829471" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="flex items-center justify-center space-x-2 p-3 bg-green-600/20 text-green-300 rounded-lg hover:bg-green-600/30 transition-colors text-sm"
+                          >
+                            <Phone className="w-4 h-4" />
+                            <span>WhatsApp</span>
+                          </a>
+                          <a 
+                            href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="flex items-center justify-center space-x-2 p-3 bg-pink-600/20 text-pink-300 rounded-lg hover:bg-pink-600/30 transition-colors text-sm"
+                          >
+                            <Instagram className="w-4 h-4" />
+                            <span>Instagram</span>
+                          </a>
+                          <a 
+                            href="mailto:info.kingsconsults@gmail.com" 
+                            className="flex items-center justify-center space-x-2 p-3 bg-blue-600/20 text-blue-300 rounded-lg hover:bg-blue-600/30 transition-colors text-sm col-span-2"
+                          >
+                            <Mail className="w-4 h-4" />
+                            <span>Email Us</span>
+                          </a>
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
                   </div>
                 </SheetContent>
               </Sheet>
@@ -372,7 +418,7 @@ const Index = () => {
       </nav>
 
       {/* Enhanced Hero Section */}
-      <section className="pt-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="pt-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Image Container with Better Contrast */}
           <div className="relative h-[60vh] min-h-[400px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl mb-8">
@@ -388,12 +434,12 @@ const Index = () => {
             <div className="absolute inset-0 flex items-center justify-center z-20">
               <div className="text-center text-white max-w-4xl px-6">
                 <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
-                  <span className="w-2 h-2 bg-[#F8A615] rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-[#D4951C] rounded-full mr-2"></span>
                   Purpose-Driven Consulting
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-shadow-lg">
                   Empowering{' '}
-                  <span className="text-[#F8A615] font-black">
+                  <span className="text-[#D4951C] font-black">
                     Visionary
                   </span>{' '}
                   Entrepreneurs
@@ -409,7 +455,7 @@ const Index = () => {
           <div className="flex justify-center pb-16">
             <Dialog>
               <DialogTrigger asChild>
-                <Button size="lg" className="bg-gradient-to-r from-[#F8A615] to-[#F8A615]/90 hover:from-[#F8A615]/90 hover:to-[#F8A615]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <Button size="lg" className="bg-gradient-to-r from-[#D4951C] to-[#D4951C]/90 hover:from-[#D4951C]/90 hover:to-[#D4951C]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
                   Book a Session
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
@@ -430,7 +476,7 @@ const Index = () => {
                     </p>
                     <Button 
                       onClick={() => setShowConfirmation(false)} 
-                      className="bg-[#F8A615] hover:bg-[#F8A615]/90 px-6 py-2"
+                      className="bg-[#D4951C] hover:bg-[#D4951C]/90 px-6 py-2"
                     >
                       Book Another Session
                     </Button>
@@ -571,7 +617,7 @@ const Index = () => {
                     </p>
                     <Button 
                       type="submit" 
-                      className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full bg-[#D4951C] hover:bg-[#D4951C]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? 'Sending Request...' : 'Request Session'}
@@ -584,7 +630,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About the CEO Section - REMOVED DUPLICATE CONTACT ICONS */}
+      {/* About the CEO Section */}
       <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#701015]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -669,7 +715,7 @@ const Index = () => {
                 <div className="grid gap-3">
                   {services.map((service, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-[#F8A615] rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#D4951C] rounded-full"></div>
                       <span>{service}</span>
                     </div>
                   ))}
@@ -689,7 +735,7 @@ const Index = () => {
                   <h4 className="font-semibold text-gray-800 mb-2">Core Values:</h4>
                   <div className="flex flex-wrap gap-2">
                     {coreValues.map((value, index) => (
-                      <Badge key={index} variant="secondary" className="bg-[#F8A615]/20 text-[#701015]">
+                      <Badge key={index} variant="secondary" className="bg-[#D4951C]/20 text-[#701015]">
                         {value}
                       </Badge>
                     ))}
@@ -718,7 +764,7 @@ const Index = () => {
                     </CardHeader>
                     <CardContent>
                       <p className="text-gray-600 text-sm">{client.service}</p>
-                      <p className="text-[#F8A615] text-xs mt-2 font-medium">Click to view case study</p>
+                      <p className="text-[#D4951C] text-xs mt-2 font-medium">Click to view case study</p>
                     </CardContent>
                   </Card>
                 </DialogTrigger>
@@ -734,7 +780,7 @@ const Index = () => {
                     
                     <div>
                       <h4 className="text-lg font-semibold text-gray-800 mb-2">Client Testimonial</h4>
-                      <blockquote className="text-gray-600 italic border-l-4 border-[#F8A615] pl-4">
+                      <blockquote className="text-gray-600 italic border-l-4 border-[#D4951C] pl-4">
                         "{client.testimonial}"
                       </blockquote>
                     </div>
@@ -758,7 +804,7 @@ const Index = () => {
               <div className="grid gap-4">
                 {achievements.map((achievement, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-[#F8A615] rounded-full"></div>
+                    <div className="w-3 h-3 bg-[#D4951C] rounded-full"></div>
                     <span className="text-gray-700">{achievement}</span>
                   </div>
                 ))}
@@ -768,7 +814,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section with Clean Professional Contact Icons */}
+      {/* Contact Section with Reduced Icon Sizes */}
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#701015] to-[#701015]/90">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-1 gap-16 items-center">
@@ -849,30 +895,30 @@ const Index = () => {
                     </Button>
                   </form>
 
-                  {/* Clean Professional Contact Row */}
+                  {/* Reduced Size Contact Icons */}
                   <div className="mt-12 pt-8 border-t border-white/20">
                     <h3 className="text-xl font-semibold text-white text-center mb-8">Connect With Us</h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-lg mx-auto">
                       {/* Phone Call */}
                       <a 
                         href="tel:+2348113829471" 
-                        className="group flex flex-col items-center space-y-3 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
+                        className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                          <Phone className="w-6 h-6 text-white" />
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                          <Phone className="w-4 h-4 text-white" />
                         </div>
-                        <span className="text-sm font-medium text-white text-center">Call Us</span>
+                        <span className="text-xs font-medium text-white text-center">Call Us</span>
                       </a>
 
                       {/* Email */}
                       <a 
                         href="mailto:info.kingsconsults@gmail.com" 
-                        className="group flex flex-col items-center space-y-3 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
+                        className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                          <Mail className="w-6 h-6 text-white" />
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                          <Mail className="w-4 h-4 text-white" />
                         </div>
-                        <span className="text-sm font-medium text-white text-center">Email</span>
+                        <span className="text-xs font-medium text-white text-center">Email</span>
                       </a>
 
                       {/* WhatsApp */}
@@ -880,12 +926,12 @@ const Index = () => {
                         href="https://wa.me/2348113829471" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="group flex flex-col items-center space-y-3 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
+                        className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                          <Phone className="w-6 h-6 text-white" />
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                          <Phone className="w-4 h-4 text-white" />
                         </div>
-                        <span className="text-sm font-medium text-white text-center">WhatsApp</span>
+                        <span className="text-xs font-medium text-white text-center">WhatsApp</span>
                       </a>
 
                       {/* Instagram */}
@@ -893,12 +939,12 @@ const Index = () => {
                         href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="group flex flex-col items-center space-y-3 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
+                        className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                          <Instagram className="w-6 h-6 text-white" />
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                          <Instagram className="w-4 h-4 text-white" />
                         </div>
-                        <span className="text-sm font-medium text-white text-center">Instagram</span>
+                        <span className="text-xs font-medium text-white text-center">Instagram</span>
                       </a>
                     </div>
                   </div>
@@ -909,39 +955,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Footer with Clean Contact Icons */}
+      {/* Simplified Footer without duplicate icons */}
       <footer className="bg-[#701015]/95 text-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center gap-6 mb-6">
-            <a 
-              href="tel:+2348113829471" 
-              className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
-            >
-              <Phone className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
-            </a>
-            <a 
-              href="mailto:info.kingsconsults@gmail.com" 
-              className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
-            >
-              <Mail className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
-            </a>
-            <a 
-              href="https://wa.me/2348113829471" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
-            >
-              <Phone className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
-            </a>
-            <a 
-              href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
-            >
-              <Instagram className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
-            </a>
-          </div>
           <div className="text-center">
             <p className="text-gray-300">
               © 2024 Kings Consults. Empowering purpose-driven entrepreneurs.
