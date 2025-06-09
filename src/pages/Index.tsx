@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Mail, Instagram, Briefcase, ArrowRight, Calendar, Phone } from "lucide-react";
+import { Label } from "@/components/ui/label";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -26,6 +27,43 @@ const Index = () => {
   const [isContactSubmitting, setIsContactSubmitting] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [showContactConfirmation, setShowContactConfirmation] = useState(false);
+  const [nameSuggestions, setNameSuggestions] = useState<string[]>([]);
+  const [emailSuggestions, setEmailSuggestions] = useState<string[]>([]);
+
+  // Common name suggestions
+  const commonNames = [
+    'Adaora', 'Chidi', 'Emeka', 'Kemi', 'Tunde', 'Chioma', 'Ibrahim', 'Fatima', 'James', 'Mary',
+    'David', 'Sarah', 'Michael', 'Grace', 'Joseph', 'Ruth', 'Daniel', 'Esther', 'Samuel', 'Rebecca'
+  ];
+
+  // Email domain suggestions
+  const emailDomains = ['@gmail.com', '@yahoo.com', '@hotmail.com', '@outlook.com'];
+
+  // Get today's date in YYYY-MM-DD format
+  const today = new Date().toISOString().split('T')[0];
+  
+  // Get current time in HH:MM format
+  const getCurrentTime = () => {
+    const now = new Date();
+    return now.toTimeString().slice(0, 5);
+  };
+
+  // Check if selected date is today
+  const isToday = (date: string) => {
+    return date === today;
+  };
+
+  // Generate available time slots
+  const getAvailableTimeSlots = () => {
+    const slots = [];
+    for (let hour = 9; hour <= 17; hour++) {
+      const timeSlot = `${hour.toString().padStart(2, '0')}:00`;
+      if (!isToday(formData.preferredDate) || timeSlot > getCurrentTime()) {
+        slots.push(timeSlot);
+      }
+    }
+    return slots;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -82,10 +120,33 @@ const Index = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
+
+    // Handle name suggestions
+    if (name === 'name' && value.length > 0) {
+      const suggestions = commonNames.filter(name => 
+        name.toLowerCase().startsWith(value.toLowerCase())
+      ).slice(0, 3);
+      setNameSuggestions(suggestions);
+    } else if (name === 'name') {
+      setNameSuggestions([]);
+    }
+
+    // Handle email suggestions
+    if (name === 'email' && value.includes('@') && !value.includes('@gmail') && !value.includes('@yahoo') && !value.includes('@hotmail') && !value.includes('@outlook')) {
+      const [localPart] = value.split('@');
+      const suggestions = emailDomains.map(domain => localPart + domain);
+      setEmailSuggestions(suggestions);
+    } else if (name === 'email' && value.length > 0 && !value.includes('@')) {
+      const suggestions = emailDomains.map(domain => value + domain);
+      setEmailSuggestions(suggestions);
+    } else {
+      setEmailSuggestions([]);
+    }
   };
 
   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -93,6 +154,15 @@ const Index = () => {
       ...contactFormData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const selectSuggestion = (suggestion: string, field: string) => {
+    setFormData({
+      ...formData,
+      [field]: suggestion
+    });
+    if (field === 'name') setNameSuggestions([]);
+    if (field === 'email') setEmailSuggestions([]);
   };
 
   const services = [
@@ -143,10 +213,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white font-inter">
-      {/* Compact Header */}
+      {/* Enhanced Header with Padding */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-1">
+          <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <img 
                 src="/lovable-uploads/9c613978-8093-4547-86bb-5bf5e848f137.png" 
@@ -186,18 +256,18 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section with Image */}
-      <section className="pt-14 bg-gradient-to-br from-gray-50 to-white">
+      {/* Enhanced Hero Section */}
+      <section className="pt-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Image Container */}
+          {/* Hero Image Container with Better Contrast */}
           <div className="relative h-[60vh] min-h-[400px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl mb-8">
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60 z-10"></div>
             
-            {/* Professional Image */}
+            {/* Professional Image with Better Contrast */}
             <img 
               src="/lovable-uploads/97e0d125-2c26-44f8-b200-bbce09b5ba23.png" 
               alt="Professional consulting team collaboration" 
-              className="absolute inset-0 w-full h-full object-cover opacity-70"
+              className="absolute inset-0 w-full h-full object-cover"
             />
             
             <div className="absolute inset-0 flex items-center justify-center z-20">
@@ -206,21 +276,21 @@ const Index = () => {
                   <span className="w-2 h-2 bg-[#F8A615] rounded-full mr-2"></span>
                   Purpose-Driven Consulting
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-shadow-lg">
                   Empowering{' '}
-                  <span className="text-[#F8A615]">
+                  <span className="text-[#F8A615] font-black">
                     Visionary
                   </span>{' '}
                   Entrepreneurs
                 </h1>
-                <p className="text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl mx-auto">
+                <p className="text-xl text-gray-100 mb-8 leading-relaxed max-w-2xl mx-auto font-medium">
                   Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
                 </p>
               </div>
             </div>
           </div>
           
-          {/* Book Session Button - Positioned below hero image */}
+          {/* Book Session Button */}
           <div className="flex justify-center pb-16">
             <Dialog>
               <DialogTrigger asChild>
@@ -251,63 +321,136 @@ const Index = () => {
                     </Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
+                      <div className="relative">
+                        <Label htmlFor="name" className="text-sm font-medium text-gray-700 mb-2 block">
+                          Full Name
+                        </Label>
+                        <Input
+                          id="name"
+                          placeholder="Enter your full name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          className="h-11 bg-white border-gray-300"
+                        />
+                        {nameSuggestions.length > 0 && (
+                          <div className="absolute z-10 w-full bg-white border border-gray-200 rounded-md shadow-lg mt-1">
+                            {nameSuggestions.map((suggestion, index) => (
+                              <button
+                                key={index}
+                                type="button"
+                                className="w-full text-left px-3 py-2 hover:bg-gray-100 transition-colors"
+                                onClick={() => selectSuggestion(suggestion, 'name')}
+                              >
+                                {suggestion}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                      <div className="relative">
+                        <Label htmlFor="email" className="text-sm font-medium text-gray-700 mb-2 block">
+                          Email Address
+                        </Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="your.email@example.com"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          className="h-11 bg-white border-gray-300"
+                        />
+                        {emailSuggestions.length > 0 && (
+                          <div className="absolute z-10 w-full bg-white border border-gray-200 rounded-md shadow-lg mt-1">
+                            {emailSuggestions.map((suggestion, index) => (
+                              <button
+                                key={index}
+                                type="button"
+                                className="w-full text-left px-3 py-2 hover:bg-gray-100 transition-colors"
+                                onClick={() => selectSuggestion(suggestion, 'email')}
+                              >
+                                {suggestion}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="phone" className="text-sm font-medium text-gray-700 mb-2 block">
+                        Phone Number
+                      </Label>
                       <Input
-                        placeholder="Full Name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="h-11 bg-white border-gray-300"
-                      />
-                      <Input
-                        type="email"
-                        placeholder="Email Address"
-                        name="email"
-                        value={formData.email}
+                        id="phone"
+                        type="tel"
+                        placeholder="+234 800 000 0000"
+                        name="phone"
+                        value={formData.phone}
                         onChange={handleChange}
                         required
                         className="h-11 bg-white border-gray-300"
                       />
                     </div>
-                    <Input
-                      type="tel"
-                      placeholder="Phone Number"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="h-11 bg-white border-gray-300"
-                    />
+                    
                     <div className="grid md:grid-cols-2 gap-4">
-                      <Input
-                        type="date"
-                        placeholder="Preferred Date"
-                        name="preferredDate"
-                        value={formData.preferredDate}
+                      <div>
+                        <Label htmlFor="preferredDate" className="text-sm font-medium text-gray-700 mb-2 block">
+                          Preferred Booking Date
+                        </Label>
+                        <Input
+                          id="preferredDate"
+                          type="date"
+                          name="preferredDate"
+                          value={formData.preferredDate}
+                          onChange={handleChange}
+                          min={today}
+                          required
+                          className="h-11 bg-white border-gray-300"
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="preferredTime" className="text-sm font-medium text-gray-700 mb-2 block">
+                          Preferred Time
+                        </Label>
+                        <select
+                          id="preferredTime"
+                          name="preferredTime"
+                          value={formData.preferredTime}
+                          onChange={(e) => setFormData({...formData, preferredTime: e.target.value})}
+                          required
+                          className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                        >
+                          <option value="">Select time</option>
+                          {getAvailableTimeSlots().map((time) => (
+                            <option key={time} value={time}>
+                              {time}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="message" className="text-sm font-medium text-gray-700 mb-2 block">
+                        Tell us about your business goals or challenges
+                      </Label>
+                      <Textarea
+                        id="message"
+                        placeholder="Describe your business goals, challenges, or what you'd like to discuss..."
+                        name="message"
+                        value={formData.message}
                         onChange={handleChange}
-                        required
-                        className="h-11 bg-white border-gray-300"
-                      />
-                      <Input
-                        type="time"
-                        placeholder="Preferred Time"
-                        name="preferredTime"
-                        value={formData.preferredTime}
-                        onChange={handleChange}
-                        required
-                        className="h-11 bg-white border-gray-300"
+                        rows={4}
+                        className="resize-none bg-white border-gray-300"
                       />
                     </div>
-                    <Textarea
-                      placeholder="Tell us about your business goals or challenges..."
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={4}
-                      className="resize-none bg-white border-gray-300"
-                    />
+                    
                     <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
                       <strong>Note:</strong> This is a paid consultation. Our team will contact you to confirm the session and complete the booking process.
                     </p>
@@ -326,7 +469,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About the CEO Section */}
+      {/* About the CEO Section with Improved Text Color */}
       <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#701015]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -593,7 +736,10 @@ const Index = () => {
 
                   {/* Contact Links */}
                   <div className="flex flex-wrap justify-center gap-6 mt-8">
-                    <a href="mailto:contact@kingsconsults.com" className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group">
+                    <a 
+                      href="mailto:info.kingsconsults@gmail.com" 
+                      className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+                    >
                       <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                       <span>Email</span>
                     </a>
@@ -630,12 +776,48 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Enhanced Footer with Fixed Email Link */}
       <footer className="bg-[#701015]/95 text-white py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-300">
-            © 2024 Kings Consults. Empowering purpose-driven entrepreneurs.
-          </p>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-center space-x-6 mb-6">
+            <a 
+              href="mailto:info.kingsconsults@gmail.com" 
+              className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+            >
+              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+              <span>Email</span>
+            </a>
+            <a 
+              href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+            >
+              <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+              <span>Instagram</span>
+            </a>
+            <a 
+              href="https://wa.me/2348113829471" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+            >
+              <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+              <span>WhatsApp</span>
+            </a>
+            <a 
+              href="tel:+2348113829471" 
+              className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+            >
+              <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+              <span>Phone Call</span>
+            </a>
+          </div>
+          <div className="text-center">
+            <p className="text-gray-300">
+              © 2024 Kings Consults. Empowering purpose-driven entrepreneurs.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
