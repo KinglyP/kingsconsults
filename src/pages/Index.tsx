@@ -5,7 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Mail, Instagram, Briefcase, ArrowRight, Calendar, Phone } from "lucide-react";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Mail, Instagram, Briefcase, ArrowRight, Calendar, Phone, Menu, X } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
 const Index = () => {
@@ -213,10 +214,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white font-inter">
-      {/* Enhanced Header with Padding */}
+      {/* Enhanced Header with Mobile Menu */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <img 
                 src="/lovable-uploads/9c613978-8093-4547-86bb-5bf5e848f137.png" 
@@ -243,14 +244,128 @@ const Index = () => {
               </a>
             </div>
             <div className="md:hidden">
-              <Button variant="ghost" size="sm">
-                <span className="sr-only">Menu</span>
-                <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-                  <div className="w-full h-0.5 bg-gray-600"></div>
-                  <div className="w-full h-0.5 bg-gray-600"></div>
-                  <div className="w-full h-0.5 bg-gray-600"></div>
-                </div>
-              </Button>
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="sm" className="p-2">
+                    <Menu className="w-6 h-6 text-gray-600" />
+                    <span className="sr-only">Menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-full sm:max-w-md">
+                  <SheetHeader className="text-left pb-6">
+                    <SheetTitle className="text-[#701015] text-xl font-bold">Kings Consults</SheetTitle>
+                    <SheetDescription className="text-gray-600">
+                      Empowering purpose-driven entrepreneurs
+                    </SheetDescription>
+                  </SheetHeader>
+                  
+                  <div className="space-y-8">
+                    {/* About Section */}
+                    <div>
+                      <h3 className="text-lg font-semibold text-[#701015] mb-3">About Kings Consulting</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        Kings Consulting is a business consulting agency that partners with entrepreneurs, startups, and organizations to bring clarity to their ideas, build strategic business structures, and execute winning plans. Whether you're refining a concept, launching a new venture, or scaling operations, we help you position your business for real results.
+                      </p>
+                    </div>
+
+                    {/* Services Section */}
+                    <div>
+                      <h3 className="text-lg font-semibold text-[#701015] mb-3">Our Services</h3>
+                      <ul className="space-y-2 text-sm text-gray-600">
+                        <li className="flex items-start space-x-2">
+                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Business & Idea Consultation</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Business Structuring & Strategic Planning</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Brand & Market Positioning</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Execution Strategy & Roadmapping</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Acting COO Services</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Operations & Team Structuring</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Brand Identity Advisory</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-1.5 h-1.5 bg-[#F8A615] rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Go-to-Market Support</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* Contact Section */}
+                    <div>
+                      <h3 className="text-lg font-semibold text-[#701015] mb-3">Contact Us</h3>
+                      <div className="space-y-3">
+                        <a 
+                          href="tel:+2348113829471" 
+                          className="flex items-center space-x-3 text-gray-600 hover:text-[#701015] transition-colors"
+                        >
+                          <div className="w-8 h-8 bg-[#F8A615]/10 rounded-lg flex items-center justify-center">
+                            <Phone className="w-4 h-4 text-[#701015]" />
+                          </div>
+                          <span className="text-sm">+234 811 382 9471</span>
+                        </a>
+                        <a 
+                          href="mailto:info.kingsconsults@gmail.com" 
+                          className="flex items-center space-x-3 text-gray-600 hover:text-[#701015] transition-colors"
+                        >
+                          <div className="w-8 h-8 bg-[#F8A615]/10 rounded-lg flex items-center justify-center">
+                            <Mail className="w-4 h-4 text-[#701015]" />
+                          </div>
+                          <span className="text-sm">info.kingsconsults@gmail.com</span>
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Connect Section */}
+                    <div>
+                      <h3 className="text-lg font-semibold text-[#701015] mb-3">Connect With Us</h3>
+                      <div className="grid grid-cols-2 gap-3">
+                        <a 
+                          href="https://wa.me/2348113829471" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="flex items-center justify-center space-x-2 p-3 bg-green-50 text-green-700 rounded-lg hover:bg-green-100 transition-colors text-sm"
+                        >
+                          <Phone className="w-4 h-4" />
+                          <span>WhatsApp</span>
+                        </a>
+                        <a 
+                          href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="flex items-center justify-center space-x-2 p-3 bg-pink-50 text-pink-700 rounded-lg hover:bg-pink-100 transition-colors text-sm"
+                        >
+                          <Instagram className="w-4 h-4" />
+                          <span>Instagram</span>
+                        </a>
+                        <a 
+                          href="mailto:info.kingsconsults@gmail.com" 
+                          className="flex items-center justify-center space-x-2 p-3 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-sm col-span-2"
+                        >
+                          <Mail className="w-4 h-4" />
+                          <span>Email Us</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>
@@ -653,7 +768,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Section with Improved Icons */}
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#701015] to-[#701015]/90">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-1 gap-16 items-center">
@@ -734,39 +849,35 @@ const Index = () => {
                     </Button>
                   </form>
 
-                  {/* Contact Links */}
-                  <div className="flex flex-wrap justify-center gap-6 mt-8">
+                  {/* Improved Contact Links */}
+                  <div className="flex justify-center gap-4 mt-8">
                     <a 
                       href="mailto:info.kingsconsults@gmail.com" 
-                      className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+                      className="group flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
                     >
-                      <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                      <span>Email</span>
+                      <Mail className="w-5 h-5 text-white group-hover:text-white transition-colors duration-300" />
                     </a>
                     <a 
                       href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+                      className="group flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
                     >
-                      <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                      <span>Instagram</span>
+                      <Instagram className="w-5 h-5 text-white group-hover:text-white transition-colors duration-300" />
                     </a>
                     <a 
                       href="https://wa.me/2348113829471" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+                      className="group flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
                     >
-                      <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                      <span>WhatsApp</span>
+                      <Phone className="w-5 h-5 text-white group-hover:text-white transition-colors duration-300" />
                     </a>
                     <a 
                       href="tel:+2348113829471" 
-                      className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+                      className="group flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
                     >
-                      <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                      <span>Phone Call</span>
+                      <Phone className="w-5 h-5 text-white group-hover:text-white transition-colors duration-300" />
                     </a>
                   </div>
                 </div>
@@ -776,41 +887,37 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Footer with Fixed Email Link */}
+      {/* Enhanced Footer with Improved Icons */}
       <footer className="bg-[#701015]/95 text-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center space-x-6 mb-6">
+          <div className="flex justify-center gap-4 mb-6">
             <a 
               href="mailto:info.kingsconsults@gmail.com" 
-              className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+              className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
             >
-              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-              <span>Email</span>
+              <Mail className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
             </a>
             <a 
               href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+              className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
             >
-              <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-              <span>Instagram</span>
+              <Instagram className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
             </a>
             <a 
               href="https://wa.me/2348113829471" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+              className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
             >
-              <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-              <span>WhatsApp</span>
+              <Phone className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
             </a>
             <a 
               href="tel:+2348113829471" 
-              className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors group"
+              className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
             >
-              <Phone className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-              <span>Phone Call</span>
+              <Phone className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
             </a>
           </div>
           <div className="text-center">
