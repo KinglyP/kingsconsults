@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -231,12 +232,12 @@ const Index = () => {
       {/* Enhanced Header with Reduced Size */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-3">
             <div className="flex items-center">
               <img 
                 src="/lovable-uploads/9c613978-8093-4547-86bb-5bf5e848f137.png" 
                 alt="Kings Consults Logo" 
-                className="h-8 w-auto transition-transform duration-300 hover:scale-105"
+                className="h-7 w-auto transition-transform duration-300 hover:scale-105"
               />
             </div>
             <div className="hidden md:flex space-x-8">
@@ -265,7 +266,7 @@ const Index = () => {
                     <span className="sr-only">Menu</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-full sm:max-w-md bg-[#701015]">
+                <SheetContent side="right" className="w-full sm:max-w-md bg-[#701015] overflow-y-auto max-h-screen">
                   <SheetHeader className="text-left pb-6">
                     <SheetTitle className="text-white text-xl font-bold">Kings Consults</SheetTitle>
                     <SheetDescription className="text-gray-300">
@@ -273,7 +274,7 @@ const Index = () => {
                     </SheetDescription>
                   </SheetHeader>
                   
-                  <div className="space-y-4">
+                  <div className="space-y-4 pb-8">
                     {/* About Section */}
                     <Collapsible 
                       open={openSections.about} 
@@ -382,29 +383,36 @@ const Index = () => {
                       <CollapsibleContent className="mt-2 p-3 bg-white/5 rounded-lg">
                         <div className="grid grid-cols-2 gap-3">
                           <a 
+                            href="tel:+2348113829471" 
+                            className="flex flex-col items-center space-y-2 p-3 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors text-sm"
+                          >
+                            <Phone className="w-5 h-5" />
+                            <span>Call Us</span>
+                          </a>
+                          <a 
+                            href="mailto:info.kingsconsults@gmail.com" 
+                            className="flex flex-col items-center space-y-2 p-3 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors text-sm"
+                          >
+                            <Mail className="w-5 h-5" />
+                            <span>Email</span>
+                          </a>
+                          <a 
                             href="https://wa.me/2348113829471" 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="flex items-center justify-center space-x-2 p-3 bg-green-600/20 text-green-300 rounded-lg hover:bg-green-600/30 transition-colors text-sm"
+                            className="flex flex-col items-center space-y-2 p-3 bg-green-600/20 text-green-300 rounded-lg hover:bg-green-600/30 transition-colors text-sm"
                           >
-                            <Phone className="w-4 h-4" />
+                            <Phone className="w-5 h-5" />
                             <span>WhatsApp</span>
                           </a>
                           <a 
                             href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="flex items-center justify-center space-x-2 p-3 bg-pink-600/20 text-pink-300 rounded-lg hover:bg-pink-600/30 transition-colors text-sm"
+                            className="flex flex-col items-center space-y-2 p-3 bg-pink-600/20 text-pink-300 rounded-lg hover:bg-pink-600/30 transition-colors text-sm"
                           >
-                            <Instagram className="w-4 h-4" />
+                            <Instagram className="w-5 h-5" />
                             <span>Instagram</span>
-                          </a>
-                          <a 
-                            href="mailto:info.kingsconsults@gmail.com" 
-                            className="flex items-center justify-center space-x-2 p-3 bg-blue-600/20 text-blue-300 rounded-lg hover:bg-blue-600/30 transition-colors text-sm col-span-2"
-                          >
-                            <Mail className="w-4 h-4" />
-                            <span>Email Us</span>
                           </a>
                         </div>
                       </CollapsibleContent>
@@ -841,7 +849,7 @@ const Index = () => {
                   </p>
                   <Button 
                     onClick={() => setShowContactConfirmation(false)} 
-                    className="bg-[#D4951C] hover:bg-[#D4951C]/90 px-6 py-2"
+                    className="bg-[#C4851C] hover:bg-[#C4851C]/90 px-6 py-2"
                   >
                     Send Another Message
                   </Button>
@@ -888,7 +896,7 @@ const Index = () => {
                     />
                     <Button 
                       type="submit" 
-                      className="w-full bg-[#D4951C] hover:bg-[#D4951C]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full bg-[#C4851C] hover:bg-[#C4851C]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                       disabled={isContactSubmitting}
                     >
                       {isContactSubmitting ? 'Sending...' : 'Send Message'}
@@ -904,8 +912,8 @@ const Index = () => {
                         href="tel:+2348113829471" 
                         className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                          <Phone className="w-4 h-4 text-white" />
+                        <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center">
+                          <Phone className="w-3.5 h-3.5 text-white" />
                         </div>
                         <span className="text-xs font-medium text-white text-center">Call Us</span>
                       </a>
@@ -915,8 +923,8 @@ const Index = () => {
                         href="mailto:info.kingsconsults@gmail.com" 
                         className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                          <Mail className="w-4 h-4 text-white" />
+                        <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center">
+                          <Mail className="w-3.5 h-3.5 text-white" />
                         </div>
                         <span className="text-xs font-medium text-white text-center">Email</span>
                       </a>
@@ -928,8 +936,8 @@ const Index = () => {
                         rel="noopener noreferrer" 
                         className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                          <Phone className="w-4 h-4 text-white" />
+                        <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center">
+                          <Phone className="w-3.5 h-3.5 text-white" />
                         </div>
                         <span className="text-xs font-medium text-white text-center">WhatsApp</span>
                       </a>
@@ -941,8 +949,8 @@ const Index = () => {
                         rel="noopener noreferrer" 
                         className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                          <Instagram className="w-4 h-4 text-white" />
+                        <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center">
+                          <Instagram className="w-3.5 h-3.5 text-white" />
                         </div>
                         <span className="text-xs font-medium text-white text-center">Instagram</span>
                       </a>
@@ -955,7 +963,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Simplified Footer without duplicate icons */}
+      {/* Simplified Footer */}
       <footer className="bg-[#701015]/95 text-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
