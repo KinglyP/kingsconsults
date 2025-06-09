@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Mail, Instagram, Briefcase, ArrowRight, Calendar, Phone, Menu, X } from "lucide-react";
+import { Mail, Instagram, Briefcase, ArrowRight, Phone, Menu } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
 const Index = () => {
@@ -584,7 +584,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About the CEO Section with Improved Text Color */}
+      {/* About the CEO Section - REMOVED DUPLICATE CONTACT ICONS */}
       <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#701015]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -621,7 +621,7 @@ const Index = () => {
               <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-8">
                 <CardHeader>
                   <CardTitle className="text-[#701015] flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-[#F8A615]/20 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-[#D4951C]/20 rounded-lg flex items-center justify-center">
                       <span className="text-[#701015] text-sm">🎓</span>
                     </div>
                     <span>Education & Certifications</span>
@@ -629,15 +629,15 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-[#F8A615] rounded-full flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#D4951C] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">Bachelor's in Public Health</span>
                   </div>
                   <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-[#F8A615] rounded-full flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#D4951C] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">Diploma in Operations Management</span>
                   </div>
                   <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-[#F8A615] rounded-full flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#D4951C] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">Certified Scrum Master</span>
                   </div>
                 </CardContent>
@@ -768,7 +768,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section with Improved Icons */}
+      {/* Contact Section with Clean Professional Contact Icons */}
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#701015] to-[#701015]/90">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-1 gap-16 items-center">
@@ -795,7 +795,7 @@ const Index = () => {
                   </p>
                   <Button 
                     onClick={() => setShowContactConfirmation(false)} 
-                    className="bg-[#F8A615] hover:bg-[#F8A615]/90 px-6 py-2"
+                    className="bg-[#D4951C] hover:bg-[#D4951C]/90 px-6 py-2"
                   >
                     Send Another Message
                   </Button>
@@ -842,43 +842,65 @@ const Index = () => {
                     />
                     <Button 
                       type="submit" 
-                      className="w-full bg-[#F8A615] hover:bg-[#F8A615]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full bg-[#D4951C] hover:bg-[#D4951C]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                       disabled={isContactSubmitting}
                     >
                       {isContactSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
 
-                  {/* Improved Contact Links */}
-                  <div className="flex justify-center gap-4 mt-8">
-                    <a 
-                      href="mailto:info.kingsconsults@gmail.com" 
-                      className="group flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
-                    >
-                      <Mail className="w-5 h-5 text-white group-hover:text-white transition-colors duration-300" />
-                    </a>
-                    <a 
-                      href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="group flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
-                    >
-                      <Instagram className="w-5 h-5 text-white group-hover:text-white transition-colors duration-300" />
-                    </a>
-                    <a 
-                      href="https://wa.me/2348113829471" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="group flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
-                    >
-                      <Phone className="w-5 h-5 text-white group-hover:text-white transition-colors duration-300" />
-                    </a>
-                    <a 
-                      href="tel:+2348113829471" 
-                      className="group flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
-                    >
-                      <Phone className="w-5 h-5 text-white group-hover:text-white transition-colors duration-300" />
-                    </a>
+                  {/* Clean Professional Contact Row */}
+                  <div className="mt-12 pt-8 border-t border-white/20">
+                    <h3 className="text-xl font-semibold text-white text-center mb-8">Connect With Us</h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto">
+                      {/* Phone Call */}
+                      <a 
+                        href="tel:+2348113829471" 
+                        className="group flex flex-col items-center space-y-3 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
+                      >
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <Phone className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="text-sm font-medium text-white text-center">Call Us</span>
+                      </a>
+
+                      {/* Email */}
+                      <a 
+                        href="mailto:info.kingsconsults@gmail.com" 
+                        className="group flex flex-col items-center space-y-3 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
+                      >
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <Mail className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="text-sm font-medium text-white text-center">Email</span>
+                      </a>
+
+                      {/* WhatsApp */}
+                      <a 
+                        href="https://wa.me/2348113829471" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="group flex flex-col items-center space-y-3 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
+                      >
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <Phone className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="text-sm font-medium text-white text-center">WhatsApp</span>
+                      </a>
+
+                      {/* Instagram */}
+                      <a 
+                        href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="group flex flex-col items-center space-y-3 p-4 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
+                      >
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                          <Instagram className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="text-sm font-medium text-white text-center">Instagram</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               )}
@@ -887,23 +909,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Footer with Improved Icons */}
+      {/* Enhanced Footer with Clean Contact Icons */}
       <footer className="bg-[#701015]/95 text-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center gap-4 mb-6">
+          <div className="flex justify-center gap-6 mb-6">
+            <a 
+              href="tel:+2348113829471" 
+              className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
+            >
+              <Phone className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
+            </a>
             <a 
               href="mailto:info.kingsconsults@gmail.com" 
               className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
             >
               <Mail className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
-            </a>
-            <a 
-              href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
-            >
-              <Instagram className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
             </a>
             <a 
               href="https://wa.me/2348113829471" 
@@ -914,10 +934,12 @@ const Index = () => {
               <Phone className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
             </a>
             <a 
-              href="tel:+2348113829471" 
+              href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
+              target="_blank" 
+              rel="noopener noreferrer" 
               className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
             >
-              <Phone className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
+              <Instagram className="w-4 h-4 text-white group-hover:text-white transition-colors duration-300" />
             </a>
           </div>
           <div className="text-center">
