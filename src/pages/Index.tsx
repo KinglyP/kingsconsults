@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -902,48 +903,52 @@ const Index = () => {
                     </Button>
                   </form>
 
-                  {/* Contact Information - Single row with properly linked items */}
-                  <div className="mt-12 pt-8 border-t border-white/20">
-                    <div className="space-y-4 max-w-md mx-auto">
+                  {/* Connect With Us Section - Updated to match reference design */}
+                  <div className="mt-16 pt-8 border-t border-white/20">
+                    <h3 className="text-2xl font-bold text-white text-center mb-8">Connect With Us</h3>
+                    <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
                       <a 
                         href="tel:+2348113829471" 
-                        className="flex items-center justify-center space-x-3 text-white hover:text-[#E4B429] transition-colors"
+                        className="flex flex-col items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 group"
                       >
-                        <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
-                          <Phone className="w-4 h-4 text-white" />
+                        <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors">
+                          <Phone className="w-6 h-6 text-white" />
                         </div>
-                        <span className="text-sm font-medium">+234 811 382 9471</span>
+                        <span className="text-white font-medium text-sm">Call Us</span>
                       </a>
+                      
                       <a 
                         href="mailto:info.kingsconsults@gmail.com" 
-                        className="flex items-center justify-center space-x-3 text-white hover:text-[#E4B429] transition-colors"
+                        className="flex flex-col items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 group"
                       >
-                        <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
-                          <Mail className="w-4 h-4 text-white" />
+                        <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors">
+                          <Mail className="w-6 h-6 text-white" />
                         </div>
-                        <span className="text-sm font-medium">info.kingsconsults@gmail.com</span>
+                        <span className="text-white font-medium text-sm">Email</span>
                       </a>
+                      
                       <a 
                         href="https://wa.me/2348113829471" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="flex items-center justify-center space-x-3 text-white hover:text-[#E4B429] transition-colors"
+                        className="flex flex-col items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 group"
                       >
-                        <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
-                          <Phone className="w-4 h-4 text-white" />
+                        <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors">
+                          <Phone className="w-6 h-6 text-white" />
                         </div>
-                        <span className="text-sm font-medium">WhatsApp</span>
+                        <span className="text-white font-medium text-sm">WhatsApp</span>
                       </a>
+                      
                       <a 
                         href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="flex items-center justify-center space-x-3 text-white hover:text-[#E4B429] transition-colors"
+                        className="flex flex-col items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 group"
                       >
-                        <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
-                          <Instagram className="w-4 h-4 text-white" />
+                        <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors">
+                          <Instagram className="w-6 h-6 text-white" />
                         </div>
-                        <span className="text-sm font-medium">Instagram</span>
+                        <span className="text-white font-medium text-sm">Instagram</span>
                       </a>
                     </div>
                   </div>
