@@ -303,35 +303,35 @@ const Index = () => {
                       <CollapsibleContent className="mt-2 p-3 bg-white/5 rounded-lg">
                         <ul className="space-y-2 text-sm text-gray-300">
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#F8A301] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Business & Idea Consultation</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#F8A301] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Business Structuring & Strategic Planning</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#F8A301] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Brand & Market Positioning</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#F8A301] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Execution Strategy & Roadmapping</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#F8A301] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Acting COO Services</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#F8A301] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Operations & Team Structuring</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#F8A301] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Brand Identity Advisory</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#F8A301] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Go-to-Market Support</span>
                           </li>
                         </ul>
@@ -353,7 +353,7 @@ const Index = () => {
                             href="tel:+2348113829471" 
                             className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors"
                           >
-                            <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
+                            <div className="w-8 h-8 bg-[#F8A301]/20 rounded-lg flex items-center justify-center">
                               <Phone className="w-4 h-4 text-white" />
                             </div>
                             <span className="text-sm">+234 811 382 9471</span>
@@ -362,7 +362,7 @@ const Index = () => {
                             href="mailto:info.kingsconsults@gmail.com" 
                             className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors"
                           >
-                            <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
+                            <div className="w-8 h-8 bg-[#F8A301]/20 rounded-lg flex items-center justify-center">
                               <Mail className="w-4 h-4 text-white" />
                             </div>
                             <span className="text-sm">info.kingsconsults@gmail.com</span>
@@ -442,12 +442,12 @@ const Index = () => {
             <div className="absolute inset-0 flex items-center justify-center z-20">
               <div className="text-center text-white max-w-4xl px-6">
                 <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
-                  <span className="w-2 h-2 bg-[#E4B429] rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-[#F8A301] rounded-full mr-2"></span>
                   Purpose-Driven Consulting
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-shadow-lg">
                   Empowering{' '}
-                  <span className="text-[#E4B429] font-black">
+                  <span className="text-[#F8A301] font-black">
                     Visionary
                   </span>{' '}
                   Entrepreneurs
@@ -463,7 +463,7 @@ const Index = () => {
           <div className="flex justify-center pb-16">
             <Dialog>
               <DialogTrigger asChild>
-                <Button size="lg" className="bg-gradient-to-r from-[#E4B429] to-[#E4B429]/90 hover:from-[#E4B429]/90 hover:to-[#E4B429]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <Button size="lg" className="bg-gradient-to-r from-[#F8A301] to-[#F8A301]/90 hover:from-[#F8A301]/90 hover:to-[#F8A301]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
                   Book a Session
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
@@ -484,7 +484,7 @@ const Index = () => {
                     </p>
                     <Button 
                       onClick={() => setShowConfirmation(false)} 
-                      className="bg-[#E4B429] hover:bg-[#E4B429]/90 px-6 py-2"
+                      className="bg-[#F8A301] hover:bg-[#F8A301]/90 px-6 py-2"
                     >
                       Book Another Session
                     </Button>
@@ -675,7 +675,7 @@ const Index = () => {
               <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-8">
                 <CardHeader>
                   <CardTitle className="text-[#701015] flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-[#F8A301]/20 rounded-lg flex items-center justify-center">
                       <span className="text-[#701015] text-sm">🎓</span>
                     </div>
                     <span>Education & Certifications</span>
@@ -683,15 +683,15 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-[#E4B429] rounded-full flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#F8A301] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">Bachelor's in Public Health</span>
                   </div>
                   <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-[#E4B429] rounded-full flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#F8A301] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">Diploma in Operations Management</span>
                   </div>
                   <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-[#E4B429] rounded-full flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#F8A301] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">Certified Scrum Master</span>
                   </div>
                 </CardContent>
@@ -723,7 +723,7 @@ const Index = () => {
                 <div className="grid gap-3">
                   {services.map((service, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-[#E4B429] rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#F8A301] rounded-full"></div>
                       <span>{service}</span>
                     </div>
                   ))}
@@ -743,7 +743,7 @@ const Index = () => {
                   <h4 className="font-semibold text-gray-800 mb-2">Core Values:</h4>
                   <div className="flex flex-wrap gap-2">
                     {coreValues.map((value, index) => (
-                      <Badge key={index} variant="secondary" className="bg-[#E4B429]/20 text-[#701015]">
+                      <Badge key={index} variant="secondary" className="bg-[#F8A301]/20 text-[#701015]">
                         {value}
                       </Badge>
                     ))}
@@ -772,7 +772,7 @@ const Index = () => {
                     </CardHeader>
                     <CardContent>
                       <p className="text-gray-600 text-sm">{client.service}</p>
-                      <p className="text-[#E4B429] text-xs mt-2 font-medium">Click to view case study</p>
+                      <p className="text-[#F8A301] text-xs mt-2 font-medium">Click to view case study</p>
                     </CardContent>
                   </Card>
                 </DialogTrigger>
@@ -788,7 +788,7 @@ const Index = () => {
                     
                     <div>
                       <h4 className="text-lg font-semibold text-gray-800 mb-2">Client Testimonial</h4>
-                      <blockquote className="text-gray-600 italic border-l-4 border-[#E4B429] pl-4">
+                      <blockquote className="text-gray-600 italic border-l-4 border-[#F8A301] pl-4">
                         "{client.testimonial}"
                       </blockquote>
                     </div>
@@ -812,7 +812,7 @@ const Index = () => {
               <div className="grid gap-4">
                 {achievements.map((achievement, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-[#E4B429] rounded-full"></div>
+                    <div className="w-3 h-3 bg-[#F8A301] rounded-full"></div>
                     <span className="text-gray-700">{achievement}</span>
                   </div>
                 ))}
@@ -849,7 +849,7 @@ const Index = () => {
                   </p>
                   <Button 
                     onClick={() => setShowContactConfirmation(false)} 
-                    className="bg-[#E4B429] hover:bg-[#E4B429]/90 px-6 py-2"
+                    className="bg-[#F8A301] hover:bg-[#F8A301]/90 px-6 py-2"
                   >
                     Send Another Message
                   </Button>
@@ -896,59 +896,59 @@ const Index = () => {
                     />
                     <Button 
                       type="submit" 
-                      className="w-full bg-[#E4B429] hover:bg-[#E4B429]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full bg-[#F8A301] hover:bg-[#F8A301]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                       disabled={isContactSubmitting}
                     >
                       {isContactSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
 
-                  {/* Connect With Us Section - Updated to match reference design */}
+                  {/* Connect With Us Section - Updated to match reference design exactly */}
                   <div className="mt-16 pt-8 border-t border-white/20">
                     <h3 className="text-2xl font-bold text-white text-center mb-8">Connect With Us</h3>
-                    <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
                       <a 
-                        href="tel:+2348113829471" 
-                        className="flex flex-col items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 group"
+                        href="mailto:info.kingsconsults@gmail.com" 
+                        className="flex flex-col items-center justify-center p-6 bg-white rounded-xl text-gray-700 hover:bg-gray-50 transition-all duration-300 group shadow-lg"
                       >
-                        <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors">
-                          <Phone className="w-6 h-6 text-white" />
+                        <div className="w-12 h-12 bg-[#F8A301] rounded-lg flex items-center justify-center mb-3 group-hover:bg-[#F8A301]/90 transition-colors">
+                          <Mail className="w-6 h-6 text-white" />
                         </div>
-                        <span className="text-white font-medium text-sm">Call Us</span>
+                        <span className="font-medium text-sm text-center">Email</span>
                       </a>
                       
                       <a 
-                        href="mailto:info.kingsconsults@gmail.com" 
-                        className="flex flex-col items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 group"
+                        href="tel:+2348113829471" 
+                        className="flex flex-col items-center justify-center p-6 bg-white rounded-xl text-gray-700 hover:bg-gray-50 transition-all duration-300 group shadow-lg"
                       >
-                        <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors">
-                          <Mail className="w-6 h-6 text-white" />
+                        <div className="w-12 h-12 bg-[#F8A301] rounded-lg flex items-center justify-center mb-3 group-hover:bg-[#F8A301]/90 transition-colors">
+                          <Phone className="w-6 h-6 text-white" />
                         </div>
-                        <span className="text-white font-medium text-sm">Email</span>
+                        <span className="font-medium text-sm text-center">Phone Call</span>
                       </a>
                       
                       <a 
                         href="https://wa.me/2348113829471" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="flex flex-col items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 group"
+                        className="flex flex-col items-center justify-center p-6 bg-white rounded-xl text-gray-700 hover:bg-gray-50 transition-all duration-300 group shadow-lg"
                       >
-                        <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors">
+                        <div className="w-12 h-12 bg-[#F8A301] rounded-lg flex items-center justify-center mb-3 group-hover:bg-[#F8A301]/90 transition-colors">
                           <Phone className="w-6 h-6 text-white" />
                         </div>
-                        <span className="text-white font-medium text-sm">WhatsApp</span>
+                        <span className="font-medium text-sm text-center">WhatsApp</span>
                       </a>
                       
                       <a 
                         href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="flex flex-col items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300 group"
+                        className="flex flex-col items-center justify-center p-6 bg-white rounded-xl text-gray-700 hover:bg-gray-50 transition-all duration-300 group shadow-lg"
                       >
-                        <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-white/30 transition-colors">
+                        <div className="w-12 h-12 bg-[#F8A301] rounded-lg flex items-center justify-center mb-3 group-hover:bg-[#F8A301]/90 transition-colors">
                           <Instagram className="w-6 h-6 text-white" />
                         </div>
-                        <span className="text-white font-medium text-sm">Instagram</span>
+                        <span className="font-medium text-sm text-center">Instagram</span>
                       </a>
                     </div>
                   </div>
