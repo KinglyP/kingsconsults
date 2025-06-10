@@ -903,52 +903,52 @@ const Index = () => {
                     </Button>
                   </form>
 
-                  {/* Connect With Us Section - Updated to match reference design exactly */}
+                  {/* Connect With Us Section - Professional rectangular design */}
                   <div className="mt-16 pt-8 border-t border-white/20">
                     <h3 className="text-2xl font-bold text-white text-center mb-8">Connect With Us</h3>
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-3xl mx-auto">
                       <a 
                         href="mailto:info.kingsconsults@gmail.com" 
-                        className="flex flex-col items-center justify-center p-6 bg-white rounded-xl text-gray-700 hover:bg-gray-50 transition-all duration-300 group shadow-lg"
+                        className="flex flex-col items-center justify-center p-4 bg-[#701015]/80 rounded-lg text-white hover:bg-[#701015] transition-all duration-300 group shadow-md border border-white/10"
                       >
-                        <div className="w-12 h-12 bg-[#F8A301] rounded-lg flex items-center justify-center mb-3 group-hover:bg-[#F8A301]/90 transition-colors">
-                          <Mail className="w-6 h-6 text-white" />
+                        <div className="w-8 h-8 bg-[#F8A301]/20 rounded-lg flex items-center justify-center mb-2 group-hover:bg-[#F8A301]/30 transition-colors">
+                          <Mail className="w-4 h-4 text-white" />
                         </div>
-                        <span className="font-medium text-sm text-center">Email</span>
+                        <span className="font-medium text-xs text-center">Email</span>
                       </a>
                       
                       <a 
                         href="tel:+2348113829471" 
-                        className="flex flex-col items-center justify-center p-6 bg-white rounded-xl text-gray-700 hover:bg-gray-50 transition-all duration-300 group shadow-lg"
+                        className="flex flex-col items-center justify-center p-4 bg-[#701015]/80 rounded-lg text-white hover:bg-[#701015] transition-all duration-300 group shadow-md border border-white/10"
                       >
-                        <div className="w-12 h-12 bg-[#F8A301] rounded-lg flex items-center justify-center mb-3 group-hover:bg-[#F8A301]/90 transition-colors">
-                          <Phone className="w-6 h-6 text-white" />
+                        <div className="w-8 h-8 bg-[#F8A301]/20 rounded-lg flex items-center justify-center mb-2 group-hover:bg-[#F8A301]/30 transition-colors">
+                          <Phone className="w-4 h-4 text-white" />
                         </div>
-                        <span className="font-medium text-sm text-center">Phone Call</span>
+                        <span className="font-medium text-xs text-center">Phone Call</span>
                       </a>
                       
                       <a 
                         href="https://wa.me/2348113829471" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="flex flex-col items-center justify-center p-6 bg-white rounded-xl text-gray-700 hover:bg-gray-50 transition-all duration-300 group shadow-lg"
+                        className="flex flex-col items-center justify-center p-4 bg-green-600/20 rounded-lg text-green-300 hover:bg-green-600/30 transition-all duration-300 group shadow-md border border-green-400/20"
                       >
-                        <div className="w-12 h-12 bg-[#F8A301] rounded-lg flex items-center justify-center mb-3 group-hover:bg-[#F8A301]/90 transition-colors">
-                          <Phone className="w-6 h-6 text-white" />
+                        <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mb-2 group-hover:bg-green-500/30 transition-colors">
+                          <Phone className="w-4 h-4 text-green-300" />
                         </div>
-                        <span className="font-medium text-sm text-center">WhatsApp</span>
+                        <span className="font-medium text-xs text-center">WhatsApp</span>
                       </a>
                       
                       <a 
                         href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="flex flex-col items-center justify-center p-6 bg-white rounded-xl text-gray-700 hover:bg-gray-50 transition-all duration-300 group shadow-lg"
+                        className="flex flex-col items-center justify-center p-4 bg-pink-600/20 rounded-lg text-pink-300 hover:bg-pink-600/30 transition-all duration-300 group shadow-md border border-pink-400/20"
                       >
-                        <div className="w-12 h-12 bg-[#F8A301] rounded-lg flex items-center justify-center mb-3 group-hover:bg-[#F8A301]/90 transition-colors">
-                          <Instagram className="w-6 h-6 text-white" />
+                        <div className="w-8 h-8 bg-pink-500/20 rounded-lg flex items-center justify-center mb-2 group-hover:bg-pink-500/30 transition-colors">
+                          <Instagram className="w-4 h-4 text-pink-300" />
                         </div>
-                        <span className="font-medium text-sm text-center">Instagram</span>
+                        <span className="font-medium text-xs text-center">Instagram</span>
                       </a>
                     </div>
                   </div>
