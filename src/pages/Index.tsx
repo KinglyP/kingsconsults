@@ -849,7 +849,7 @@ const Index = () => {
                   </p>
                   <Button 
                     onClick={() => setShowContactConfirmation(false)} 
-                    className="bg-[#C4851C] hover:bg-[#C4851C]/90 px-6 py-2"
+                    className="bg-[#E4A51C] hover:bg-[#E4A51C]/90 px-6 py-2"
                   >
                     Send Another Message
                   </Button>
@@ -896,14 +896,14 @@ const Index = () => {
                     />
                     <Button 
                       type="submit" 
-                      className="w-full bg-[#C4851C] hover:bg-[#C4851C]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full bg-[#E4A51C] hover:bg-[#E4A51C]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                       disabled={isContactSubmitting}
                     >
                       {isContactSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
 
-                  {/* Reduced Size Contact Icons */}
+                  {/* Contact Icons with Clickable Text */}
                   <div className="mt-12 pt-8 border-t border-white/20">
                     <h3 className="text-xl font-semibold text-white text-center mb-8">Connect With Us</h3>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-lg mx-auto">
@@ -912,8 +912,8 @@ const Index = () => {
                         href="tel:+2348113829471" 
                         className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center">
-                          <Phone className="w-3.5 h-3.5 text-white" />
+                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+                          <Phone className="w-3 h-3 text-white" />
                         </div>
                         <span className="text-xs font-medium text-white text-center">Call Us</span>
                       </a>
@@ -923,8 +923,8 @@ const Index = () => {
                         href="mailto:info.kingsconsults@gmail.com" 
                         className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center">
-                          <Mail className="w-3.5 h-3.5 text-white" />
+                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+                          <Mail className="w-3 h-3 text-white" />
                         </div>
                         <span className="text-xs font-medium text-white text-center">Email</span>
                       </a>
@@ -936,8 +936,8 @@ const Index = () => {
                         rel="noopener noreferrer" 
                         className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center">
-                          <Phone className="w-3.5 h-3.5 text-white" />
+                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+                          <Phone className="w-3 h-3 text-white" />
                         </div>
                         <span className="text-xs font-medium text-white text-center">WhatsApp</span>
                       </a>
@@ -949,10 +949,32 @@ const Index = () => {
                         rel="noopener noreferrer" 
                         className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center">
-                          <Instagram className="w-3.5 h-3.5 text-white" />
+                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+                          <Instagram className="w-3 h-3 text-white" />
                         </div>
                         <span className="text-xs font-medium text-white text-center">Instagram</span>
+                      </a>
+                    </div>
+
+                    {/* Direct Contact Information with Clickable Text */}
+                    <div className="mt-8 space-y-4 max-w-md mx-auto">
+                      <a 
+                        href="tel:+2348113829471" 
+                        className="flex items-center justify-center space-x-3 text-white hover:text-[#E4A51C] transition-colors"
+                      >
+                        <div className="w-8 h-8 bg-[#E4A51C]/20 rounded-lg flex items-center justify-center">
+                          <Phone className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-sm font-medium">+234 811 382 9471</span>
+                      </a>
+                      <a 
+                        href="mailto:info.kingsconsults@gmail.com" 
+                        className="flex items-center justify-center space-x-3 text-white hover:text-[#E4A51C] transition-colors"
+                      >
+                        <div className="w-8 h-8 bg-[#E4A51C]/20 rounded-lg flex items-center justify-center">
+                          <Mail className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-sm font-medium">info.kingsconsults@gmail.com</span>
                       </a>
                     </div>
                   </div>
