@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -303,35 +302,35 @@ const Index = () => {
                       <CollapsibleContent className="mt-2 p-3 bg-white/5 rounded-lg">
                         <ul className="space-y-2 text-sm text-gray-300">
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Business & Idea Consultation</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Business Structuring & Strategic Planning</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Brand & Market Positioning</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Execution Strategy & Roadmapping</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Acting COO Services</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Operations & Team Structuring</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Brand Identity Advisory</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#D4951C] rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-1.5 h-1.5 bg-[#E4B429] rounded-full mt-2 flex-shrink-0"></div>
                             <span>Go-to-Market Support</span>
                           </li>
                         </ul>
@@ -353,7 +352,7 @@ const Index = () => {
                             href="tel:+2348113829471" 
                             className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors"
                           >
-                            <div className="w-8 h-8 bg-[#D4951C]/20 rounded-lg flex items-center justify-center">
+                            <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
                               <Phone className="w-4 h-4 text-white" />
                             </div>
                             <span className="text-sm">+234 811 382 9471</span>
@@ -362,7 +361,7 @@ const Index = () => {
                             href="mailto:info.kingsconsults@gmail.com" 
                             className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors"
                           >
-                            <div className="w-8 h-8 bg-[#D4951C]/20 rounded-lg flex items-center justify-center">
+                            <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
                               <Mail className="w-4 h-4 text-white" />
                             </div>
                             <span className="text-sm">info.kingsconsults@gmail.com</span>
@@ -442,12 +441,12 @@ const Index = () => {
             <div className="absolute inset-0 flex items-center justify-center z-20">
               <div className="text-center text-white max-w-4xl px-6">
                 <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
-                  <span className="w-2 h-2 bg-[#D4951C] rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-[#E4B429] rounded-full mr-2"></span>
                   Purpose-Driven Consulting
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-shadow-lg">
                   Empowering{' '}
-                  <span className="text-[#D4951C] font-black">
+                  <span className="text-[#E4B429] font-black">
                     Visionary
                   </span>{' '}
                   Entrepreneurs
@@ -463,7 +462,7 @@ const Index = () => {
           <div className="flex justify-center pb-16">
             <Dialog>
               <DialogTrigger asChild>
-                <Button size="lg" className="bg-gradient-to-r from-[#D4951C] to-[#D4951C]/90 hover:from-[#D4951C]/90 hover:to-[#D4951C]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <Button size="lg" className="bg-gradient-to-r from-[#E4B429] to-[#E4B429]/90 hover:from-[#E4B429]/90 hover:to-[#E4B429]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
                   Book a Session
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
@@ -484,7 +483,7 @@ const Index = () => {
                     </p>
                     <Button 
                       onClick={() => setShowConfirmation(false)} 
-                      className="bg-[#D4951C] hover:bg-[#D4951C]/90 px-6 py-2"
+                      className="bg-[#E4B429] hover:bg-[#E4B429]/90 px-6 py-2"
                     >
                       Book Another Session
                     </Button>
@@ -625,7 +624,7 @@ const Index = () => {
                     </p>
                     <Button 
                       type="submit" 
-                      className="w-full bg-[#D4951C] hover:bg-[#D4951C]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full bg-[#E4B429] hover:bg-[#E4B429]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? 'Sending Request...' : 'Request Session'}
@@ -675,7 +674,7 @@ const Index = () => {
               <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-8">
                 <CardHeader>
                   <CardTitle className="text-[#701015] flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-[#D4951C]/20 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
                       <span className="text-[#701015] text-sm">🎓</span>
                     </div>
                     <span>Education & Certifications</span>
@@ -683,15 +682,15 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-[#D4951C] rounded-full flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#E4B429] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">Bachelor's in Public Health</span>
                   </div>
                   <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-[#D4951C] rounded-full flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#E4B429] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">Diploma in Operations Management</span>
                   </div>
                   <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-[#D4951C] rounded-full flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#E4B429] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">Certified Scrum Master</span>
                   </div>
                 </CardContent>
@@ -723,7 +722,7 @@ const Index = () => {
                 <div className="grid gap-3">
                   {services.map((service, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-[#D4951C] rounded-full"></div>
+                      <div className="w-2 h-2 bg-[#E4B429] rounded-full"></div>
                       <span>{service}</span>
                     </div>
                   ))}
@@ -743,7 +742,7 @@ const Index = () => {
                   <h4 className="font-semibold text-gray-800 mb-2">Core Values:</h4>
                   <div className="flex flex-wrap gap-2">
                     {coreValues.map((value, index) => (
-                      <Badge key={index} variant="secondary" className="bg-[#D4951C]/20 text-[#701015]">
+                      <Badge key={index} variant="secondary" className="bg-[#E4B429]/20 text-[#701015]">
                         {value}
                       </Badge>
                     ))}
@@ -772,7 +771,7 @@ const Index = () => {
                     </CardHeader>
                     <CardContent>
                       <p className="text-gray-600 text-sm">{client.service}</p>
-                      <p className="text-[#D4951C] text-xs mt-2 font-medium">Click to view case study</p>
+                      <p className="text-[#E4B429] text-xs mt-2 font-medium">Click to view case study</p>
                     </CardContent>
                   </Card>
                 </DialogTrigger>
@@ -788,7 +787,7 @@ const Index = () => {
                     
                     <div>
                       <h4 className="text-lg font-semibold text-gray-800 mb-2">Client Testimonial</h4>
-                      <blockquote className="text-gray-600 italic border-l-4 border-[#D4951C] pl-4">
+                      <blockquote className="text-gray-600 italic border-l-4 border-[#E4B429] pl-4">
                         "{client.testimonial}"
                       </blockquote>
                     </div>
@@ -812,7 +811,7 @@ const Index = () => {
               <div className="grid gap-4">
                 {achievements.map((achievement, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-[#D4951C] rounded-full"></div>
+                    <div className="w-3 h-3 bg-[#E4B429] rounded-full"></div>
                     <span className="text-gray-700">{achievement}</span>
                   </div>
                 ))}
@@ -822,7 +821,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section with Reduced Icon Sizes */}
+      {/* Contact Section */}
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#701015] to-[#701015]/90">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-1 gap-16 items-center">
@@ -849,7 +848,7 @@ const Index = () => {
                   </p>
                   <Button 
                     onClick={() => setShowContactConfirmation(false)} 
-                    className="bg-[#E4A51C] hover:bg-[#E4A51C]/90 px-6 py-2"
+                    className="bg-[#E4B429] hover:bg-[#E4B429]/90 px-6 py-2"
                   >
                     Send Another Message
                   </Button>
@@ -896,85 +895,55 @@ const Index = () => {
                     />
                     <Button 
                       type="submit" 
-                      className="w-full bg-[#E4A51C] hover:bg-[#E4A51C]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full bg-[#E4B429] hover:bg-[#E4B429]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                       disabled={isContactSubmitting}
                     >
                       {isContactSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
 
-                  {/* Contact Icons with Clickable Text */}
+                  {/* Contact Information - Single row with properly linked items */}
                   <div className="mt-12 pt-8 border-t border-white/20">
-                    <h3 className="text-xl font-semibold text-white text-center mb-8">Connect With Us</h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-lg mx-auto">
-                      {/* Phone Call */}
+                    <div className="space-y-4 max-w-md mx-auto">
                       <a 
                         href="tel:+2348113829471" 
-                        className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
+                        className="flex items-center justify-center space-x-3 text-white hover:text-[#E4B429] transition-colors"
                       >
-                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
-                          <Phone className="w-3 h-3 text-white" />
-                        </div>
-                        <span className="text-xs font-medium text-white text-center">Call Us</span>
-                      </a>
-
-                      {/* Email */}
-                      <a 
-                        href="mailto:info.kingsconsults@gmail.com" 
-                        className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
-                      >
-                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
-                          <Mail className="w-3 h-3 text-white" />
-                        </div>
-                        <span className="text-xs font-medium text-white text-center">Email</span>
-                      </a>
-
-                      {/* WhatsApp */}
-                      <a 
-                        href="https://wa.me/2348113829471" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
-                      >
-                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
-                          <Phone className="w-3 h-3 text-white" />
-                        </div>
-                        <span className="text-xs font-medium text-white text-center">WhatsApp</span>
-                      </a>
-
-                      {/* Instagram */}
-                      <a 
-                        href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="group flex flex-col items-center space-y-2 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-105"
-                      >
-                        <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
-                          <Instagram className="w-3 h-3 text-white" />
-                        </div>
-                        <span className="text-xs font-medium text-white text-center">Instagram</span>
-                      </a>
-                    </div>
-
-                    {/* Direct Contact Information with Clickable Text */}
-                    <div className="mt-8 space-y-4 max-w-md mx-auto">
-                      <a 
-                        href="tel:+2348113829471" 
-                        className="flex items-center justify-center space-x-3 text-white hover:text-[#E4A51C] transition-colors"
-                      >
-                        <div className="w-8 h-8 bg-[#E4A51C]/20 rounded-lg flex items-center justify-center">
+                        <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
                           <Phone className="w-4 h-4 text-white" />
                         </div>
                         <span className="text-sm font-medium">+234 811 382 9471</span>
                       </a>
                       <a 
                         href="mailto:info.kingsconsults@gmail.com" 
-                        className="flex items-center justify-center space-x-3 text-white hover:text-[#E4A51C] transition-colors"
+                        className="flex items-center justify-center space-x-3 text-white hover:text-[#E4B429] transition-colors"
                       >
-                        <div className="w-8 h-8 bg-[#E4A51C]/20 rounded-lg flex items-center justify-center">
+                        <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
                           <Mail className="w-4 h-4 text-white" />
                         </div>
                         <span className="text-sm font-medium">info.kingsconsults@gmail.com</span>
+                      </a>
+                      <a 
+                        href="https://wa.me/2348113829471" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="flex items-center justify-center space-x-3 text-white hover:text-[#E4B429] transition-colors"
+                      >
+                        <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
+                          <Phone className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-sm font-medium">WhatsApp</span>
+                      </a>
+                      <a 
+                        href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="flex items-center justify-center space-x-3 text-white hover:text-[#E4B429] transition-colors"
+                      >
+                        <div className="w-8 h-8 bg-[#E4B429]/20 rounded-lg flex items-center justify-center">
+                          <Instagram className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-sm font-medium">Instagram</span>
                       </a>
                     </div>
                   </div>
