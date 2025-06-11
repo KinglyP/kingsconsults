@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Mail, Instagram, Briefcase, ArrowRight, Phone, Menu, ChevronDown } from "lucide-react";
+import { Mail, Instagram, Briefcase, ArrowRight, Phone, Menu, ChevronDown, Lightbulb, Target, Heart } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
 const Index = () => {
@@ -430,24 +430,24 @@ const Index = () => {
       <section className="pt-16">
         {/* Full Width Hero Image */}
         <div className="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30 z-10"></div>
           
           <img 
             src="/lovable-uploads/97e0d125-2c26-44f8-b200-bbce09b5ba23.png" 
             alt="Professional consulting team collaboration" 
-            className="absolute inset-0 w-full h-full object-cover opacity-90"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           
           <div className="absolute inset-0 flex items-center justify-center z-20">
             <div className="text-center text-white max-w-4xl px-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-shadow-lg animate-fade-in">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-shadow-lg animate-fade-in">
                 Empowering{' '}
                 <span className="text-[#F8A301] font-black">
                   Visionary
                 </span>{' '}
                 Entrepreneurs
               </h1>
-              <p className="text-xl text-gray-100 mb-8 leading-relaxed max-w-2xl mx-auto font-medium animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <p className="text-lg text-gray-100 mb-8 leading-relaxed max-w-2xl mx-auto font-medium animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
               </p>
             </div>
@@ -468,12 +468,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Kings Consults - Updated Font Sizes */}
+      {/* About Kings Consults */}
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl font-bold text-[#701015] mb-6">About Kings Consults</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold text-[#701015] mb-6">About Kings Consults</h2>
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
               Kings Consults is a strategy-first consulting brand helping purpose-driven entrepreneurs build structure, clarity, and confidence in their business. We guide founders through brand discovery, strategic positioning, and alignment so they can grow with intention and impact.
             </p>
           </div>
@@ -523,7 +523,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Meet the CEO Section - Updated Title */}
+      {/* Meet the CEO Section */}
       <section id="ceo" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#701015]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -531,7 +531,7 @@ const Index = () => {
               <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6">
                 Leadership Excellence
               </div>
-              <h2 className="text-3xl font-bold text-white mb-6">Meet the CEO</h2>
+              <h2 className="text-2xl font-bold text-white mb-6">Meet the CEO</h2>
               <div className="prose prose-lg text-white/90 space-y-6">
                 <p>
                   <strong>Favour Nicholas</strong> is a business strategist and mentor with 5+ years of experience launching, scaling, and leading businesses in Nigeria and Atlanta, USA. She has served as Chief Operating Officer and guided entrepreneurs through business development and operations.
@@ -589,8 +589,8 @@ const Index = () => {
       {/* Book a Session Section */}
       <section id="book-session" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          <h2 className="text-3xl font-bold text-[#701015] mb-6">Ready to Transform Your Business?</h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#701015] mb-6">Ready to Transform Your Business?</h2>
+          <p className="text-base text-gray-600 mb-8 max-w-2xl mx-auto">
             Book a clarity session with our team and start your journey toward sustainable business growth and success.
           </p>
           
@@ -770,14 +770,82 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Our Vision, Mission & Purpose Section */}
+      <section id="vision-mission-purpose" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-2xl font-bold text-[#701015] mb-6">Our Vision, Mission & Purpose</h2>
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
+              Driven by clear values and a commitment to meaningful impact, we guide entrepreneurs toward purpose-driven success.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Vision */}
+            <div className="text-center animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <div className="w-16 h-16 mx-auto mb-6 bg-[#701015]/10 rounded-full flex items-center justify-center">
+                <Lightbulb className="w-8 h-8 text-[#701015]" />
+              </div>
+              <h3 className="text-xl font-bold text-[#701015] mb-4">Vision</h3>
+              <p className="text-gray-600 leading-relaxed">
+                To see entrepreneurs build intentional, values-driven brands that create lasting impact and reflect true purpose.
+              </p>
+            </div>
+
+            {/* Mission */}
+            <div className="text-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="w-16 h-16 mx-auto mb-6 bg-[#F8A301]/10 rounded-full flex items-center justify-center">
+                <Target className="w-8 h-8 text-[#F8A301]" />
+              </div>
+              <h3 className="text-xl font-bold text-[#701015] mb-4">Mission</h3>
+              <p className="text-gray-600 leading-relaxed">
+                To equip individuals with clarity, structure, and brand strategy that transforms vision into confident execution.
+              </p>
+            </div>
+
+            {/* Purpose */}
+            <div className="text-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="w-16 h-16 mx-auto mb-6 bg-[#701015]/10 rounded-full flex items-center justify-center">
+                <Heart className="w-8 h-8 text-[#701015]" />
+              </div>
+              <h3 className="text-xl font-bold text-[#701015] mb-4">Purpose</h3>
+              <p className="text-gray-600 leading-relaxed">
+                To help purpose-driven founders transition from confusion to clarity, and from passion to measurable progress.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recognition & Milestones */}
+      <section id="recognition" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <Card className="shadow-lg animate-fade-in">
+            <CardHeader>
+              <CardTitle className="text-[#701015] text-2xl">Recognition & Milestones</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-4">
+                {achievements.map((achievement, index) => (
+                  <div key={index} className="flex items-center space-x-3 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <div className="w-3 h-3 bg-[#F8A301] rounded-full"></div>
+                    <span className="text-gray-700">{achievement}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Clients & Testimonials */}
       <section id="clients" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">Clients & Testimonials</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">Clients & Testimonials</h2>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {clients.map((client, index) => (
               <Dialog key={index}>
                 <DialogTrigger asChild>
@@ -817,23 +885,6 @@ const Index = () => {
               </Dialog>
             ))}
           </div>
-
-          {/* Recognition & Milestones */}
-          <Card className="shadow-lg animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <CardHeader>
-              <CardTitle className="text-[#701015] text-2xl">Recognition & Milestones</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-4">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-[#F8A301] rounded-full"></div>
-                    <span className="text-gray-700">{achievement}</span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
@@ -842,10 +893,10 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-white">
             <div className="mb-12 text-center animate-fade-in">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+              <h2 className="text-2xl lg:text-3xl font-bold mb-6 leading-tight">
                 Get in Touch
               </h2>
-              <p className="text-lg text-white/90 leading-relaxed">
+              <p className="text-base text-white/90 leading-relaxed">
                 Have questions about our services? We'd love to hear from you.
               </p>
             </div>
