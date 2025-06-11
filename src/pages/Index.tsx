@@ -228,16 +228,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white font-inter" style={{ scrollBehavior: 'smooth' }}>
-      {/* Enhanced Header with Better Logo Consistency */}
+      {/* Enhanced Header with Transparent Logo */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-3">
             <div className="flex items-center">
-              <div className="bg-white/95 backdrop-blur-md rounded-lg p-1">
+              <div className="logo-transparent rounded-lg p-0">
                 <img 
                   src="/lovable-uploads/9c613978-8093-4547-86bb-5bf5e848f137.png" 
                   alt="Kings Consults Logo" 
-                  className="h-7 w-auto transition-transform duration-300 hover:scale-105"
+                  className="h-8 w-auto transition-transform duration-300 hover:scale-105"
                 />
               </div>
             </div>
@@ -262,8 +262,8 @@ const Index = () => {
             <div className="md:hidden">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="sm" className="p-2">
-                    <Menu className="w-5 h-5 text-gray-600" />
+                  <Button variant="ghost" size="sm" className="hamburger-menu">
+                    <Menu className="w-6 h-6 text-gray-600" />
                     <span className="sr-only">Menu</span>
                   </Button>
                 </SheetTrigger>
@@ -426,11 +426,10 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Enhanced Hero Section - Full Width Image */}
+      {/* Enhanced Hero Section */}
       <section className="pt-16">
-        {/* Full Width Hero Image */}
         <div className="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20 z-10"></div>
           
           <img 
             src="/lovable-uploads/97e0d125-2c26-44f8-b200-bbce09b5ba23.png" 
@@ -454,11 +453,10 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Tagline Section Below Image */}
         <div className="bg-gray-50 py-12">
-          <div className="max-w-4xl mx-auto text-center px-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="inline-flex items-center px-6 py-3 bg-[#701015] text-white rounded-full text-lg font-medium mb-4">
-              <span className="w-3 h-3 bg-[#F8A301] rounded-full mr-3"></span>
+          <div className="max-w-4xl mx-auto text-center px-6 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+            <div className="inline-flex items-center px-6 py-3 bg-[#701015] text-white rounded-full text-lg font-medium mb-4 animate-pulse-scale">
+              <span className="w-3 h-3 bg-[#F8A301] rounded-full mr-3 animate-float"></span>
               The Purpose-Driven Consortium
             </div>
             <p className="text-lg text-gray-600 leading-relaxed">
@@ -472,14 +470,14 @@ const Index = () => {
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-2xl font-bold text-[#701015] mb-6">About Kings Consults</h2>
+            <h2 className="text-xl font-bold text-[#701015] mb-6">About Kings Consults</h2>
             <p className="text-base text-gray-600 max-w-3xl mx-auto">
               Kings Consults is a strategy-first consulting brand helping purpose-driven entrepreneurs build structure, clarity, and confidence in their business. We guide founders through brand discovery, strategic positioning, and alignment so they can grow with intention and impact.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16">
-            <Card className="shadow-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <Card className="shadow-lg animate-fade-in-left card-hover" style={{ animationDelay: '0.2s' }}>
               <CardHeader>
                 <CardTitle className="text-[#701015] flex items-center space-x-2">
                   <Briefcase className="w-6 h-6" />
@@ -489,8 +487,8 @@ const Index = () => {
               <CardContent>
                 <div className="grid gap-3">
                   {services.map((service, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-[#F8A301] rounded-full"></div>
+                    <div key={index} className="flex items-center space-x-3 animate-fade-in" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
+                      <div className="w-2 h-2 bg-[#F8A301] rounded-full animate-pulse-scale"></div>
                       <span>{service}</span>
                     </div>
                   ))}
@@ -498,20 +496,19 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            {/* What Makes Us Different - Separate Section */}
-            <Card className="shadow-lg animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <Card className="shadow-lg animate-fade-in-right card-hover" style={{ animationDelay: '0.4s' }}>
               <CardHeader>
                 <CardTitle className="text-[#701015]">What Makes Us Different</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-gray-600">
+                <p className="text-gray-600 animate-fade-in" style={{ animationDelay: '0.5s' }}>
                   We are rooted in purpose, committed to impact, and driven by values. Our faith foundation inspires our approach to business with integrity, innovation, and empowerment at the core.
                 </p>
-                <div>
+                <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
                   <h4 className="font-semibold text-gray-800 mb-2">Core Values:</h4>
                   <div className="flex flex-wrap gap-2">
                     {coreValues.map((value, index) => (
-                      <Badge key={index} variant="secondary" className="bg-[#F8A301]/20 text-[#701015]">
+                      <Badge key={index} variant="secondary" className="bg-[#F8A301]/20 text-[#701015] animate-scale-in" style={{ animationDelay: `${0.7 + index * 0.1}s` }}>
                         {value}
                       </Badge>
                     ))}
@@ -527,26 +524,25 @@ const Index = () => {
       <section id="ceo" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#701015]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div className="animate-fade-in">
-              <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6">
+            <div className="animate-fade-in-left">
+              <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6 animate-scale-in">
                 Leadership Excellence
               </div>
-              <h2 className="text-2xl font-bold text-white mb-6">Meet the CEO</h2>
+              <h2 className="text-xl font-bold text-white mb-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>Meet the CEO</h2>
               <div className="prose prose-lg text-white/90 space-y-6">
-                <p>
+                <p className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
                   <strong>Favour Nicholas</strong> is a business strategist and mentor with 5+ years of experience launching, scaling, and leading businesses in Nigeria and Atlanta, USA. She has served as Chief Operating Officer and guided entrepreneurs through business development and operations.
                 </p>
-                <p>
+                <p className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
                   Years ago, she launched a business with just ₦65,000 and scaled it to half a million within six months — a milestone that ignited her passion for empowering entrepreneurs.
                 </p>
-                <p>
+                <p className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
                   Today, as the driving force behind Kings Consults, <strong>Favour</strong> is on a mission to mentor and equip purpose-driven leaders to build, grow, and lead successful ventures.
                 </p>
               </div>
             </div>
             
-            {/* CEO Image */}
-            <div className="animate-fade-in relative" style={{ animationDelay: '0.2s' }}>
+            <div className="animate-fade-in-right relative" style={{ animationDelay: '0.2s' }}>
               <div className="relative overflow-hidden rounded-2xl shadow-xl">
                 <img 
                   src="/lovable-uploads/a9446baf-23ed-4fb0-8052-0703bffd7093.png" 
@@ -556,8 +552,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
               
-              {/* Education & Certifications Card */}
-              <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-8">
+              <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-8 card-hover animate-slide-up" style={{ animationDelay: '0.6s' }}>
                 <CardHeader>
                   <CardTitle className="text-[#701015] flex items-center space-x-2">
                     <div className="w-8 h-8 bg-[#F8A301]/20 rounded-lg flex items-center justify-center">
@@ -567,18 +562,12 @@ const Index = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-[#F8A301] rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Bachelor's in Public Health</span>
-                  </div>
-                  <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-[#F8A301] rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Diploma in Operations Management</span>
-                  </div>
-                  <div className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm">
-                    <div className="w-3 h-3 bg-[#F8A301] rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Certified Scrum Master</span>
-                  </div>
+                  {['Bachelor\'s in Public Health', 'Diploma in Operations Management', 'Certified Scrum Master'].map((item, index) => (
+                    <div key={index} className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm animate-fade-in" style={{ animationDelay: `${0.7 + index * 0.1}s` }}>
+                      <div className="w-3 h-3 bg-[#F8A301] rounded-full flex-shrink-0 animate-pulse-scale"></div>
+                      <span className="text-gray-700">{item}</span>
+                    </div>
+                  ))}
                 </CardContent>
               </Card>
             </div>
@@ -774,7 +763,7 @@ const Index = () => {
       <section id="vision-mission-purpose" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-2xl font-bold text-[#701015] mb-6">Our Vision, Mission & Purpose</h2>
+            <h2 className="text-xl font-bold text-[#701015] mb-6">Our Vision, Mission & Purpose</h2>
             <p className="text-base text-gray-600 max-w-3xl mx-auto">
               Driven by clear values and a commitment to meaningful impact, we guide entrepreneurs toward purpose-driven success.
             </p>
@@ -783,33 +772,33 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Vision */}
             <div className="text-center animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              <div className="w-16 h-16 mx-auto mb-6 bg-[#701015]/10 rounded-full flex items-center justify-center">
-                <Lightbulb className="w-8 h-8 text-[#701015]" />
+              <div className="w-20 h-20 mx-auto mb-6 professional-icon rounded-full flex items-center justify-center animate-icon-glow">
+                <Lightbulb className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#701015] mb-4">Vision</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-lg font-bold text-[#701015] mb-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>Vision</h3>
+              <p className="text-gray-600 leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 To see entrepreneurs build intentional, values-driven brands that create lasting impact and reflect true purpose.
               </p>
             </div>
 
             {/* Mission */}
             <div className="text-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="w-16 h-16 mx-auto mb-6 bg-[#F8A301]/10 rounded-full flex items-center justify-center">
-                <Target className="w-8 h-8 text-[#F8A301]" />
+              <div className="w-20 h-20 mx-auto mb-6 professional-icon rounded-full flex items-center justify-center animate-icon-glow" style={{ animationDelay: '0.5s' }}>
+                <Target className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#701015] mb-4">Mission</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-lg font-bold text-[#701015] mb-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>Mission</h3>
+              <p className="text-gray-600 leading-relaxed animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 To equip individuals with clarity, structure, and brand strategy that transforms vision into confident execution.
               </p>
             </div>
 
             {/* Purpose */}
             <div className="text-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <div className="w-16 h-16 mx-auto mb-6 bg-[#701015]/10 rounded-full flex items-center justify-center">
-                <Heart className="w-8 h-8 text-[#701015]" />
+              <div className="w-20 h-20 mx-auto mb-6 professional-icon rounded-full flex items-center justify-center animate-icon-glow" style={{ animationDelay: '1s' }}>
+                <Heart className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#701015] mb-4">Purpose</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-lg font-bold text-[#701015] mb-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>Purpose</h3>
+              <p className="text-gray-600 leading-relaxed animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 To help purpose-driven founders transition from confusion to clarity, and from passion to measurable progress.
               </p>
             </div>
@@ -893,7 +882,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-white">
             <div className="mb-12 text-center animate-fade-in">
-              <h2 className="text-2xl lg:text-3xl font-bold mb-6 leading-tight">
+              <h2 className="text-xl lg:text-2xl font-bold mb-6 leading-tight">
                 Get in Touch
               </h2>
               <p className="text-base text-white/90 leading-relaxed">
@@ -966,26 +955,27 @@ const Index = () => {
                   </Button>
                 </form>
 
-                {/* Connect With Us Section - Updated with Brand Red Icons */}
                 <div className="mt-16 pt-8 border-t border-white/20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                  <h3 className="text-2xl font-bold text-white text-center mb-8">Connect With Us</h3>
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-3xl mx-auto">
+                  <h3 className="text-xl font-bold text-white text-center mb-8">Connect With Us</h3>
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-2xl mx-auto">
                     <a 
                       href="mailto:info.kingsconsults@gmail.com" 
-                      className="flex flex-col items-center justify-center p-4 bg-[#701015]/80 rounded-lg text-white hover:bg-[#701015] transition-all duration-300 group shadow-md border border-white/10"
+                      className="flex flex-col items-center justify-center p-3 contact-icon rounded-lg text-white transition-all duration-300 group shadow-md animate-scale-in"
+                      style={{ animationDelay: '0.5s' }}
                     >
-                      <div className="w-8 h-8 bg-[#901219]/30 rounded-lg flex items-center justify-center mb-2 group-hover:bg-[#901219]/40 transition-colors">
-                        <Mail className="w-4 h-4 text-[#901219]" />
+                      <div className="w-6 h-6 flex items-center justify-center mb-2">
+                        <Mail className="w-4 h-4 text-white" />
                       </div>
                       <span className="font-medium text-xs text-center">Email</span>
                     </a>
                     
                     <a 
                       href="tel:+2348113829471" 
-                      className="flex flex-col items-center justify-center p-4 bg-[#701015]/80 rounded-lg text-white hover:bg-[#701015] transition-all duration-300 group shadow-md border border-white/10"
+                      className="flex flex-col items-center justify-center p-3 contact-icon rounded-lg text-white transition-all duration-300 group shadow-md animate-scale-in"
+                      style={{ animationDelay: '0.6s' }}
                     >
-                      <div className="w-8 h-8 bg-[#901219]/30 rounded-lg flex items-center justify-center mb-2 group-hover:bg-[#901219]/40 transition-colors">
-                        <Phone className="w-4 h-4 text-[#901219]" />
+                      <div className="w-6 h-6 flex items-center justify-center mb-2">
+                        <Phone className="w-4 h-4 text-white" />
                       </div>
                       <span className="font-medium text-xs text-center">Phone Call</span>
                     </a>
@@ -994,10 +984,11 @@ const Index = () => {
                       href="https://wa.me/2348113829471" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex flex-col items-center justify-center p-4 bg-[#701015]/80 rounded-lg text-white hover:bg-[#701015] transition-all duration-300 group shadow-md border border-white/10"
+                      className="flex flex-col items-center justify-center p-3 contact-icon rounded-lg text-white transition-all duration-300 group shadow-md animate-scale-in"
+                      style={{ animationDelay: '0.7s' }}
                     >
-                      <div className="w-8 h-8 bg-[#901219]/30 rounded-lg flex items-center justify-center mb-2 group-hover:bg-[#901219]/40 transition-colors">
-                        <Phone className="w-4 h-4 text-[#901219]" />
+                      <div className="w-6 h-6 flex items-center justify-center mb-2">
+                        <Phone className="w-4 h-4 text-white" />
                       </div>
                       <span className="font-medium text-xs text-center">WhatsApp</span>
                     </a>
@@ -1006,10 +997,11 @@ const Index = () => {
                       href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex flex-col items-center justify-center p-4 bg-[#701015]/80 rounded-lg text-white hover:bg-[#701015] transition-all duration-300 group shadow-md border border-white/10"
+                      className="flex flex-col items-center justify-center p-3 contact-icon rounded-lg text-white transition-all duration-300 group shadow-md animate-scale-in"
+                      style={{ animationDelay: '0.8s' }}
                     >
-                      <div className="w-8 h-8 bg-[#901219]/30 rounded-lg flex items-center justify-center mb-2 group-hover:bg-[#901219]/40 transition-colors">
-                        <Instagram className="w-4 h-4 text-[#901219]" />
+                      <div className="w-6 h-6 flex items-center justify-center mb-2">
+                        <Instagram className="w-4 h-4 text-white" />
                       </div>
                       <span className="font-medium text-xs text-center">Instagram</span>
                     </a>
