@@ -207,6 +207,18 @@
     }
   }
 
+  @keyframes hamburger-hover {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(5deg);
+    }
+    100% {
+      transform: scale(1.1) rotate(0deg);
+    }
+  }
+
   /* Animation Classes */
   .animate-fade-in {
     animation: fade-in 0.8s ease-out forwards;
@@ -250,40 +262,50 @@
     animation: pulse-scale 2s ease-in-out infinite;
   }
 
-  /* Professional Icon Styles */
-  .professional-icon {
+  /* Professional Vision/Mission/Purpose Icons */
+  .vmp-icon {
     background: linear-gradient(135deg, #701015 0%, #901219 50%, #701015 100%);
-    box-shadow: 0 8px 32px rgba(112, 16, 21, 0.3), 0 4px 16px rgba(112, 16, 21, 0.2);
+    box-shadow: 
+      0 8px 32px rgba(112, 16, 21, 0.25), 
+      0 4px 16px rgba(112, 16, 21, 0.15),
+      inset 0 1px 0 rgba(248, 163, 1, 0.2);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    border: 2px solid rgba(248, 163, 1, 0.2);
   }
 
-  .professional-icon::before {
+  .vmp-icon::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(248, 163, 1, 0.3), transparent);
     transition: left 0.6s ease;
   }
 
-  .professional-icon:hover {
+  .vmp-icon:hover {
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 12px 40px rgba(112, 16, 21, 0.4), 0 8px 24px rgba(112, 16, 21, 0.3);
+    box-shadow: 
+      0 12px 40px rgba(112, 16, 21, 0.35), 
+      0 8px 24px rgba(112, 16, 21, 0.25),
+      0 0 20px rgba(248, 163, 1, 0.4);
+    border-color: rgba(248, 163, 1, 0.5);
   }
 
-  .professional-icon:hover::before {
+  .vmp-icon:hover::before {
     left: 100%;
   }
 
-  /* Contact Icon Styles */
+  /* Premium Contact Icons */
   .contact-icon {
     background: linear-gradient(135deg, #701015 0%, #901219 100%);
     border: 2px solid rgba(248, 163, 1, 0.3);
-    box-shadow: 0 4px 20px rgba(112, 16, 21, 0.25);
+    box-shadow: 
+      0 6px 24px rgba(112, 16, 21, 0.25),
+      0 2px 8px rgba(112, 16, 21, 0.15);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -293,14 +315,16 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(248, 163, 1, 0.1) 50%, transparent 70%);
+    background: linear-gradient(45deg, transparent 30%, rgba(248, 163, 1, 0.15) 50%, transparent 70%);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
 
   .contact-icon:hover {
-    transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 8px 30px rgba(112, 16, 21, 0.4), 0 0 20px rgba(248, 163, 1, 0.3);
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 
+      0 10px 32px rgba(112, 16, 21, 0.35), 
+      0 0 24px rgba(248, 163, 1, 0.4);
     border-color: rgba(248, 163, 1, 0.6);
   }
 
@@ -308,20 +332,30 @@
     opacity: 1;
   }
 
-  /* Hamburger Menu Enhancements */
+  /* Enhanced Hamburger Menu */
   .hamburger-menu {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 12px;
+    padding: 14px;
     border-radius: 8px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hamburger-menu:hover {
     background: rgba(112, 16, 21, 0.1);
-    transform: scale(1.1);
+    animation: hamburger-hover 0.4s ease;
   }
 
   .hamburger-menu:active {
     transform: scale(0.95);
+  }
+
+  .hamburger-menu svg {
+    width: 28px;
+    height: 28px;
   }
 
   /* Smooth Hover Transitions */
@@ -385,6 +419,39 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    .scroll-reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .scroll-reveal-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .scroll-reveal-right.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-reveal-scale {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .scroll-reveal-scale.revealed {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -409,4 +476,12 @@
     background: transparent !important;
     backdrop-filter: none !important;
   }
+
+  /* Stagger animation delays */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
 }
