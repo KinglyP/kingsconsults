@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -228,17 +227,19 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white font-inter">
-      {/* Enhanced Header with Reduced Size */}
+    <div className="min-h-screen bg-white font-inter" style={{ scrollBehavior: 'smooth' }}>
+      {/* Enhanced Header with Better Logo Consistency */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-3">
             <div className="flex items-center">
-              <img 
-                src="/lovable-uploads/9c613978-8093-4547-86bb-5bf5e848f137.png" 
-                alt="Kings Consults Logo" 
-                className="h-7 w-auto transition-transform duration-300 hover:scale-105"
-              />
+              <div className="bg-white/95 backdrop-blur-md rounded-lg p-1">
+                <img 
+                  src="/lovable-uploads/9c613978-8093-4547-86bb-5bf5e848f137.png" 
+                  alt="Kings Consults Logo" 
+                  className="h-7 w-auto transition-transform duration-300 hover:scale-105"
+                />
+              </div>
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#about" className="text-gray-600 hover:text-[#701015] transition-all duration-300 font-medium relative group">
@@ -425,228 +426,112 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Enhanced Hero Section */}
-      <section className="pt-16 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Image Container with Better Contrast */}
-          <div className="relative h-[60vh] min-h-[400px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl mb-8">
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60 z-10"></div>
-            
-            {/* Professional Image with Better Contrast */}
-            <img 
-              src="/lovable-uploads/97e0d125-2c26-44f8-b200-bbce09b5ba23.png" 
-              alt="Professional consulting team collaboration" 
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            
-            <div className="absolute inset-0 flex items-center justify-center z-20">
-              <div className="text-center text-white max-w-4xl px-6">
-                <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
-                  <span className="w-2 h-2 bg-[#F8A301] rounded-full mr-2"></span>
-                  Purpose-Driven Consulting
-                </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-shadow-lg">
-                  Empowering{' '}
-                  <span className="text-[#F8A301] font-black">
-                    Visionary
-                  </span>{' '}
-                  Entrepreneurs
-                </h1>
-                <p className="text-xl text-gray-100 mb-8 leading-relaxed max-w-2xl mx-auto font-medium">
-                  Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
-                </p>
-              </div>
+      {/* Enhanced Hero Section - Full Width Image */}
+      <section className="pt-16">
+        {/* Full Width Hero Image */}
+        <div className="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40 z-10"></div>
+          
+          <img 
+            src="/lovable-uploads/97e0d125-2c26-44f8-b200-bbce09b5ba23.png" 
+            alt="Professional consulting team collaboration" 
+            className="absolute inset-0 w-full h-full object-cover opacity-90"
+          />
+          
+          <div className="absolute inset-0 flex items-center justify-center z-20">
+            <div className="text-center text-white max-w-4xl px-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-shadow-lg animate-fade-in">
+                Empowering{' '}
+                <span className="text-[#F8A301] font-black">
+                  Visionary
+                </span>{' '}
+                Entrepreneurs
+              </h1>
+              <p className="text-xl text-gray-100 mb-8 leading-relaxed max-w-2xl mx-auto font-medium animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
+              </p>
             </div>
           </div>
-          
-          {/* Book Session Button */}
-          <div className="flex justify-center pb-16">
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button size="lg" className="bg-gradient-to-r from-[#F8A301] to-[#F8A301]/90 hover:from-[#F8A301]/90 hover:to-[#F8A301]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
-                  Book a Session
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-                <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold text-[#701015] mb-2">Book a Clarity Session</DialogTitle>
-                </DialogHeader>
-                
-                {showConfirmation ? (
-                  <div className="text-center py-8">
-                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-green-600 text-2xl">✓</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-3">Thank You!</h3>
-                    <p className="text-gray-600 leading-relaxed max-w-md mx-auto mb-6">
-                      Your session request has been received. A team member from Kings Consults will contact you shortly to confirm and complete the booking.
-                    </p>
-                    <Button 
-                      onClick={() => setShowConfirmation(false)} 
-                      className="bg-[#F8A301] hover:bg-[#F8A301]/90 px-6 py-2"
-                    >
-                      Book Another Session
-                    </Button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="relative">
-                        <Label htmlFor="name" className="text-sm font-medium text-gray-700 mb-2 block">
-                          Full Name
-                        </Label>
-                        <Input
-                          id="name"
-                          placeholder="Enter your full name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                          className="h-11 bg-white border-gray-300"
-                        />
-                        {nameSuggestions.length > 0 && (
-                          <div className="absolute z-10 w-full bg-white border border-gray-200 rounded-md shadow-lg mt-1">
-                            {nameSuggestions.map((suggestion, index) => (
-                              <button
-                                key={index}
-                                type="button"
-                                className="w-full text-left px-3 py-2 hover:bg-gray-100 transition-colors"
-                                onClick={() => selectSuggestion(suggestion, 'name')}
-                              >
-                                {suggestion}
-                              </button>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                      <div className="relative">
-                        <Label htmlFor="email" className="text-sm font-medium text-gray-700 mb-2 block">
-                          Email Address
-                        </Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          placeholder="your.email@example.com"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                          className="h-11 bg-white border-gray-300"
-                        />
-                        {emailSuggestions.length > 0 && (
-                          <div className="absolute z-10 w-full bg-white border border-gray-200 rounded-md shadow-lg mt-1">
-                            {emailSuggestions.map((suggestion, index) => (
-                              <button
-                                key={index}
-                                type="button"
-                                className="w-full text-left px-3 py-2 hover:bg-gray-100 transition-colors"
-                                onClick={() => selectSuggestion(suggestion, 'email')}
-                              >
-                                {suggestion}
-                              </button>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="phone" className="text-sm font-medium text-gray-700 mb-2 block">
-                        Phone Number
-                      </Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        placeholder="+234 800 000 0000"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                        className="h-11 bg-white border-gray-300"
-                      />
-                    </div>
-                    
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="preferredDate" className="text-sm font-medium text-gray-700 mb-2 block">
-                          Preferred Booking Date
-                        </Label>
-                        <Input
-                          id="preferredDate"
-                          type="date"
-                          name="preferredDate"
-                          value={formData.preferredDate}
-                          onChange={handleChange}
-                          min={today}
-                          required
-                          className="h-11 bg-white border-gray-300"
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="preferredTime" className="text-sm font-medium text-gray-700 mb-2 block">
-                          Preferred Time
-                        </Label>
-                        <select
-                          id="preferredTime"
-                          name="preferredTime"
-                          value={formData.preferredTime}
-                          onChange={(e) => setFormData({...formData, preferredTime: e.target.value})}
-                          required
-                          className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                        >
-                          <option value="">Select time</option>
-                          {getAvailableTimeSlots().map((time) => (
-                            <option key={time} value={time}>
-                              {time}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="message" className="text-sm font-medium text-gray-700 mb-2 block">
-                        Tell us about your business goals or challenges
-                      </Label>
-                      <Textarea
-                        id="message"
-                        placeholder="Describe your business goals, challenges, or what you'd like to discuss..."
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        rows={4}
-                        className="resize-none bg-white border-gray-300"
-                      />
-                    </div>
-                    
-                    <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
-                      <strong>Note:</strong> This is a paid consultation. Our team will contact you to confirm the session and complete the booking process.
-                    </p>
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-[#E4B429] hover:bg-[#E4B429]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? 'Sending Request...' : 'Request Session'}
-                    </Button>
-                  </form>
-                )}
-              </DialogContent>
-            </Dialog>
+        </div>
+        
+        {/* Tagline Section Below Image */}
+        <div className="bg-gray-50 py-12">
+          <div className="max-w-4xl mx-auto text-center px-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="inline-flex items-center px-6 py-3 bg-[#701015] text-white rounded-full text-lg font-medium mb-4">
+              <span className="w-3 h-3 bg-[#F8A301] rounded-full mr-3"></span>
+              The Purpose-Driven Consortium
+            </div>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Where vision meets strategy, and dreams become sustainable business realities.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* About the CEO Section */}
-      <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#701015]">
+      {/* About Kings Consults - Updated Font Sizes */}
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-3xl font-bold text-[#701015] mb-6">About Kings Consults</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Kings Consults is a strategy-first consulting brand helping purpose-driven entrepreneurs build structure, clarity, and confidence in their business. We guide founders through brand discovery, strategic positioning, and alignment so they can grow with intention and impact.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-16">
+            <Card className="shadow-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <CardHeader>
+                <CardTitle className="text-[#701015] flex items-center space-x-2">
+                  <Briefcase className="w-6 h-6" />
+                  <span>What We Offer</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-3">
+                  {services.map((service, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-[#F8A301] rounded-full"></div>
+                      <span>{service}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* What Makes Us Different - Separate Section */}
+            <Card className="shadow-lg animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <CardHeader>
+                <CardTitle className="text-[#701015]">What Makes Us Different</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-gray-600">
+                  We are rooted in purpose, committed to impact, and driven by values. Our faith foundation inspires our approach to business with integrity, innovation, and empowerment at the core.
+                </p>
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-2">Core Values:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {coreValues.map((value, index) => (
+                      <Badge key={index} variant="secondary" className="bg-[#F8A301]/20 text-[#701015]">
+                        {value}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet the CEO Section - Updated Title */}
+      <section id="ceo" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#701015]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="animate-fade-in">
               <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6">
                 Leadership Excellence
               </div>
-              <h2 className="text-4xl font-bold text-white mb-6">About the CEO</h2>
+              <h2 className="text-3xl font-bold text-white mb-6">Meet the CEO</h2>
               <div className="prose prose-lg text-white/90 space-y-6">
                 <p>
                   <strong>Favour Nicholas</strong> is a business strategist and mentor with 5+ years of experience launching, scaling, and leading businesses in Nigeria and Atlanta, USA. She has served as Chief Operating Officer and guided entrepreneurs through business development and operations.
@@ -701,72 +586,202 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Kings Consults */}
-      <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#701015] mb-6">About Kings Consults</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Kings Consults is a strategy-first consulting brand helping purpose-driven entrepreneurs build structure, clarity, and confidence in their business. We guide founders through brand discovery, strategic positioning, and alignment so they can grow with intention and impact.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-16 mb-16">
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-[#701015] flex items-center space-x-2">
-                  <Briefcase className="w-6 h-6" />
-                  <span>What We Offer</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid gap-3">
-                  {services.map((service, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-[#F8A301] rounded-full"></div>
-                      <span>{service}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-[#701015]">What Makes Us Different</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600">
-                  We are rooted in purpose, committed to impact, and driven by values. Our faith foundation inspires our approach to business with integrity, innovation, and empowerment at the core.
-                </p>
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-2">Core Values:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {coreValues.map((value, index) => (
-                      <Badge key={index} variant="secondary" className="bg-[#F8A301]/20 text-[#701015]">
-                        {value}
-                      </Badge>
-                    ))}
+      {/* Book a Session Section */}
+      <section id="book-session" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-4xl mx-auto text-center animate-fade-in">
+          <h2 className="text-3xl font-bold text-[#701015] mb-6">Ready to Transform Your Business?</h2>
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Book a clarity session with our team and start your journey toward sustainable business growth and success.
+          </p>
+          
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button size="lg" className="bg-gradient-to-r from-[#F8A301] to-[#F8A301]/90 hover:from-[#F8A301]/90 hover:to-[#F8A301]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group animate-scale-in" style={{ animationDelay: '0.2s' }}>
+                Book a Session
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold text-[#701015] mb-2">Book a Clarity Session</DialogTitle>
+              </DialogHeader>
+              
+              {showConfirmation ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-green-600 text-2xl">✓</span>
                   </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Thank You!</h3>
+                  <p className="text-gray-600 leading-relaxed max-w-md mx-auto mb-6">
+                    Your session request has been received. A team member from Kings Consults will contact you shortly to confirm and complete the booking.
+                  </p>
+                  <Button 
+                    onClick={() => setShowConfirmation(false)} 
+                    className="bg-[#F8A301] hover:bg-[#F8A301]/90 px-6 py-2"
+                  >
+                    Book Another Session
+                  </Button>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="relative">
+                      <Label htmlFor="name" className="text-sm font-medium text-gray-700 mb-2 block">
+                        Full Name
+                      </Label>
+                      <Input
+                        id="name"
+                        placeholder="Enter your full name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="h-11 bg-white border-gray-300"
+                      />
+                      {nameSuggestions.length > 0 && (
+                        <div className="absolute z-10 w-full bg-white border border-gray-200 rounded-md shadow-lg mt-1">
+                          {nameSuggestions.map((suggestion, index) => (
+                            <button
+                              key={index}
+                              type="button"
+                              className="w-full text-left px-3 py-2 hover:bg-gray-100 transition-colors"
+                              onClick={() => selectSuggestion(suggestion, 'name')}
+                            >
+                              {suggestion}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <div className="relative">
+                      <Label htmlFor="email" className="text-sm font-medium text-gray-700 mb-2 block">
+                        Email Address
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="your.email@example.com"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="h-11 bg-white border-gray-300"
+                      />
+                      {emailSuggestions.length > 0 && (
+                        <div className="absolute z-10 w-full bg-white border border-gray-200 rounded-md shadow-lg mt-1">
+                          {emailSuggestions.map((suggestion, index) => (
+                            <button
+                              key={index}
+                              type="button"
+                              className="w-full text-left px-3 py-2 hover:bg-gray-100 transition-colors"
+                              onClick={() => selectSuggestion(suggestion, 'email')}
+                            >
+                              {suggestion}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="phone" className="text-sm font-medium text-gray-700 mb-2 block">
+                      Phone Number
+                    </Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      placeholder="+234 800 000 0000"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="h-11 bg-white border-gray-300"
+                    />
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="preferredDate" className="text-sm font-medium text-gray-700 mb-2 block">
+                        Preferred Booking Date
+                      </Label>
+                      <Input
+                        id="preferredDate"
+                        type="date"
+                        name="preferredDate"
+                        value={formData.preferredDate}
+                        onChange={handleChange}
+                        min={today}
+                        required
+                        className="h-11 bg-white border-gray-300"
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="preferredTime" className="text-sm font-medium text-gray-700 mb-2 block">
+                        Preferred Time
+                      </Label>
+                      <select
+                        id="preferredTime"
+                        name="preferredTime"
+                        value={formData.preferredTime}
+                        onChange={(e) => setFormData({...formData, preferredTime: e.target.value})}
+                        required
+                        className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      >
+                        <option value="">Select time</option>
+                        {getAvailableTimeSlots().map((time) => (
+                          <option key={time} value={time}>
+                            {time}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="message" className="text-sm font-medium text-gray-700 mb-2 block">
+                      Tell us about your business goals or challenges
+                    </Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Describe your business goals, challenges, or what you'd like to discuss..."
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={4}
+                      className="resize-none bg-white border-gray-300"
+                    />
+                  </div>
+                  
+                  <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
+                    <strong>Note:</strong> This is a paid consultation. Our team will contact you to confirm the session and complete the booking process.
+                  </p>
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-[#E4B429] hover:bg-[#E4B429]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending Request...' : 'Request Session'}
+                  </Button>
+                </form>
+              )}
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
 
-      {/* Clients & Portfolio */}
-      <section id="clients" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* Clients & Testimonials */}
+      <section id="clients" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">Clients & Portfolio</h2>
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6">Clients & Testimonials</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {clients.map((client, index) => (
               <Dialog key={index}>
                 <DialogTrigger asChild>
-                  <Card className="shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105">
+                  <Card className="shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                     <CardHeader>
                       <CardTitle className="text-lg">{client.name}</CardTitle>
                     </CardHeader>
@@ -804,7 +819,7 @@ const Index = () => {
           </div>
 
           {/* Recognition & Milestones */}
-          <Card className="shadow-lg">
+          <Card className="shadow-lg animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <CardHeader>
               <CardTitle className="text-[#701015] text-2xl">Recognition & Milestones</CardTitle>
             </CardHeader>
@@ -823,143 +838,139 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#701015] to-[#701015]/90">
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#701015] to-[#701015]/90">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-1 gap-16 items-center">
+          <div className="text-white">
+            <div className="mb-12 text-center animate-fade-in">
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+                Get in Touch
+              </h2>
+              <p className="text-lg text-white/90 leading-relaxed">
+                Have questions about our services? We'd love to hear from you.
+              </p>
+            </div>
             
-            {/* Contact Form */}
-            <div className="text-white">
-              <div className="mb-12 text-center">
-                <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                  Get in Touch
-                </h2>
-                <p className="text-xl text-white/90 leading-relaxed">
-                  Have questions about our services? We'd love to hear from you.
-                </p>
-              </div>
-              
-              {showContactConfirmation ? (
-                <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-green-600 text-2xl">✓</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">Thank You!</h3>
-                  <p className="text-white/90 leading-relaxed max-w-md mx-auto mb-6">
-                    Thank you for reaching out! We'll be in touch with you shortly.
-                  </p>
-                  <Button 
-                    onClick={() => setShowContactConfirmation(false)} 
-                    className="bg-[#F8A301] hover:bg-[#F8A301]/90 px-6 py-2"
-                  >
-                    Send Another Message
-                  </Button>
+            {showContactConfirmation ? (
+              <div className="text-center py-8">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-green-600 text-2xl">✓</span>
                 </div>
-              ) : (
-                <div className="max-w-2xl mx-auto">
-                  <form onSubmit={handleContactSubmit} className="space-y-4">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <Input
-                        placeholder="Full Name"
-                        name="name"
-                        value={contactFormData.name}
-                        onChange={handleContactChange}
-                        required
-                        className="h-11 bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
-                      />
-                      <Input
-                        type="email"
-                        placeholder="Email Address"
-                        name="email"
-                        value={contactFormData.email}
-                        onChange={handleContactChange}
-                        required
-                        className="h-11 bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
-                      />
-                    </div>
+                <h3 className="text-xl font-bold text-white mb-3">Thank You!</h3>
+                <p className="text-white/90 leading-relaxed max-w-md mx-auto mb-6">
+                  Thank you for reaching out! We'll be in touch with you shortly.
+                </p>
+                <Button 
+                  onClick={() => setShowContactConfirmation(false)} 
+                  className="bg-[#F8A301] hover:bg-[#F8A301]/90 px-6 py-2"
+                >
+                  Send Another Message
+                </Button>
+              </div>
+            ) : (
+              <div className="max-w-2xl mx-auto">
+                <form onSubmit={handleContactSubmit} className="space-y-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                  <div className="grid md:grid-cols-2 gap-4">
                     <Input
-                      type="tel"
-                      placeholder="Phone Number"
-                      name="phone"
-                      value={contactFormData.phone}
+                      placeholder="Full Name"
+                      name="name"
+                      value={contactFormData.name}
                       onChange={handleContactChange}
                       required
                       className="h-11 bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
                     />
-                    <Textarea
-                      placeholder="Your message..."
-                      name="message"
-                      value={contactFormData.message}
+                    <Input
+                      type="email"
+                      placeholder="Email Address"
+                      name="email"
+                      value={contactFormData.email}
                       onChange={handleContactChange}
-                      rows={4}
-                      className="resize-none bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
                       required
+                      className="h-11 bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
                     />
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-[#F8A301] hover:bg-[#F8A301]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                      disabled={isContactSubmitting}
-                    >
-                      {isContactSubmitting ? 'Sending...' : 'Send Message'}
-                    </Button>
-                  </form>
+                  </div>
+                  <Input
+                    type="tel"
+                    placeholder="Phone Number"
+                    name="phone"
+                    value={contactFormData.phone}
+                    onChange={handleContactChange}
+                    required
+                    className="h-11 bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
+                  />
+                  <Textarea
+                    placeholder="Your message..."
+                    name="message"
+                    value={contactFormData.message}
+                    onChange={handleContactChange}
+                    rows={4}
+                    className="resize-none bg-white border-gray-300 text-gray-900 placeholder:text-gray-500"
+                    required
+                  />
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-[#F8A301] hover:bg-[#F8A301]/90 h-12 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    disabled={isContactSubmitting}
+                  >
+                    {isContactSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                </form>
 
-                  {/* Connect With Us Section - Professional rectangular design */}
-                  <div className="mt-16 pt-8 border-t border-white/20">
-                    <h3 className="text-2xl font-bold text-white text-center mb-8">Connect With Us</h3>
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-3xl mx-auto">
-                      <a 
-                        href="mailto:info.kingsconsults@gmail.com" 
-                        className="flex flex-col items-center justify-center p-4 bg-[#701015]/80 rounded-lg text-white hover:bg-[#701015] transition-all duration-300 group shadow-md border border-white/10"
-                      >
-                        <div className="w-8 h-8 bg-[#F8A301]/20 rounded-lg flex items-center justify-center mb-2 group-hover:bg-[#F8A301]/30 transition-colors">
-                          <Mail className="w-4 h-4 text-white" />
-                        </div>
-                        <span className="font-medium text-xs text-center">Email</span>
-                      </a>
-                      
-                      <a 
-                        href="tel:+2348113829471" 
-                        className="flex flex-col items-center justify-center p-4 bg-[#701015]/80 rounded-lg text-white hover:bg-[#701015] transition-all duration-300 group shadow-md border border-white/10"
-                      >
-                        <div className="w-8 h-8 bg-[#F8A301]/20 rounded-lg flex items-center justify-center mb-2 group-hover:bg-[#F8A301]/30 transition-colors">
-                          <Phone className="w-4 h-4 text-white" />
-                        </div>
-                        <span className="font-medium text-xs text-center">Phone Call</span>
-                      </a>
-                      
-                      <a 
-                        href="https://wa.me/2348113829471" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="flex flex-col items-center justify-center p-4 bg-green-600/20 rounded-lg text-green-300 hover:bg-green-600/30 transition-all duration-300 group shadow-md border border-green-400/20"
-                      >
-                        <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mb-2 group-hover:bg-green-500/30 transition-colors">
-                          <Phone className="w-4 h-4 text-green-300" />
-                        </div>
-                        <span className="font-medium text-xs text-center">WhatsApp</span>
-                      </a>
-                      
-                      <a 
-                        href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="flex flex-col items-center justify-center p-4 bg-pink-600/20 rounded-lg text-pink-300 hover:bg-pink-600/30 transition-all duration-300 group shadow-md border border-pink-400/20"
-                      >
-                        <div className="w-8 h-8 bg-pink-500/20 rounded-lg flex items-center justify-center mb-2 group-hover:bg-pink-500/30 transition-colors">
-                          <Instagram className="w-4 h-4 text-pink-300" />
-                        </div>
-                        <span className="font-medium text-xs text-center">Instagram</span>
-                      </a>
-                    </div>
+                {/* Connect With Us Section - Updated with Brand Red Icons */}
+                <div className="mt-16 pt-8 border-t border-white/20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                  <h3 className="text-2xl font-bold text-white text-center mb-8">Connect With Us</h3>
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-3xl mx-auto">
+                    <a 
+                      href="mailto:info.kingsconsults@gmail.com" 
+                      className="flex flex-col items-center justify-center p-4 bg-[#701015]/80 rounded-lg text-white hover:bg-[#701015] transition-all duration-300 group shadow-md border border-white/10"
+                    >
+                      <div className="w-8 h-8 bg-[#901219]/30 rounded-lg flex items-center justify-center mb-2 group-hover:bg-[#901219]/40 transition-colors">
+                        <Mail className="w-4 h-4 text-[#901219]" />
+                      </div>
+                      <span className="font-medium text-xs text-center">Email</span>
+                    </a>
+                    
+                    <a 
+                      href="tel:+2348113829471" 
+                      className="flex flex-col items-center justify-center p-4 bg-[#701015]/80 rounded-lg text-white hover:bg-[#701015] transition-all duration-300 group shadow-md border border-white/10"
+                    >
+                      <div className="w-8 h-8 bg-[#901219]/30 rounded-lg flex items-center justify-center mb-2 group-hover:bg-[#901219]/40 transition-colors">
+                        <Phone className="w-4 h-4 text-[#901219]" />
+                      </div>
+                      <span className="font-medium text-xs text-center">Phone Call</span>
+                    </a>
+                    
+                    <a 
+                      href="https://wa.me/2348113829471" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex flex-col items-center justify-center p-4 bg-[#701015]/80 rounded-lg text-white hover:bg-[#701015] transition-all duration-300 group shadow-md border border-white/10"
+                    >
+                      <div className="w-8 h-8 bg-[#901219]/30 rounded-lg flex items-center justify-center mb-2 group-hover:bg-[#901219]/40 transition-colors">
+                        <Phone className="w-4 h-4 text-[#901219]" />
+                      </div>
+                      <span className="font-medium text-xs text-center">WhatsApp</span>
+                    </a>
+                    
+                    <a 
+                      href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex flex-col items-center justify-center p-4 bg-[#701015]/80 rounded-lg text-white hover:bg-[#701015] transition-all duration-300 group shadow-md border border-white/10"
+                    >
+                      <div className="w-8 h-8 bg-[#901219]/30 rounded-lg flex items-center justify-center mb-2 group-hover:bg-[#901219]/40 transition-colors">
+                        <Instagram className="w-4 h-4 text-[#901219]" />
+                      </div>
+                      <span className="font-medium text-xs text-center">Instagram</span>
+                    </a>
                   </div>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Simplified Footer */}
+      {/* Footer */}
       <footer className="bg-[#701015]/95 text-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
