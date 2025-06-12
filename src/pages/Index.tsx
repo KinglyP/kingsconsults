@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Mail, Instagram, Briefcase, ArrowRight, Phone, Menu, ChevronDown, Lightbulb, Target, Heart } from "lucide-react";
+import { Mail, Instagram, Briefcase, ArrowRight, Phone, Menu, ChevronDown, Eye, Target, Heart } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
 const Index = () => {
@@ -180,6 +180,18 @@ const Index = () => {
     }));
   };
 
+  // Smooth scroll function for mobile menu
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    }
+  };
+
   const services = [
     "Business Startup Consulting",
     "Strategy & Growth Planning", 
@@ -286,8 +298,8 @@ const Index = () => {
             <div className="md:hidden">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="sm" className="hamburger-menu">
-                    <Menu className="w-6 h-6 text-gray-600" />
+                  <Button variant="ghost" size="sm" className="hamburger-menu p-2">
+                    <Menu className="w-7 h-7 text-gray-600" />
                     <span className="sr-only">Menu</span>
                   </Button>
                 </SheetTrigger>
@@ -300,6 +312,34 @@ const Index = () => {
                   </SheetHeader>
                   
                   <div className="space-y-4 pb-8">
+                    {/* Quick Navigation Links with Smooth Scroll */}
+                    <div className="space-y-2 mb-6">
+                      <button 
+                        onClick={() => scrollToSection('about')}
+                        className="w-full text-left p-3 text-white hover:bg-white/10 rounded-lg transition-all duration-300 hover:scale-105 font-medium"
+                      >
+                        About
+                      </button>
+                      <button 
+                        onClick={() => scrollToSection('services')}
+                        className="w-full text-left p-3 text-white hover:bg-white/10 rounded-lg transition-all duration-300 hover:scale-105 font-medium"
+                      >
+                        Services
+                      </button>
+                      <button 
+                        onClick={() => scrollToSection('clients')}
+                        className="w-full text-left p-3 text-white hover:bg-white/10 rounded-lg transition-all duration-300 hover:scale-105 font-medium"
+                      >
+                        Clients
+                      </button>
+                      <button 
+                        onClick={() => scrollToSection('contact')}
+                        className="w-full text-left p-3 text-white hover:bg-white/10 rounded-lg transition-all duration-300 hover:scale-105 font-medium"
+                      >
+                        Contact
+                      </button>
+                    </div>
+
                     {/* About Section */}
                     <Collapsible 
                       open={openSections.about} 
@@ -409,14 +449,14 @@ const Index = () => {
                         <div className="grid grid-cols-2 gap-3">
                           <a 
                             href="tel:+2348113829471" 
-                            className="flex flex-col items-center space-y-2 p-3 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors text-sm"
+                            className="flex flex-col items-center space-y-2 p-3 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all duration-300 hover:scale-105 text-sm"
                           >
                             <Phone className="w-5 h-5" />
                             <span>Call Us</span>
                           </a>
                           <a 
                             href="mailto:info.kingsconsults@gmail.com" 
-                            className="flex flex-col items-center space-y-2 p-3 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors text-sm"
+                            className="flex flex-col items-center space-y-2 p-3 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all duration-300 hover:scale-105 text-sm"
                           >
                             <Mail className="w-5 h-5" />
                             <span>Email</span>
@@ -425,7 +465,7 @@ const Index = () => {
                             href="https://wa.me/2348113829471" 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="flex flex-col items-center space-y-2 p-3 bg-green-600/20 text-green-300 rounded-lg hover:bg-green-600/30 transition-colors text-sm"
+                            className="flex flex-col items-center space-y-2 p-3 bg-green-600/20 text-green-300 rounded-lg hover:bg-green-600/30 transition-all duration-300 hover:scale-105 text-sm"
                           >
                             <Phone className="w-5 h-5" />
                             <span>WhatsApp</span>
@@ -434,7 +474,7 @@ const Index = () => {
                             href="https://www.instagram.com/kingsconsults.ng?igsh=MWpqOWY2ZGZtYm04bQ==" 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="flex flex-col items-center space-y-2 p-3 bg-pink-600/20 text-pink-300 rounded-lg hover:bg-pink-600/30 transition-colors text-sm"
+                            className="flex flex-col items-center space-y-2 p-3 bg-pink-600/20 text-pink-300 rounded-lg hover:bg-pink-600/30 transition-all duration-300 hover:scale-105 text-sm"
                           >
                             <Instagram className="w-5 h-5" />
                             <span>Instagram</span>
@@ -783,7 +823,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Vision, Mission & Purpose Section */}
+      {/* Updated Vision, Mission & Purpose Section with Modern Icons */}
       <section id="vision-mission-purpose" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 scroll-reveal">
@@ -794,10 +834,10 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Vision */}
+            {/* Vision with modern sleek icon */}
             <div className="text-center scroll-reveal stagger-1">
-              <div className="w-24 h-24 mx-auto mb-6 vmp-icon rounded-full flex items-center justify-center">
-                <Lightbulb className="w-12 h-12 text-white" strokeWidth={2.5} />
+              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[#701015] via-[#8a1419] to-[#701015] rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-[#F8A301]/20">
+                <Eye className="w-9 h-9 text-white" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg font-bold text-[#701015] mb-4 scroll-reveal stagger-2">Vision</h3>
               <p className="text-gray-600 leading-relaxed scroll-reveal stagger-3">
@@ -805,10 +845,10 @@ const Index = () => {
               </p>
             </div>
 
-            {/* Mission */}
+            {/* Mission with modern sleek icon */}
             <div className="text-center scroll-reveal stagger-2">
-              <div className="w-24 h-24 mx-auto mb-6 vmp-icon rounded-full flex items-center justify-center">
-                <Target className="w-12 h-12 text-white" strokeWidth={2.5} />
+              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[#701015] via-[#8a1419] to-[#701015] rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-[#F8A301]/20">
+                <Target className="w-9 h-9 text-white" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg font-bold text-[#701015] mb-4 scroll-reveal stagger-3">Mission</h3>
               <p className="text-gray-600 leading-relaxed scroll-reveal stagger-4">
@@ -816,10 +856,10 @@ const Index = () => {
               </p>
             </div>
 
-            {/* Purpose */}
+            {/* Purpose with modern sleek icon */}
             <div className="text-center scroll-reveal stagger-3">
-              <div className="w-24 h-24 mx-auto mb-6 vmp-icon rounded-full flex items-center justify-center">
-                <Heart className="w-12 h-12 text-white" strokeWidth={2.5} fill="currentColor" />
+              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[#701015] via-[#8a1419] to-[#701015] rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-[#F8A301]/20">
+                <Heart className="w-9 h-9 text-white" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg font-bold text-[#701015] mb-4 scroll-reveal stagger-4">Purpose</h3>
               <p className="text-gray-600 leading-relaxed scroll-reveal stagger-5">
@@ -877,7 +917,6 @@ const Index = () => {
                     <DialogTitle className="text-2xl text-[#701015] mb-4">{client.name}</DialogTitle>
                   </DialogHeader>
                   <div className="space-y-6">
-                    {/* Placeholder for client logo */}
                     <div className="h-20 bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
                       <span className="text-gray-500 text-sm">Client Logo Placeholder</span>
                     </div>
