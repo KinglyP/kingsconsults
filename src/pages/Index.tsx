@@ -226,7 +226,7 @@ const Index = () => {
     "5+ years of hands-on experience across multiple industries"
   ];
 
-  // Scroll reveal animation logic
+  // Enhanced scroll reveal animation logic with unified behavior
   useEffect(() => {
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
@@ -241,8 +241,8 @@ const Index = () => {
       rootMargin: '0px 0px -50px 0px'
     });
 
-    // Observe all scroll reveal elements
-    const scrollElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+    // Observe all unified scroll reveal elements
+    const scrollElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-subtle, .scroll-reveal-gentle, .scroll-reveal-scale');
     scrollElements.forEach((el) => observer.observe(el));
 
     return () => {
@@ -470,7 +470,7 @@ const Index = () => {
                 </span>{' '}
                 Entrepreneurs
               </h1>
-              <p className="text-lg text-gray-100 mb-8 leading-relaxed max-w-2xl mx-auto font-medium scroll-reveal stagger-2">
+              <p className="text-lg text-gray-100 mb-8 leading-relaxed max-w-2xl mx-auto font-medium scroll-reveal-subtle stagger-2">
                 Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
               </p>
             </div>
@@ -478,7 +478,7 @@ const Index = () => {
         </div>
         
         <div className="bg-gray-50 py-12">
-          <div className="max-w-4xl mx-auto text-center px-6 scroll-reveal stagger-3">
+          <div className="max-w-4xl mx-auto text-center px-6 scroll-reveal-gentle stagger-3">
             <div className="inline-flex items-center px-6 py-3 bg-[#701015] text-white rounded-full text-lg font-medium mb-4 animate-pulse-scale">
               <span className="w-3 h-3 bg-[#F8A301] rounded-full mr-3 animate-float"></span>
               The Purpose-Driven Consortium
@@ -501,7 +501,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-16">
-            <Card className="shadow-lg scroll-reveal-left card-hover" style={{ animationDelay: '0.2s' }}>
+            <Card className="shadow-lg scroll-reveal-subtle card-hover">
               <CardHeader>
                 <CardTitle className="text-[#701015] flex items-center space-x-2">
                   <Briefcase className="w-6 h-6" />
@@ -511,7 +511,7 @@ const Index = () => {
               <CardContent>
                 <div className="grid gap-3">
                   {services.map((service, index) => (
-                    <div key={index} className="flex items-center space-x-3 animate-fade-in" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
+                    <div key={index} className="flex items-center space-x-3 scroll-reveal-gentle" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
                       <div className="w-2 h-2 bg-[#F8A301] rounded-full animate-pulse-scale"></div>
                       <span>{service}</span>
                     </div>
@@ -520,19 +520,19 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg scroll-reveal-right card-hover" style={{ animationDelay: '0.4s' }}>
+            <Card className="shadow-lg scroll-reveal-subtle card-hover">
               <CardHeader>
                 <CardTitle className="text-[#701015]">What Makes Us Different</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-gray-600 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                <p className="text-gray-600 scroll-reveal-gentle">
                   We are rooted in purpose, committed to impact, and driven by values. Our faith foundation inspires our approach to business with integrity, innovation, and empowerment at the core.
                 </p>
-                <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
+                <div className="scroll-reveal-gentle">
                   <h4 className="font-semibold text-gray-800 mb-2">Core Values:</h4>
                   <div className="flex flex-wrap gap-2">
                     {coreValues.map((value, index) => (
-                      <Badge key={index} variant="secondary" className="bg-[#F8A301]/20 text-[#701015] animate-scale-in" style={{ animationDelay: `${0.7 + index * 0.1}s` }}>
+                      <Badge key={index} variant="secondary" className="bg-[#F8A301]/20 text-[#701015] scroll-reveal-scale" style={{ animationDelay: `${0.7 + index * 0.1}s` }}>
                         {value}
                       </Badge>
                     ))}
@@ -548,25 +548,25 @@ const Index = () => {
       <section id="ceo" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#701015]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div className="scroll-reveal-left">
+            <div className="scroll-reveal">
               <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6 scroll-reveal-scale">
                 Leadership Excellence
               </div>
-              <h2 className="text-xl font-bold text-white mb-6 scroll-reveal stagger-2">Meet the CEO</h2>
+              <h2 className="text-xl font-bold text-white mb-6 scroll-reveal-subtle stagger-2">Meet the CEO</h2>
               <div className="prose prose-lg text-white/90 space-y-6">
-                <p className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                <p className="scroll-reveal-gentle stagger-3">
                   <strong>Favour Nicholas</strong> is a business strategist and mentor with 5+ years of experience launching, scaling, and leading businesses in Nigeria and Atlanta, USA. She has served as Chief Operating Officer and guided entrepreneurs through business development and operations.
                 </p>
-                <p className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <p className="scroll-reveal-gentle stagger-4">
                   Years ago, she launched a business with just ₦65,000 and scaled it to half a million within six months — a milestone that ignited her passion for empowering entrepreneurs.
                 </p>
-                <p className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                <p className="scroll-reveal-gentle stagger-5">
                   Today, as the driving force behind Kings Consults, <strong>Favour</strong> is on a mission to mentor and equip purpose-driven leaders to build, grow, and lead successful ventures.
                 </p>
               </div>
             </div>
             
-            <div className="scroll-reveal-right relative" style={{ animationDelay: '0.2s' }}>
+            <div className="scroll-reveal-subtle relative">
               <div className="relative overflow-hidden rounded-2xl shadow-xl">
                 <img 
                   src="/lovable-uploads/a9446baf-23ed-4fb0-8052-0703bffd7093.png" 
@@ -576,7 +576,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
               
-              <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-8 card-hover animate-slide-up" style={{ animationDelay: '0.6s' }}>
+              <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-8 card-hover scroll-reveal-scale stagger-6">
                 <CardHeader>
                   <CardTitle className="text-[#701015] flex items-center space-x-2">
                     <div className="w-8 h-8 bg-[#F8A301]/20 rounded-lg flex items-center justify-center">
@@ -587,7 +587,7 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {['Bachelor\'s in Public Health', 'Diploma in Operations Management', 'Certified Scrum Master'].map((item, index) => (
-                    <div key={index} className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm animate-fade-in" style={{ animationDelay: `${0.7 + index * 0.1}s` }}>
+                    <div key={index} className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm scroll-reveal-gentle" style={{ animationDelay: `${0.7 + index * 0.1}s` }}>
                       <div className="w-3 h-3 bg-[#F8A301] rounded-full flex-shrink-0 animate-pulse-scale"></div>
                       <span className="text-gray-700">{item}</span>
                     </div>
@@ -609,7 +609,7 @@ const Index = () => {
           
           <Dialog>
             <DialogTrigger asChild>
-              <Button size="lg" className="bg-gradient-to-r from-[#F8A301] to-[#F8A301]/90 hover:from-[#F8A301]/90 hover:to-[#F8A301]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group animate-scale-in" style={{ animationDelay: '0.2s' }}>
+              <Button size="lg" className="bg-gradient-to-r from-[#F8A301] to-[#F8A301]/90 hover:from-[#F8A301]/90 hover:to-[#F8A301]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group scroll-reveal-scale stagger-2">
                 Book a Session
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
@@ -739,7 +739,7 @@ const Index = () => {
                         value={formData.preferredTime}
                         onChange={(e) => setFormData({...formData, preferredTime: e.target.value})}
                         required
-                        className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                        className="h-11 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
                       >
                         <option value="">Select time</option>
                         {getAvailableTimeSlots().map((time) => (
@@ -795,34 +795,34 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Vision */}
-            <div className="text-center scroll-reveal stagger-1">
+            <div className="text-center scroll-reveal-subtle stagger-1">
               <div className="w-24 h-24 mx-auto mb-6 vmp-icon rounded-full flex items-center justify-center">
                 <Lightbulb className="w-12 h-12 text-white" strokeWidth={2.5} />
               </div>
-              <h3 className="text-lg font-bold text-[#701015] mb-4 scroll-reveal stagger-2">Vision</h3>
-              <p className="text-gray-600 leading-relaxed scroll-reveal stagger-3">
+              <h3 className="text-lg font-bold text-[#701015] mb-4 scroll-reveal-gentle stagger-2">Vision</h3>
+              <p className="text-gray-600 leading-relaxed scroll-reveal-gentle stagger-3">
                 To see entrepreneurs build intentional, values-driven brands that create lasting impact and reflect true purpose.
               </p>
             </div>
 
             {/* Mission */}
-            <div className="text-center scroll-reveal stagger-2">
+            <div className="text-center scroll-reveal-subtle stagger-2">
               <div className="w-24 h-24 mx-auto mb-6 vmp-icon rounded-full flex items-center justify-center">
                 <Target className="w-12 h-12 text-white" strokeWidth={2.5} />
               </div>
-              <h3 className="text-lg font-bold text-[#701015] mb-4 scroll-reveal stagger-3">Mission</h3>
-              <p className="text-gray-600 leading-relaxed scroll-reveal stagger-4">
+              <h3 className="text-lg font-bold text-[#701015] mb-4 scroll-reveal-gentle stagger-3">Mission</h3>
+              <p className="text-gray-600 leading-relaxed scroll-reveal-gentle stagger-4">
                 To equip individuals with clarity, structure, and brand strategy that transforms vision into confident execution.
               </p>
             </div>
 
             {/* Purpose */}
-            <div className="text-center scroll-reveal stagger-3">
+            <div className="text-center scroll-reveal-subtle stagger-3">
               <div className="w-24 h-24 mx-auto mb-6 vmp-icon rounded-full flex items-center justify-center">
                 <Heart className="w-12 h-12 text-white" strokeWidth={2.5} fill="currentColor" />
               </div>
-              <h3 className="text-lg font-bold text-[#701015] mb-4 scroll-reveal stagger-4">Purpose</h3>
-              <p className="text-gray-600 leading-relaxed scroll-reveal stagger-5">
+              <h3 className="text-lg font-bold text-[#701015] mb-4 scroll-reveal-gentle stagger-4">Purpose</h3>
+              <p className="text-gray-600 leading-relaxed scroll-reveal-gentle stagger-5">
                 To help purpose-driven founders transition from confusion to clarity, and from passion to measurable progress.
               </p>
             </div>
@@ -840,7 +840,7 @@ const Index = () => {
             <CardContent>
               <div className="grid gap-4">
                 {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-center space-x-3 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div key={index} className="flex items-center space-x-3 scroll-reveal-gentle" style={{ animationDelay: `${index * 0.1}s` }}>
                     <div className="w-3 h-3 bg-[#F8A301] rounded-full"></div>
                     <span className="text-gray-700">{achievement}</span>
                   </div>
@@ -862,7 +862,7 @@ const Index = () => {
             {clients.map((client, index) => (
               <Dialog key={index}>
                 <DialogTrigger asChild>
-                  <Card className={`shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 scroll-reveal stagger-${(index % 4) + 1}`}>
+                  <Card className={`shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 scroll-reveal-subtle stagger-${(index % 4) + 1}`}>
                     <CardHeader>
                       <CardTitle className="text-lg">{client.name}</CardTitle>
                     </CardHeader>
@@ -932,7 +932,7 @@ const Index = () => {
               </div>
             ) : (
               <div className="max-w-2xl mx-auto">
-                <form onSubmit={handleContactSubmit} className="space-y-4 scroll-reveal stagger-2">
+                <form onSubmit={handleContactSubmit} className="space-y-4 scroll-reveal-subtle stagger-2">
                   <div className="grid md:grid-cols-2 gap-4">
                     <Input
                       placeholder="Full Name"
@@ -979,7 +979,7 @@ const Index = () => {
                   </Button>
                 </form>
 
-                <div className="mt-16 pt-8 border-t border-white/20 scroll-reveal stagger-4">
+                <div className="mt-16 pt-8 border-t border-white/20 scroll-reveal-gentle stagger-4">
                   <h3 className="text-xl font-bold text-white text-center mb-8">Connect With Us</h3>
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-2xl mx-auto">
                     <a 
