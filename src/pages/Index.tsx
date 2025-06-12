@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 
@@ -11,8 +12,27 @@ const Index = () => {
 
     window.addEventListener('scroll', handleScroll);
 
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll-reveal elements
+    const scrollElements = document.querySelectorAll('.scroll-reveal');
+    scrollElements.forEach(el => observer.observe(el));
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
     };
   }, []);
 
@@ -20,17 +40,17 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
           <div className="flex items-center space-x-2 logo-transparent">
             <img
               src="/lovable-uploads/cb6a2ab8-2783-4538-b6e8-9363c3597977.png"
               alt="Kings Consults"
-              className="h-10 w-auto"
+              className="h-8 w-auto"
             />
           </div>
           
-          <button className="hamburger-menu">
-            <Menu size={32} className="text-foreground" />
+          <button className="hamburger-menu-large">
+            <Menu size={36} className="text-foreground" />
           </button>
         </div>
       </header>
