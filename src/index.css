@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -331,30 +332,30 @@
     opacity: 1;
   }
 
-  /* Enhanced Hamburger Menu - Larger Size */
-  .hamburger-menu-large {
+  /* Enhanced Hamburger Menu */
+  .hamburger-menu {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 16px;
+    padding: 14px;
     border-radius: 8px;
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .hamburger-menu-large:hover {
+  .hamburger-menu:hover {
     background: rgba(112, 16, 21, 0.1);
     animation: hamburger-hover 0.4s ease;
   }
 
-  .hamburger-menu-large:active {
+  .hamburger-menu:active {
     transform: scale(0.95);
   }
 
-  .hamburger-menu-large svg {
-    width: 36px;
-    height: 36px;
+  .hamburger-menu svg {
+    width: 28px;
+    height: 28px;
   }
 
   /* Smooth Hover Transitions */
