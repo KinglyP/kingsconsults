@@ -452,40 +452,42 @@ const Index = () => {
 
       {/* Enhanced Hero Section */}
       <section className="pt-16">
-        <div className="relative h-[70vh] min-h-[500px] w-full overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/15 z-10"></div>
-          
-          <img 
-            src="/lovable-uploads/97e0d125-2c26-44f8-b200-bbce09b5ba23.png" 
-            alt="Professional consulting team collaboration" 
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          
-          <div className="absolute inset-0 flex items-center justify-center z-20">
-            <div className="text-center text-white max-w-4xl px-6">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-shadow-lg scroll-reveal">
-                Empowering{' '}
-                <span className="text-[#F8A301] font-black">
-                  Visionary
-                </span>{' '}
-                Entrepreneurs
-              </h1>
-              <p className="text-lg text-gray-100 mb-8 leading-relaxed max-w-2xl mx-auto font-medium scroll-reveal-subtle stagger-2">
-                Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
-              </p>
+        <div className="relative w-full overflow-hidden">
+          <div className="relative h-[70vh] min-h-[500px] w-full">
+            <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/15 z-10"></div>
+            
+            <img 
+              src="/lovable-uploads/cb6a2ab8-2783-4538-b6e8-9363c3597977.png" 
+              alt="A confident businesswoman in white attire holding a coral-colored folder, standing in front of a modern boardroom team" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            
+            <div className="absolute inset-0 flex items-center justify-center z-20">
+              <div className="text-center text-white max-w-4xl px-6">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-shadow-lg scroll-reveal">
+                  Empowering{' '}
+                  <span className="text-[#F8A301] font-black">
+                    Visionary
+                  </span>{' '}
+                  Entrepreneurs
+                </h1>
+              </div>
             </div>
           </div>
-        </div>
-        
-        <div className="bg-gray-50 py-12">
-          <div className="max-w-4xl mx-auto text-center px-6 scroll-reveal-gentle stagger-3">
-            <div className="inline-flex items-center px-6 py-3 bg-[#701015] text-white rounded-full text-lg font-medium mb-4 animate-pulse-scale">
-              <span className="w-3 h-3 bg-[#F8A301] rounded-full mr-3 animate-float"></span>
-              The Purpose-Driven Consortium
+          
+          <div className="bg-gray-50 py-12">
+            <div className="max-w-4xl mx-auto text-center px-6 scroll-reveal-gentle stagger-3">
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto font-medium">
+                Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
+              </p>
+              <div className="inline-flex items-center px-6 py-3 bg-[#701015] text-white rounded-full text-lg font-medium animate-pulse-scale">
+                <span className="w-3 h-3 bg-[#F8A301] rounded-full mr-3 animate-float"></span>
+                The Purpose-Driven Consortium
+              </div>
+              <p className="text-lg text-gray-600 leading-relaxed mt-4">
+                Where vision meets strategy, and dreams become sustainable business realities.
+              </p>
             </div>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Where vision meets strategy, and dreams become sustainable business realities.
-            </p>
           </div>
         </div>
       </section>
@@ -549,9 +551,6 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="scroll-reveal">
-              <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6 scroll-reveal-scale">
-                Leadership Excellence
-              </div>
               <h2 className="text-xl font-bold text-white mb-6 scroll-reveal-subtle stagger-2">Meet the CEO</h2>
               <div className="prose prose-lg text-white/90 space-y-6">
                 <p className="scroll-reveal-gentle stagger-3">
