@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -457,7 +458,7 @@ const Index = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/15 z-10"></div>
             
             <img 
-              src="/lovable-uploads/cb6a2ab8-2783-4538-b6e8-9363c3597977.png" 
+              src="/lovable-uploads/1dcc7864-b90c-4314-ad23-8159e3d51db4.png" 
               alt="A confident businesswoman in white attire holding a coral-colored folder, standing in front of a modern boardroom team" 
               className="absolute inset-0 w-full h-full object-cover"
             />
