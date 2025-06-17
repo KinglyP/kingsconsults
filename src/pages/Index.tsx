@@ -1,4 +1,5 @@
 
+
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -385,13 +386,13 @@ const Index = () => {
                             <span className="text-sm">+234 811 382 9471</span>
                           </a>
                           <a 
-                            href="mailto:info.kingsconsults@gmail.com" 
+                            href="mailto:info@kingsconsults.com" 
                             className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors"
                           >
                             <div className="w-8 h-8 bg-[#F8A301]/20 rounded-lg flex items-center justify-center">
                               <Mail className="w-4 h-4 text-white" />
                             </div>
-                            <span className="text-sm">info.kingsconsults@gmail.com</span>
+                            <span className="text-sm">info@kingsconsults.com</span>
                           </a>
                         </div>
                       </CollapsibleContent>
@@ -416,7 +417,7 @@ const Index = () => {
                             <span>Call Us</span>
                           </a>
                           <a 
-                            href="mailto:info.kingsconsults@gmail.com" 
+                            href="mailto:info@kingsconsults.com" 
                             className="flex flex-col items-center space-y-2 p-3 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors text-sm"
                           >
                             <Mail className="w-5 h-5" />
@@ -983,7 +984,7 @@ const Index = () => {
                   <h3 className="text-xl font-bold text-white text-center mb-8">Connect With Us</h3>
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-2xl mx-auto">
                     <a 
-                      href="mailto:info.kingsconsults@gmail.com" 
+                      href="mailto:info@kingsconsults.com" 
                       className="flex flex-col items-center justify-center p-3 contact-icon rounded-lg text-white transition-all duration-300 group shadow-md scroll-reveal-scale stagger-5"
                     >
                       <div className="w-6 h-6 flex items-center justify-center mb-2">
@@ -1048,3 +1049,4 @@ const Index = () => {
 };
 
 export default Index;
+
