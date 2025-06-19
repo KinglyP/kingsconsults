@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -212,9 +210,17 @@ const Index = () => {
     },
     { 
       name: "Zenny's Cookware", 
-      service: "Consulting & Growth Strategy",
-      testimonial: "The growth strategy they developed helped us scale beyond our expectations.",
-      services: "Growth Strategy Planning, Market Analysis, Operational Optimization"
+      service: "Business Startup Strategy & Brand Direction",
+      testimonial: "She told me it was the right time to start a business, even before I said anything. I came back with 'cookware,' and she helped me shape it into a real brand. I doubted WhatsApp marketing, but the day I finally posted, I made a sale. Her direction gave me clarity and confidence. Now I'm expanding, and I know I wouldn't have started without her push.",
+      services: "Business Startup Strategy & Brand Direction",
+      projectSummary: "Zenny came to King's Consult unsure of what business to start. Through a strategic clarity session, she was guided to launch Zenny's Cookware, aligning with her passion for food and home essentials. King's Consult helped her:",
+      achievements: [
+        "Validate the business idea and timing",
+        "Develop sales and marketing strategies",
+        "Leverage WhatsApp and social media for early traction",
+        "Begin expansion into souvenirs and plastic household goods"
+      ],
+      results: "This led to real-time sales, increased confidence, and a solid path to long-term growth."
     },
     { 
       name: "Bills Grub", 
@@ -915,6 +921,29 @@ const Index = () => {
                       </div>
                     )}
                     
+                    {/* Project Summary for Zenny's Cookware */}
+                    {client.name === "Zenny's Cookware" && client.projectSummary && (
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-800 mb-3">📌 Project Summary</h4>
+                        <div className="bg-gray-50 p-4 rounded-lg">
+                          <p className="text-gray-600 mb-3">{client.projectSummary}</p>
+                          {client.achievements && (
+                            <ul className="space-y-1 text-gray-600">
+                              {client.achievements.map((achievement, idx) => (
+                                <li key={idx} className="flex items-start space-x-2">
+                                  <span className="text-[#F8A301] mt-1">•</span>
+                                  <span>{achievement}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                          {client.results && (
+                            <p className="text-gray-600 mt-3 font-medium">{client.results}</p>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                    
                     <div>
                       <h4 className="text-lg font-semibold text-gray-800 mb-2">💬 Client Review</h4>
                       <blockquote className="text-gray-600 italic border-l-4 border-[#F8A301] pl-4 leading-relaxed">
@@ -1081,4 +1110,3 @@ const Index = () => {
 };
 
 export default Index;
-
