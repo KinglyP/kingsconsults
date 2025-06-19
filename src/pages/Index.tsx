@@ -199,8 +199,16 @@ const Index = () => {
     { 
       name: "Simbi's Secret", 
       service: "Business Startup Consulting",
-      testimonial: "Kings Consults transformed our business vision into reality. Their strategic guidance was invaluable.",
-      services: "Business Startup Consulting, Brand Strategy Development, Operations Setup"
+      testimonial: "I remember starting my perfume business with just ₦10,000 when I was still in school. King's Consult helped me believe in the vision and structure it properly. That foundation made all the difference. I went from selling online with no store to making hundreds of thousand naira in a day from Instagram sales. Her direction and encouragement pushed me to build a real, trusted brand. Even today, I tell people no matter how big I get, I'll keep selling perfume. It's the business that gave me a chance, and King's Consult helped me shape it.",
+      services: "Business Startup Consulting, Brand Strategy Development, Operations Setup",
+      projectSummary: "The client approached King's Consult seeking clarity on how to structure her ideas and turn them into an actionable brand. Through a series of strategy sessions, King's Consult helped her:",
+      achievements: [
+        "Refine her brand vision and values.",
+        "Create a clear roadmap for execution.",
+        "Prioritize excellence and strategic decision-making.",
+        "Maintain accountability with consistent follow-up."
+      ],
+      results: "This resulted in improved brand focus, confidence in execution, and long-term business growth."
     },
     { 
       name: "Zenny's Cookware", 
@@ -873,7 +881,7 @@ const Index = () => {
                     </CardContent>
                   </Card>
                 </DialogTrigger>
-                <DialogContent className="max-w-2xl">
+                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                   <DialogHeader>
                     <DialogTitle className="text-2xl text-[#701015] mb-4">{client.name}</DialogTitle>
                   </DialogHeader>
@@ -883,9 +891,33 @@ const Index = () => {
                       <span className="text-gray-500 text-sm">Client Logo Placeholder</span>
                     </div>
                     
+                    {/* Project Summary for Simbi's Secret */}
+                    {client.name === "Simbi's Secret" && client.projectSummary && (
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-800 mb-3">🔧 What King's Consult Did</h4>
+                        <div className="bg-gray-50 p-4 rounded-lg">
+                          <h5 className="font-medium text-gray-800 mb-2">Project Summary:</h5>
+                          <p className="text-gray-600 mb-3">{client.projectSummary}</p>
+                          {client.achievements && (
+                            <ul className="space-y-1 text-gray-600">
+                              {client.achievements.map((achievement, idx) => (
+                                <li key={idx} className="flex items-start space-x-2">
+                                  <span className="text-[#F8A301] mt-1">•</span>
+                                  <span>{achievement}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                          {client.results && (
+                            <p className="text-gray-600 mt-3 font-medium">{client.results}</p>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                    
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-800 mb-2">Client Testimonial</h4>
-                      <blockquote className="text-gray-600 italic border-l-4 border-[#F8A301] pl-4">
+                      <h4 className="text-lg font-semibold text-gray-800 mb-2">💬 Client Review</h4>
+                      <blockquote className="text-gray-600 italic border-l-4 border-[#F8A301] pl-4 leading-relaxed">
                         "{client.testimonial}"
                       </blockquote>
                     </div>
