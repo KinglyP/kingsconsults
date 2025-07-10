@@ -473,7 +473,7 @@ const Index = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-black/15 z-10"></div>
             
             <img 
-              src="/lovable-uploads/1dcc7864-b90c-4314-ad23-8159e3d51db4.png" 
+              src="/lovable-uploads/bba2d8f3-8ff4-448f-b87a-48c015b216b9.png" 
               alt="A confident businesswoman in white attire holding a coral-colored folder, standing in front of a modern boardroom team" 
               className="absolute inset-0 w-full h-full object-cover"
             />
