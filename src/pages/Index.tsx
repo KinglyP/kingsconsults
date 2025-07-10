@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -278,7 +277,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/9c613978-8093-4547-86bb-5bf5e848f137.png" 
                   alt="Kings Consults Logo" 
-                  className="h-8 w-auto transition-transform duration-300 hover:scale-105"
+                  className="h-7 w-auto transition-transform duration-300 hover:scale-105"
                 />
               </div>
             </div>
@@ -481,7 +480,7 @@ const Index = () => {
             
             <div className="absolute inset-0 flex items-center justify-center z-20">
               <div className="text-center text-white max-w-4xl px-6">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-shadow-lg scroll-reveal">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-6 text-shadow-lg scroll-reveal">
                   Empowering{' '}
                   <span className="text-[#F8A301] font-black">
                     Visionary
@@ -497,7 +496,7 @@ const Index = () => {
               <p className="body-large mb-8 max-w-2xl mx-auto font-medium">
                 Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
               </p>
-              <div className="inline-flex items-center px-6 py-3 bg-[#701015] text-white rounded-full text-lg font-medium animate-pulse-scale">
+              <div className="inline-flex items-center px-6 py-3 bg-[#701015] text-white rounded-full text-base font-medium animate-pulse-scale">
                 <span className="w-3 h-3 bg-[#F8A301] rounded-full mr-3 animate-float"></span>
                 The Purpose-Driven Consortium
               </div>
@@ -523,7 +522,7 @@ const Index = () => {
             <Card className="shadow-lg scroll-reveal-subtle card-hover subtle-shadow">
               <CardHeader>
                 <CardTitle className="heading-secondary flex items-center space-x-2">
-                  <Briefcase className="w-6 h-6" />
+                  <Briefcase className="w-5 h-5" />
                   <span>What We Offer</span>
                 </CardTitle>
               </CardHeader>
@@ -812,8 +811,8 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Vision */}
             <div className="text-center scroll-reveal-subtle stagger-1">
-              <div className="w-24 h-24 mb-6 vmp-icon rounded-full flex items-center justify-center mx-auto">
-                <Lightbulb className="w-12 h-12 text-white" strokeWidth={2.5} />
+              <div className="w-20 h-20 mb-6 vmp-icon rounded-full flex items-center justify-center mx-auto">
+                <Lightbulb className="w-10 h-10 text-white" strokeWidth={2.5} />
               </div>
               <h3 className="heading-secondary mb-4 scroll-reveal-gentle stagger-2">Vision</h3>
               <p className="body-large scroll-reveal-gentle stagger-3">
@@ -823,8 +822,8 @@ const Index = () => {
 
             {/* Mission */}
             <div className="text-center scroll-reveal-subtle stagger-2">
-              <div className="w-24 h-24 mb-6 vmp-icon rounded-full flex items-center justify-center mx-auto">
-                <Target className="w-12 h-12 text-white" strokeWidth={2.5} />
+              <div className="w-20 h-20 mb-6 vmp-icon rounded-full flex items-center justify-center mx-auto">
+                <Target className="w-10 h-10 text-white" strokeWidth={2.5} />
               </div>
               <h3 className="heading-secondary mb-4 scroll-reveal-gentle stagger-3">Mission</h3>
               <p className="body-large scroll-reveal-gentle stagger-4">
@@ -834,8 +833,8 @@ const Index = () => {
 
             {/* Purpose */}
             <div className="text-center scroll-reveal-subtle stagger-3">
-              <div className="w-24 h-24 mb-6 vmp-icon rounded-full flex items-center justify-center mx-auto">
-                <Heart className="w-12 h-12 text-white" strokeWidth={2.5} fill="currentColor" />
+              <div className="w-20 h-20 mb-6 vmp-icon rounded-full flex items-center justify-center mx-auto">
+                <Heart className="w-10 h-10 text-white" strokeWidth={2.5} fill="currentColor" />
               </div>
               <h3 className="heading-secondary mb-4 scroll-reveal-gentle stagger-4">Purpose</h3>
               <p className="body-large scroll-reveal-gentle stagger-5">
@@ -867,7 +866,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Clients & Testimonials - LEFT ALIGNED */}
+      {/* Clients & Testimonials - LEFT ALIGNED with Enhanced Logo Integration */}
       <section id="clients" className="section-spacing px-4 sm:px-6 lg:px-8 modern-bg-white section-divider">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-16 scroll-reveal">
@@ -884,7 +883,7 @@ const Index = () => {
                     </CardHeader>
                     <CardContent>
                       <p className="body-regular">{client.service}</p>
-                      <p className="text-[#F8A301] text-sm mt-2 font-medium">Click to view case study</p>
+                      <p className="text-[#F8A301] text-xs mt-2 font-medium">Click to view case study</p>
                     </CardContent>
                   </Card>
                 </DialogTrigger>
@@ -893,7 +892,7 @@ const Index = () => {
                     <DialogTitle className="heading-secondary mb-4">{client.name}</DialogTitle>
                   </DialogHeader>
                   <div className="space-y-6">
-                    {/* Client logo */}
+                    {/* Enhanced Client logo integration */}
                     <div className="client-logo-container">
                       {client.name === "Zenny's Cookware" ? (
                         <img 
@@ -902,7 +901,9 @@ const Index = () => {
                           className="client-logo"
                         />
                       ) : (
-                        <span className="text-gray-500 text-sm">Client Logo Placeholder</span>
+                        <div className="flex items-center justify-center w-full h-full">
+                          <span className="text-gray-400 text-sm font-medium">{client.name}</span>
+                        </div>
                       )}
                     </div>
                     
