@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,11 +45,11 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Enhanced Modern background variables */
-    --background-primary: 0 0% 98.5%;
-    --background-secondary: 0 0% 97.5%;
-    --background-accent: 0 0% 99%;
-    --section-divider: 0 0% 93%;
-    --subtle-pattern: 0 0% 96%;
+    --background-primary: 0 0% 98.8%;
+    --background-secondary: 0 0% 97.8%;
+    --background-accent: 0 0% 99.2%;
+    --section-divider: 0 0% 94%;
+    --subtle-pattern: 0 0% 96.5%;
   }
 
   .dark {
@@ -105,7 +106,7 @@
       radial-gradient(circle at 20% 80%, hsl(var(--subtle-pattern)) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, hsl(var(--subtle-pattern)) 0%, transparent 50%),
       radial-gradient(circle at 40% 40%, hsl(var(--subtle-pattern)) 0%, transparent 50%);
-    opacity: 0.03;
+    opacity: 0.04;
     pointer-events: none;
     z-index: -1;
   }
@@ -301,7 +302,6 @@
     top: 0;
     left: -100%;
     width: 100%;
-    height: 100%;
     background: linear-gradient(90deg, transparent, rgba(248, 163, 1, 0.3), transparent);
     transition: left 0.6s ease;
   }
@@ -357,8 +357,8 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 14px;
     border-radius: 8px;
-    width: 52px;
-    height: 52px;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -482,15 +482,6 @@
     }
   }
 
-  /* Enhanced Typography Spacing */
-  .section-spacing {
-    @apply py-16 lg:py-20;
-  }
-
-  .content-spacing {
-    @apply space-y-6 lg:space-y-8;
-  }
-
   /* Logo transparency */
   .logo-transparent {
     background: transparent !important;
@@ -499,19 +490,19 @@
 
   /* Professional Client Logo Styling - Enhanced */
   .client-logo-container {
-    @apply bg-white/80 backdrop-blur-sm rounded-lg border border-gray-100 shadow-sm p-6 flex items-center justify-center;
-    min-height: 100px;
-    transition: all 0.3s ease;
+    @apply bg-white/90 backdrop-blur-sm rounded-xl border border-gray-200 shadow-md p-8 flex items-center justify-center;
+    min-height: 120px;
+    transition: all 0.4s ease;
   }
 
   .client-logo-container:hover {
-    @apply shadow-md border-gray-200 bg-white/90;
-    transform: translateY(-2px);
+    @apply shadow-lg border-gray-300 bg-white/95;
+    transform: translateY(-3px);
   }
 
   .client-logo {
-    @apply max-h-16 w-auto object-contain;
-    filter: brightness(1.05) contrast(1.02);
+    @apply max-h-20 w-auto object-contain;
+    filter: brightness(1.02) contrast(1.05);
   }
 
   /* Stagger animation delays for smooth sequential reveals */
