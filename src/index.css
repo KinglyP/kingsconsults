@@ -43,6 +43,11 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Modern background variables */
+    --background-primary: 0 0% 98%;
+    --background-secondary: 0 0% 97%;
+    --section-divider: 0 0% 94%;
   }
 
   .dark {
@@ -82,7 +87,9 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: linear-gradient(135deg, hsl(var(--background-primary)) 0%, hsl(var(--background-secondary)) 100%);
+    min-height: 100vh;
   }
 
   html {
@@ -91,6 +98,52 @@
 }
 
 @layer utilities {
+  /* Modern Background Patterns */
+  .modern-bg-primary {
+    background: linear-gradient(135deg, hsl(var(--background-primary)) 0%, hsl(var(--background-secondary)) 100%);
+    position: relative;
+  }
+
+  .modern-bg-secondary {
+    background: linear-gradient(135deg, hsl(var(--background-secondary)) 0%, hsl(var(--background-primary)) 100%);
+    position: relative;
+  }
+
+  .modern-bg-white {
+    background: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(var(--background-primary)) 100%);
+    position: relative;
+  }
+
+  .section-divider {
+    border-top: 1px solid hsl(var(--section-divider));
+    box-shadow: 0 1px 0 0 hsl(0 0% 100% / 0.8);
+  }
+
+  .subtle-shadow {
+    box-shadow: 0 1px 3px 0 hsl(0 0% 0% / 0.02), 0 1px 2px 0 hsl(0 0% 0% / 0.03);
+  }
+
+  /* Refined Typography System */
+  .heading-primary {
+    @apply text-2xl lg:text-3xl font-bold text-[#701015] leading-tight;
+  }
+
+  .heading-secondary {
+    @apply text-xl lg:text-2xl font-bold text-[#701015] leading-tight;
+  }
+
+  .heading-tertiary {
+    @apply text-lg lg:text-xl font-semibold text-gray-800 leading-tight;
+  }
+
+  .body-large {
+    @apply text-base lg:text-lg text-gray-600 leading-relaxed;
+  }
+
+  .body-regular {
+    @apply text-sm lg:text-base text-gray-600 leading-relaxed;
+  }
+
   /* Unified Scroll Animations - Fade in and slide up */
   @keyframes fade-slide-up {
     from {
@@ -424,6 +477,23 @@
   .logo-transparent {
     background: transparent !important;
     backdrop-filter: none !important;
+  }
+
+  /* Professional Client Logo Styling */
+  .client-logo-container {
+    @apply bg-white rounded-lg border border-gray-100 shadow-sm p-4 flex items-center justify-center;
+    min-height: 80px;
+    transition: all 0.3s ease;
+  }
+
+  .client-logo-container:hover {
+    @apply shadow-md border-gray-200;
+    transform: translateY(-2px);
+  }
+
+  .client-logo {
+    @apply max-h-12 w-auto object-contain;
+    filter: brightness(1.1) contrast(1.05);
   }
 
   /* Stagger animation delays for smooth sequential reveals */

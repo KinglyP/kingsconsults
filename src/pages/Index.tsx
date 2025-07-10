@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -267,7 +268,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-inter" style={{ scrollBehavior: 'smooth' }}>
+    <div className="min-h-screen modern-bg-primary font-inter" style={{ scrollBehavior: 'smooth' }}>
       {/* Enhanced Header with Transparent Logo */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -480,7 +481,7 @@ const Index = () => {
             
             <div className="absolute inset-0 flex items-center justify-center z-20">
               <div className="text-center text-white max-w-4xl px-6">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-shadow-lg scroll-reveal">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-shadow-lg scroll-reveal">
                   Empowering{' '}
                   <span className="text-[#F8A301] font-black">
                     Visionary
@@ -491,16 +492,16 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="bg-gray-50 py-12">
+          <div className="modern-bg-secondary py-12 section-divider">
             <div className="max-w-4xl mx-auto text-center px-6 scroll-reveal-gentle stagger-3">
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto font-medium">
+              <p className="body-large mb-8 max-w-2xl mx-auto font-medium">
                 Transform your business vision into reality with strategic consulting that drives sustainable growth and meaningful impact.
               </p>
               <div className="inline-flex items-center px-6 py-3 bg-[#701015] text-white rounded-full text-lg font-medium animate-pulse-scale">
                 <span className="w-3 h-3 bg-[#F8A301] rounded-full mr-3 animate-float"></span>
                 The Purpose-Driven Consortium
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed mt-4">
+              <p className="body-large mt-4">
                 Where vision meets strategy, and dreams become sustainable business realities.
               </p>
             </div>
@@ -509,19 +510,19 @@ const Index = () => {
       </section>
 
       {/* About Kings Consults - LEFT ALIGNED */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="about" className="section-spacing px-4 sm:px-6 lg:px-8 modern-bg-white section-divider">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-16 scroll-reveal">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#701015] mb-6">About Kings Consults</h2>
-            <p className="text-lg text-gray-600 max-w-4xl leading-relaxed">
+            <h2 className="heading-primary mb-6">About Kings Consults</h2>
+            <p className="body-large max-w-4xl">
               Kings Consults is a strategy-first consulting brand helping purpose-driven entrepreneurs build structure, clarity, and confidence in their business. We guide founders through brand discovery, strategic positioning, and alignment so they can grow with intention and impact.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16">
-            <Card className="shadow-lg scroll-reveal-subtle card-hover">
+            <Card className="shadow-lg scroll-reveal-subtle card-hover subtle-shadow">
               <CardHeader>
-                <CardTitle className="text-2xl text-[#701015] flex items-center space-x-2">
+                <CardTitle className="heading-secondary flex items-center space-x-2">
                   <Briefcase className="w-6 h-6" />
                   <span>What We Offer</span>
                 </CardTitle>
@@ -531,23 +532,23 @@ const Index = () => {
                   {services.map((service, index) => (
                     <div key={index} className="flex items-center space-x-3 scroll-reveal-gentle" style={{ animationDelay: `${0.3 + index * 0.1}s` }}>
                       <div className="w-2 h-2 bg-[#F8A301] rounded-full animate-pulse-scale"></div>
-                      <span className="text-gray-700">{service}</span>
+                      <span className="body-regular">{service}</span>
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="shadow-lg scroll-reveal-subtle card-hover">
+            <Card className="shadow-lg scroll-reveal-subtle card-hover subtle-shadow">
               <CardHeader>
-                <CardTitle className="text-2xl text-[#701015]">What Makes Us Different</CardTitle>
+                <CardTitle className="heading-secondary">What Makes Us Different</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-lg text-gray-600 leading-relaxed scroll-reveal-gentle">
+                <p className="body-large scroll-reveal-gentle">
                   We are rooted in purpose, committed to impact, and driven by values. Our faith foundation inspires our approach to business with integrity, innovation, and empowerment at the core.
                 </p>
                 <div className="scroll-reveal-gentle">
-                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Core Values:</h4>
+                  <h4 className="heading-tertiary mb-2">Core Values:</h4>
                   <div className="flex flex-wrap gap-2">
                     {coreValues.map((value, index) => (
                       <Badge key={index} variant="secondary" className="bg-[#F8A301]/20 text-[#701015] scroll-reveal-scale" style={{ animationDelay: `${0.7 + index * 0.1}s` }}>
@@ -563,19 +564,19 @@ const Index = () => {
       </section>
 
       {/* Meet the CEO Section - LEFT ALIGNED */}
-      <section id="ceo" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#701015]">
+      <section id="ceo" className="section-spacing px-4 sm:px-6 lg:px-8 bg-[#701015] section-divider">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="scroll-reveal">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 scroll-reveal-subtle stagger-2">Meet the CEO</h2>
+              <h2 className="heading-primary text-white mb-6 scroll-reveal-subtle stagger-2">Meet the CEO</h2>
               <div className="prose prose-lg text-white/90 space-y-6">
-                <p className="text-lg leading-relaxed scroll-reveal-gentle stagger-3">
+                <p className="body-large text-white/90 scroll-reveal-gentle stagger-3">
                   <strong>Favour Nicholas</strong> is a business strategist and mentor with 5+ years of experience launching, scaling, and leading businesses in Nigeria and Atlanta, USA. She has served as Chief Operating Officer and guided entrepreneurs through business development and operations.
                 </p>
-                <p className="text-lg leading-relaxed scroll-reveal-gentle stagger-4">
+                <p className="body-large text-white/90 scroll-reveal-gentle stagger-4">
                   Years ago, she launched a business with just ₦65,000 and scaled it to half a million within six months — a milestone that ignited her passion for empowering entrepreneurs.
                 </p>
-                <p className="text-lg leading-relaxed scroll-reveal-gentle stagger-5">
+                <p className="body-large text-white/90 scroll-reveal-gentle stagger-5">
                   Today, as the driving force behind Kings Consults, <strong>Favour</strong> is on a mission to mentor and equip purpose-driven leaders to build, grow, and lead successful ventures.
                 </p>
               </div>
@@ -591,9 +592,9 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
               
-              <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-8 card-hover scroll-reveal-scale stagger-6">
+              <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-8 card-hover scroll-reveal-scale stagger-6 subtle-shadow">
                 <CardHeader>
-                  <CardTitle className="text-xl text-[#701015] flex items-center space-x-2">
+                  <CardTitle className="heading-tertiary text-[#701015] flex items-center space-x-2">
                     <div className="w-8 h-8 bg-[#F8A301]/20 rounded-lg flex items-center justify-center">
                       <span className="text-[#701015] text-sm">🎓</span>
                     </div>
@@ -604,7 +605,7 @@ const Index = () => {
                   {['Bachelor\'s in Public Health', 'Diploma in Operations Management', 'Certified Scrum Master'].map((item, index) => (
                     <div key={index} className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm scroll-reveal-gentle" style={{ animationDelay: `${0.7 + index * 0.1}s` }}>
                       <div className="w-3 h-3 bg-[#F8A301] rounded-full flex-shrink-0 animate-pulse-scale"></div>
-                      <span className="text-gray-700">{item}</span>
+                      <span className="body-regular">{item}</span>
                     </div>
                   ))}
                 </CardContent>
@@ -615,10 +616,10 @@ const Index = () => {
       </section>
 
       {/* Book a Session Section - LEFT ALIGNED */}
-      <section id="book-session" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section id="book-session" className="section-spacing px-4 sm:px-6 lg:px-8 modern-bg-secondary section-divider">
         <div className="max-w-4xl mx-auto text-left scroll-reveal">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#701015] mb-6">Ready to Transform Your Business?</h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">
+          <h2 className="heading-primary mb-6">Ready to Transform Your Business?</h2>
+          <p className="body-large mb-8 max-w-3xl">
             Book a clarity session with our team and start your journey toward sustainable business growth and success.
           </p>
           
@@ -798,46 +799,46 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Vision, Mission & Purpose Section - LEFT ALIGNED */}
-      <section id="vision-mission-purpose" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* Our Vision, Mission & Purpose Section - CENTERED */}
+      <section id="vision-mission-purpose" className="section-spacing px-4 sm:px-6 lg:px-8 modern-bg-white section-divider">
         <div className="max-w-7xl mx-auto">
-          <div className="text-left mb-16 scroll-reveal">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#701015] mb-6">Our Vision, Mission & Purpose</h2>
-            <p className="text-lg text-gray-600 max-w-4xl leading-relaxed">
+          <div className="text-center mb-16 scroll-reveal">
+            <h2 className="heading-primary mb-6">Our Vision, Mission & Purpose</h2>
+            <p className="body-large max-w-4xl mx-auto">
               Driven by clear values and a commitment to meaningful impact, we guide entrepreneurs toward purpose-driven success.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Vision */}
-            <div className="text-left scroll-reveal-subtle stagger-1">
-              <div className="w-24 h-24 mb-6 vmp-icon rounded-full flex items-center justify-center">
+            <div className="text-center scroll-reveal-subtle stagger-1">
+              <div className="w-24 h-24 mb-6 vmp-icon rounded-full flex items-center justify-center mx-auto">
                 <Lightbulb className="w-12 h-12 text-white" strokeWidth={2.5} />
               </div>
-              <h3 className="text-2xl font-bold text-[#701015] mb-4 scroll-reveal-gentle stagger-2">Vision</h3>
-              <p className="text-lg text-gray-600 leading-relaxed scroll-reveal-gentle stagger-3">
+              <h3 className="heading-secondary mb-4 scroll-reveal-gentle stagger-2">Vision</h3>
+              <p className="body-large scroll-reveal-gentle stagger-3">
                 To see entrepreneurs build intentional, values-driven brands that create lasting impact and reflect true purpose.
               </p>
             </div>
 
             {/* Mission */}
-            <div className="text-left scroll-reveal-subtle stagger-2">
-              <div className="w-24 h-24 mb-6 vmp-icon rounded-full flex items-center justify-center">
+            <div className="text-center scroll-reveal-subtle stagger-2">
+              <div className="w-24 h-24 mb-6 vmp-icon rounded-full flex items-center justify-center mx-auto">
                 <Target className="w-12 h-12 text-white" strokeWidth={2.5} />
               </div>
-              <h3 className="text-2xl font-bold text-[#701015] mb-4 scroll-reveal-gentle stagger-3">Mission</h3>
-              <p className="text-lg text-gray-600 leading-relaxed scroll-reveal-gentle stagger-4">
+              <h3 className="heading-secondary mb-4 scroll-reveal-gentle stagger-3">Mission</h3>
+              <p className="body-large scroll-reveal-gentle stagger-4">
                 To equip individuals with clarity, structure, and brand strategy that transforms vision into confident execution.
               </p>
             </div>
 
             {/* Purpose */}
-            <div className="text-left scroll-reveal-subtle stagger-3">
-              <div className="w-24 h-24 mb-6 vmp-icon rounded-full flex items-center justify-center">
+            <div className="text-center scroll-reveal-subtle stagger-3">
+              <div className="w-24 h-24 mb-6 vmp-icon rounded-full flex items-center justify-center mx-auto">
                 <Heart className="w-12 h-12 text-white" strokeWidth={2.5} fill="currentColor" />
               </div>
-              <h3 className="text-2xl font-bold text-[#701015] mb-4 scroll-reveal-gentle stagger-4">Purpose</h3>
-              <p className="text-lg text-gray-600 leading-relaxed scroll-reveal-gentle stagger-5">
+              <h3 className="heading-secondary mb-4 scroll-reveal-gentle stagger-4">Purpose</h3>
+              <p className="body-large scroll-reveal-gentle stagger-5">
                 To help purpose-driven founders transition from confusion to clarity, and from passion to measurable progress.
               </p>
             </div>
@@ -846,18 +847,18 @@ const Index = () => {
       </section>
 
       {/* Recognition & Milestones - LEFT ALIGNED */}
-      <section id="recognition" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section id="recognition" className="section-spacing px-4 sm:px-6 lg:px-8 modern-bg-secondary section-divider">
         <div className="max-w-7xl mx-auto">
-          <Card className="shadow-lg scroll-reveal">
+          <Card className="shadow-lg scroll-reveal subtle-shadow">
             <CardHeader>
-              <CardTitle className="text-3xl text-[#701015]">Recognition & Milestones</CardTitle>
+              <CardTitle className="heading-primary">Recognition & Milestones</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid gap-4">
                 {achievements.map((achievement, index) => (
                   <div key={index} className="flex items-center space-x-3 scroll-reveal-gentle" style={{ animationDelay: `${index * 0.1}s` }}>
                     <div className="w-3 h-3 bg-[#F8A301] rounded-full"></div>
-                    <span className="text-lg text-gray-700">{achievement}</span>
+                    <span className="body-large">{achievement}</span>
                   </div>
                 ))}
               </div>
@@ -867,38 +868,38 @@ const Index = () => {
       </section>
 
       {/* Clients & Testimonials - LEFT ALIGNED */}
-      <section id="clients" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="clients" className="section-spacing px-4 sm:px-6 lg:px-8 modern-bg-white section-divider">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-16 scroll-reveal">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">Clients & Testimonials</h2>
+            <h2 className="heading-primary mb-6">Clients & Testimonials</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {clients.map((client, index) => (
               <Dialog key={index}>
                 <DialogTrigger asChild>
-                  <Card className={`shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 scroll-reveal-subtle stagger-${(index % 4) + 1}`}>
+                  <Card className={`shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105 scroll-reveal-subtle stagger-${(index % 4) + 1} subtle-shadow`}>
                     <CardHeader>
-                      <CardTitle className="text-xl">{client.name}</CardTitle>
+                      <CardTitle className="heading-tertiary">{client.name}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-gray-600 text-base">{client.service}</p>
+                      <p className="body-regular">{client.service}</p>
                       <p className="text-[#F8A301] text-sm mt-2 font-medium">Click to view case study</p>
                     </CardContent>
                   </Card>
                 </DialogTrigger>
                 <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                   <DialogHeader>
-                    <DialogTitle className="text-2xl text-[#701015] mb-4">{client.name}</DialogTitle>
+                    <DialogTitle className="heading-secondary mb-4">{client.name}</DialogTitle>
                   </DialogHeader>
                   <div className="space-y-6">
                     {/* Client logo */}
-                    <div className="h-20 bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <div className="client-logo-container">
                       {client.name === "Zenny's Cookware" ? (
                         <img 
                           src="/lovable-uploads/a15e8cb5-402b-4c3d-b2cc-3be647a9ce63.png" 
                           alt="Zenny's Cookware Logo" 
-                          className="h-16 w-auto object-contain"
+                          className="client-logo"
                         />
                       ) : (
                         <span className="text-gray-500 text-sm">Client Logo Placeholder</span>
@@ -972,14 +973,14 @@ const Index = () => {
       </section>
 
       {/* Contact Section - LEFT ALIGNED */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#701015] to-[#701015]/90">
+      <section id="contact" className="section-spacing px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#701015] to-[#701015]/90 section-divider">
         <div className="max-w-6xl mx-auto">
           <div className="text-white">
             <div className="mb-12 text-left scroll-reveal">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+              <h2 className="heading-primary text-white mb-6">
                 Get in Touch
               </h2>
-              <p className="text-lg text-white/90 leading-relaxed max-w-3xl">
+              <p className="body-large text-white/90 max-w-3xl">
                 Have questions about our services? We'd love to hear from you.
               </p>
             </div>
