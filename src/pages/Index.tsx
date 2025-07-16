@@ -509,7 +509,7 @@ const Index = () => {
       </section>
 
       {/* About Kings Consults - LEFT ALIGNED */}
-      <section id="about" className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8 modern-bg-white section-divider">
+      <section id="about" className="py-8 lg:py-12 px-4 sm:px-6 lg:px-8 modern-bg-white section-divider">
         <div className="max-w-7xl mx-auto">
           <div className="text-left mb-12 scroll-reveal">
             <h2 className="heading-primary mb-4">About Kings Consults</h2>
@@ -563,19 +563,19 @@ const Index = () => {
       </section>
 
       {/* Meet the CEO Section - LEFT ALIGNED */}
-      <section id="ceo" className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[#701015] section-divider">
+      <section id="ceo" className="py-8 lg:py-12 px-4 sm:px-6 lg:px-8 bg-[#701015] section-divider">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="scroll-reveal">
-              <h2 className="heading-primary text-white mb-4 scroll-reveal-subtle stagger-2">Meet the CEO</h2>
+              <h2 className="text-lg lg:text-xl font-bold text-white leading-tight mb-4 scroll-reveal-subtle stagger-2">Meet the CEO</h2>
               <div className="prose prose-lg text-white/90 space-y-4">
-                <p className="body-large text-white scroll-reveal-gentle stagger-3">
+                <p className="text-sm lg:text-base text-white leading-relaxed scroll-reveal-gentle stagger-3">
                   <strong>Favour Nicholas</strong> is a business strategist and mentor with 5+ years of experience launching, scaling, and leading businesses in Nigeria and Atlanta, USA. She has served as Chief Operating Officer and guided entrepreneurs through business development and operations.
                 </p>
-                <p className="body-large text-white scroll-reveal-gentle stagger-4">
+                <p className="text-sm lg:text-base text-white leading-relaxed scroll-reveal-gentle stagger-4">
                   Years ago, she launched a business with just ₦65,000 and scaled it to half a million within six months — a milestone that ignited her passion for empowering entrepreneurs.
                 </p>
-                <p className="body-large text-white scroll-reveal-gentle stagger-5">
+                <p className="text-sm lg:text-base text-white leading-relaxed scroll-reveal-gentle stagger-5">
                   Today, as the driving force behind Kings Consults, <strong>Favour</strong> is on a mission to mentor and equip purpose-driven leaders to build, grow, and lead successful ventures.
                 </p>
               </div>
@@ -624,7 +624,7 @@ const Index = () => {
           
           <Dialog>
             <DialogTrigger asChild>
-              <Button size="lg" className="bg-gradient-to-r from-[#F8A301] to-[#F8A301]/90 hover:from-[#F8A301]/90 hover:to-[#F8A301]/80 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group scroll-reveal-scale stagger-2">
+              <Button size="lg" className="bg-gradient-to-r from-[#F8A301] to-[#F8A301]/90 hover:from-[#F8A301]/90 hover:to-[#F8A301]/80 text-white px-8 py-4 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 group scroll-reveal-scale stagger-2">
                 Book a Session
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
@@ -974,14 +974,14 @@ const Index = () => {
       </section>
 
       {/* Contact Section - LEFT ALIGNED */}
-      <section id="contact" className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#701015] to-[#701015]/90 section-divider">
+      <section id="contact" className="py-8 lg:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#701015] to-[#701015]/90 section-divider">
         <div className="max-w-6xl mx-auto">
           <div className="text-white">
             <div className="mb-10 text-left scroll-reveal">
-              <h2 className="heading-primary text-white mb-4">
+              <h2 className="text-lg lg:text-xl font-bold text-white leading-tight mb-4">
                 Get in Touch
               </h2>
-              <p className="body-large text-white max-w-3xl">
+              <p className="text-sm lg:text-base text-white leading-relaxed max-w-3xl">
                 Have questions about our services? We'd love to hear from you.
               </p>
             </div>
