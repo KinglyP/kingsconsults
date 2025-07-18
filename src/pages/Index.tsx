@@ -590,25 +590,6 @@ const Index = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
-              
-              <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-gray-50 mt-6 card-hover scroll-reveal-scale stagger-6 subtle-shadow">
-                <CardHeader>
-                  <CardTitle className="heading-tertiary text-[#701015] flex items-center space-x-2">
-                    <div className="w-8 h-8 bg-[#F8A301]/20 rounded-lg flex items-center justify-center">
-                      <span className="text-[#701015] text-sm">🎓</span>
-                    </div>
-                    <span>Education & Certifications</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  {['Bachelor\'s in Public Health', 'Diploma in Operations Management', 'Certified Scrum Master'].map((item, index) => (
-                    <div key={index} className="flex items-center space-x-4 p-3 bg-white rounded-lg shadow-sm scroll-reveal-gentle" style={{ animationDelay: `${0.7 + index * 0.1}s` }}>
-                      <div className="w-3 h-3 bg-[#F8A301] rounded-full flex-shrink-0 animate-pulse-scale"></div>
-                      <span className="body-regular">{item}</span>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
